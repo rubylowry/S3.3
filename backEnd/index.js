@@ -12,7 +12,7 @@ const port = 3000; //set server port
 
 //connect to db
 
-const mongodbURI = `mongodb+srv://${config.MONGO_USER}:${config.MONGO_PASSWORD}@${config.MONGO_CLUSTER_NAME}.mongodb.net/summative3db?retryWrites=true&w=majority`; //set what mongoDb to look at (set which collection with word after mongodeb.net/)
+const mongodbURI = `mongodb+srv://${config.MONGO_USER}:${config.MONGO_PASSWORD}@${config.MONGO_CLUSTER_NAME}-hlrm7.mongodb.net/test?retryWrites=true&w=majority`; //set what mongoDb to look at (set which collection with word after mongodeb.net/)
 mongoose.connect(mongodbURI, {useNewUrlParser: true, useUnifiedTopology: true}) // connect to above
 .then(()=> console.log('DB connected!')) //success message
 .catch(err =>{ //error catch
