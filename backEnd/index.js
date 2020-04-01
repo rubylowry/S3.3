@@ -5,8 +5,9 @@ const bodyParser = require('body-parser'); //to parse all data coming from the u
 const cors = require('cors'); //to include cross orgin request
 const bcryptjs = require('bcryptjs');//to hash and compare password in an encrypted method
 const config = require('./config.json');//has credentials
-//const User = require('./models/user.js'); //this refers to the structure for user ojects
-//const Item = require('./models/item.js'); //this refers to the structure for product ojects
+const User = require('./models/user.js');
+const Post = require('./models/post.js');
+const Comment = require('./models/comment.js');
 
 const port = 3000; //set server port
 
@@ -29,31 +30,21 @@ db.once('open', function() { // on open do this once
 
 // =========  code from Jake start
 
-
 // code from Jake end here
 
 
-
-
 //========== code from Ruby start
-
 
 // code from Ruby end here
 
 
 
-
-
 //========== code from James start
-
-
 
 // code from James end here
 
 
 //========== code from Natalia start
-
-
 
 // code from Natalia end here
 
