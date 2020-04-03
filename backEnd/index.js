@@ -26,28 +26,30 @@ db.on('error', console.error.bind(console, 'connection error:')); //error messag
 db.once('open', function() { // on open do this once
   console.log('We are connected to mongo db'); // success message
 });
+// connect endpoints
+app.use((req,res,next)=>{
+  console.log(`${req.method} request for ${req.url}`);
+  next();//include this to go to the next middleware
+});
 
+// include body-parser, cors, bcryptjs
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended:false}));
+
+app.use(cors());
 
 // =========  code from Jake start
-
 // code from Jake end here
 
-
 //========== code from Ruby start
-
 // code from Ruby end here
 
-
-
 //========== code from James start
-
 // code from James end here
-
 
 //========== code from Natalia start
 
 // code from Natalia end here
-
 
 //keep this always at the bottom so that you can see the errors reported
 app.listen(port, () => console.log(`Mongodb app listening on port ${port}!`))
