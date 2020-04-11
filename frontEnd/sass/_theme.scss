@@ -7,6 +7,7 @@ $mainBackgroundLight:#faf2e8;
 $mainLightBlue: #6fc7e1;
 $mainLightOrange: #FFA883;
 $white: #ffffff;
+$black: #000000;
 
 .navbar, .jumbotron {
     background-color: $mainBackgroundLight;
@@ -22,16 +23,7 @@ $white: #ffffff;
     font-style: normal;
 }
 
-h1{
-    font-family: 'Fredoka One';
-    color: $mainLightOrange!important;
-}
 
-.btn-primary{
-    background-color: $mainLightBlue!important;
-    border:none!important;
-    font-family: 'Fredoka One';
-}
 
 
 

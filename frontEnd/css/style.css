@@ -12,25 +12,54 @@
   font-weight: normal;
   font-style: normal;
 }
+.card {
+  border: 2px solid #6fc7e1;
+  border-radius: 20px;
+  width: 18em;
+}
+.card .card-img-top {
+  width: 95%;
+  height: 16em;
+  border-radius: 20px;
+}
+.card .card-body img {
+  width: 2.5em;
+  height: 2.5em;
+  border-radius: 50%;
+}
+.card .card-body .avatarSkin {
+  border: 3px solid #6fc7e1;
+}
+
 h1 {
-  font-family: "Fredoka One";
+  font-family: "Fredoka One" !important;
   color: #FFA883 !important;
+  font-size: 2em !important;
+}
+
+h2 {
+  font-family: "Fredoka One" !important;
+  color: #000000 !important;
+  font-size: 1em !important;
+}
+
+h3 {
+  font-family: "Fredoka One" !important;
+  color: #FFA883 !important;
+  font-size: 1em !important;
 }
 
 .btn-primary {
-  background-color: #6fc7e1 !important;
+  font-family: "Fredoka One" !important;
   border: none !important;
-  font-family: "Fredoka One";
+  background-color: #6fc7e1 !important;
 }
 
-h3 {
-  font-size: 1em;
-}
-
-h3 {
-  font-family: "Fredoka One";
-  color: #FFA883;
-  font-size: 1em;
+.btnPrimaryBlackFont {
+  font-family: "Fredoka One" !important;
+  border: none !important;
+  background-color: #6fc7e1 !important;
+  color: #000000 !important;
 }
 
 /*# sourceMappingURL=style.css.map */
