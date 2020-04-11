@@ -1,7 +1,11 @@
-@mixin h3Size{
-    font-size:$h3Font;
+
+
+@mixin headline3 ($f, $s, $c) {
+    font-family: $f;
+    color:$c;
+    font-size:$s;
 }
 
 h3{
-    @include h3Size;
+    @include headline3($f:'Fredoka One', $s:1em, $c:$mainLightOrange);
 }
