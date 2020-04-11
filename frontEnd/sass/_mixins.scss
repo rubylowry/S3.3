@@ -1,11 +1,31 @@
+//Natalia's code
 
-
-@mixin headline3 ($f, $s, $c) {
-    font-family: $f;
-    color:$c;
-    font-size:$s;
+@mixin headline ($f, $s, $c) {
+    font-family: $f!important;
+    color:$c!important;
+    font-size:$s!important;
 }
 
+h1{
+    @include headline('Fredoka One', 2em, $c:$mainLightOrange);
+}
+h2{
+    @include headline('Fredoka One', 1em, $c:$black);
+}
 h3{
-    @include headline3($f:'Fredoka One', $s:1em, $c:$mainLightOrange);
+    @include headline('Fredoka One', 1em, $mainLightOrange);
 }
+
+@mixin buttonSkin ($f,$b,$c){
+    font-family:$f!important;
+    border:$b!important;
+    background-color:$c!important;
+}
+.btn-primary{
+    @include buttonSkin('Fredoka One', none, $mainLightBlue);
+}
+.btnPrimaryBlackFont{
+    @include buttonSkin('Fredoka One', none, $mainLightBlue);
+    color:$black!important;
+}
+
