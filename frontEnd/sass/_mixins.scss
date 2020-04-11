@@ -1,0 +1,7 @@
+@mixin h3Size{
+    font-size:$h3Font;
+}
+
+h3{
+    @include h3Size;
+}

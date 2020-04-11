@@ -10,7 +10,10 @@
   "license": "ISC",
   "dependencies": {
     "bootstrap": "^4.4.1",
-    "jquery": "^3.4.1"
+    "grunt-contrib-csslint": "^2.0.0",
+    "grunt-contrib-cssmin": "^3.0.0",
+    "jquery": "^3.4.1",
+    "save-dev": "0.0.1-security"
   },
   "devDependencies": {
     "@popperjs/core": "^2.1.1",
