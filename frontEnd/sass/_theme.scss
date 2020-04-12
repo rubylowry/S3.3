@@ -23,8 +23,25 @@ $black: #000000;
     font-style: normal;
 }
 
-
-
+.modal-content{
+    border:3px solid $black;
+}
+.borderNone{
+    border:none!important;
+}
+.cardSkin{
+    border:2px solid $mainLightBlue;
+}
+.avatarSkin{
+    border:3px solid $mainLightBlue;
+}
+.closeModalSkin{
+    border: 2px solid $mainLightBlue;
+    background-color: $mainLightBlue;
+}
+.form-control{
+    border:1px solid $black!important;
+}
 
 
 

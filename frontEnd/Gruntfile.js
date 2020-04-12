@@ -1,6 +1,7 @@
 // Front end grant tasks
 module.exports = function(grunt) {
-
+	const sass = require('node-sass');
+	require('load-grunt-tasks')(grunt);
 	// Project configuration.
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
@@ -57,7 +58,8 @@ module.exports = function(grunt) {
 		sass: {
 			dist: {
 				options: {
-					style: 'expanded'
+					style: 'expanded',
+					implemenation: sass
 				},
 				files: {
 					// Destination : Source
@@ -70,7 +72,8 @@ module.exports = function(grunt) {
 		watch : {
 			scripts : {
 				files : ['js/*.js', 'sass/*.scss', 'css/style.css'],
-				tasks : ['sass', 'csslint', 'jshint', 'cssmin', 'uglify'],
+				// tasks : ['sass', 'csslint', 'jshint', 'cssmin', 'uglify'],
+				tasks : ['sass', 'csslint', 'cssmin', 'uglify'],
 				options : false,
 			},
 		}
@@ -81,7 +84,7 @@ module.exports = function(grunt) {
 	// Load the plugin that provides the "uglify" task.
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-jshint');
-	grunt.loadNpmTasks('grunt-contrib-sass');
+	grunt.loadNpmTasks('grunt-sass');
 	grunt.loadNpmTasks('grunt-contrib-csslint');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-contrib-watch');

@@ -2,24 +2,27 @@
 //basic app styles
 
 .card {
-    border:2px solid $mainLightBlue;
     border-radius: 20px;
     width:18em;
-    .card-img-top{
-        width:95%;
-        height:16em;
-        border-radius: 20px;
-    }
-    .card-body{
-        img{
-            width:2.5em;
-            height:2.5em;
-            border-radius: 50%;
+        .card-img-top{
+            width:95%;
+            height:16em;
+            border-radius: 20px;
         }
-        .avatarSkin{
-            border:3px solid $mainLightBlue;
+        .card-body{
+            img{
+                width:2.5em;
+                height:2.5em;
+                border-radius: 50%;
+            }
+            
         }
-    }
-    
 }
+
+.closeModalStructure{
+    border-radius: 10px;
+    width:1.5em;
+    height:1.5em;
+}
+
 
