@@ -1,3 +1,73 @@
+//Javascript for navbar and main homePage animations
+
+//hide and seek animation
+$("#hidePlants").click(function(){
+  $("#hidePlants").hide();
+});
+
+$("#hideLion").click(function(){
+  $("#hidePlants").show();
+  $("#hideSeal").show();
+  $("#hideLion").hide();
+
+});
+
+$("#hideSeal").click(function(){
+  $("#hidePlants").show();
+  $("#hideLion").show();
+  $("#hideSeal").hide();
+
+});
+
+// End of hide and seek animation
+
+//fox animation
+
+$("#orangeCircle").click(function(){
+  $("#orangeFox").show();
+  $("#purpleFox").hide();
+  $("#blueFox").hide();
+  $("#yellowFox").hide();
+});
+
+$("#purpleCircle").click(function(){
+  $("#purpleFox").show();
+  $("#orangeFox").hide();
+  $("#blueFox").hide();
+  $("#yellowFox").hide();
+});
+
+$("#blueCircle").click(function(){
+  $("#blueFox").show();
+  $("#orangeFox").hide();
+  $("#purpleFox").hide();
+  $("#yellowFox").hide();
+});
+
+$("#yellowCircle").click(function(){
+  $("#yellowFox").show();
+  $("#orangeFox").hide();
+  $("#purpleFox").hide();
+  $("#blueFox").hide();
+});
+
+//End of fox animation
+
+
+
+
+//End of Javascript for navbar and main homePage animations
+
+
+
+
+
+
+
+
+
+
+
 function renderCardHomePage(){
     document.getElementById('communityPhotos').innerHTML = `
     <div class="col-md-4">

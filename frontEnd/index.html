@@ -13,6 +13,8 @@
   <body>
     <!-- Home page -->
     <header>
+
+
       <div class="collapse bg-dark" id="navbarHeader">
         <div class="container">
           <div class="row">
@@ -31,24 +33,59 @@
           </div>
         </div>
       </div>
-      <div class="navbar shadow-sm">
-        <a href="#" class="navbar-brand d-flex align-items-center">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="mr-2" viewBox="0 0 24 24" focusable="false"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
-          <strong>Album</strong>
-        </a>
-        <div class="container justify-content-center">
-          <h1>Little Fox</h1>
+
+
+
+
+      <div class="navbar shadow-sm ">
+
+
+        <div class="leftCornerDivNav">
+            <img src="assets/hidePlants.svg" id="hidePlants">
+            <img src="assets/lionFaceHide.svg" class="hideAndSeekAnimals" id="hideLion">
+            <img src="assets/sealFaceHide.svg" class="hideAndSeekAnimals" id="hideSeal">
         </div>
-        <span class="text-right">
-          <button id="logInHomePage">Log in</button>
-          <button id="signUpHomePage" class="btn btn-primary">Sign up</button>
-        </span>
-        <button class="navbar-toggler bg-light" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+
+
+
+          <div class="centerDivNav">
+
+            <h1 class="littleFoxNav">Little Fox</h1>
+
+            <div class="colourCircleNav" id="orangeCircle"></div>
+            <div class="colourCircleNav" id="purpleCircle"></div>
+            <img src="assets/orangeFox.svg" class="foxFaceNav" id="orangeFox">
+            <img src="assets/purpleFox.svg" class="foxFaceNav" id="purpleFox">
+            <img src="assets/blueFox.svg" class="foxFaceNav" id="blueFox">
+            <img src="assets/yellowFox.svg" class="foxFaceNav" id="yellowFox">
+            <div class="colourCircleNav" id="blueCircle"></div>
+            <div class="colourCircleNav" id="yellowCircle"></div>
+
+          </div>
+
+
+
+
+        <div class="rightdivNav">
+          <span class="text-right">
+            <button id="logInHomePage" class="btn-login" >Log in</button>
+            <button id="signUpHomePage" class="btn btn-primary">Sign up</button>
+          </span>
+
+          <button class="navbar-toggler bg-light" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+
+
+
+
       </div>
+
+
+
     </header>
-    
+
     <main id="homePage" role="main">
       <section class="jumbotron text-center">
         <div class="container">
@@ -59,7 +96,7 @@
           </p>
         </div>
       </section>
-    
+
       <div class="album py-1">
         <h1 class="text-center mb-5">Latest community photos</h1>
         <h2 class="text-center mb-5">Please login to upload images and participate in discussions</h2>
@@ -68,7 +105,7 @@
           </div>
         </div>
       </div>
-    
+
     </main>
 
     <!-- Sign up page -->
@@ -77,15 +114,15 @@
     </div>
 
     <!-- Login page -->
-    <div id="loginPage"> 
+    <div id="loginPage">
 
     </div>
-    
+
     <!-- Profile page -->
     <div id="profilePage">
 
     </div>
-    
+
     <!-- Add photo form -->
     <div id="addPhotoPage">
 
