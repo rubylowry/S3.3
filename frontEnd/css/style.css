@@ -1,15 +1,22 @@
 .navbar, .jumbotron {
-  background-color: #faf2e8;
-}
+  background-color: #faf2e8; }
 
 .navbar {
+  height: 150px;
+  width: 100%;
   box-shadow: none !important;
-}
+  display: flex;
+  justify-content: space-between; }
 
 @font-face {
-  font-family: "Fredoka One";
+  font-family: 'Fredoka One';
   src: url("../fonts/FredokaOne-Regular.woff2") format("woff2"), url("FredokaOne-Regular.woff") format("woff");
   font-weight: normal;
+
+  font-style: normal; }
+
+.card {
+
   font-style: normal;
 }
 .modal-content {
@@ -29,6 +36,7 @@
 }
 
 .closeModalSkin {
+
   border: 2px solid #6fc7e1;
   background-color: #6fc7e1;
 }
@@ -39,6 +47,19 @@
 
 .card {
   border-radius: 20px;
+
+  width: 18em; }
+  .card .card-img-top {
+    width: 95%;
+    height: 16em;
+    border-radius: 20px; }
+  .card .card-body img {
+    width: 2.5em;
+    height: 2.5em;
+    border-radius: 50%; }
+  .card .card-body .avatarSkin {
+    border: 3px solid #6fc7e1; }
+
   width: 18em;
 }
 .card .card-img-top {
@@ -61,33 +82,118 @@
 h1 {
   font-family: "Fredoka One" !important;
   color: #FFA883 !important;
-  font-size: 2em !important;
-}
+  font-size: 2em !important; }
 
 h2 {
   font-family: "Fredoka One" !important;
   color: #000000 !important;
-  font-size: 1em !important;
-}
+  font-size: 1em !important; }
 
 h3 {
   font-family: "Fredoka One" !important;
   color: #FFA883 !important;
-  font-size: 1em !important;
-}
+  font-size: 1em !important; }
 
 .btn-primary {
+  font-size: 20px;
   font-family: "Fredoka One" !important;
   border: none !important;
-  background-color: #6fc7e1 !important;
-}
+  background-color: #6fc7e1 !important; }
+
+.btn-login {
+  font-size: 20px;
+  font-family: "Fredoka One" !important;
+  border: none !important;
+  background-color: none !important;
+  color: #6fc7e1 !important; }
 
 .btnPrimaryBlackFont {
   font-family: "Fredoka One" !important;
   border: none !important;
   background-color: #6fc7e1 !important;
-  color: #000000 !important;
-}
+  color: #000000 !important; }
+
+.leftCornerDivNav {
+  position: relative;
+  height: 150px;
+  width: 200px;
+  z-index: 100; }
+
+#hidePlants {
+  top: 0;
+  left: 0;
+  position: absolute;
+  z-index: 3; }
+
+#hidePlants {
+  cursor: pointer; }
+
+#hideSeal {
+  display: none; }
+
+.hideAndSeekAnimals {
+  margin-top: 20px;
+  margin-left: 50px;
+  height: 100px;
+  z-index: 1; }
+
+.hideAndSeekAnimals:hover {
+  cursor: pointer; }
+
+.centerDivNav {
+  text-align: center; }
+
+.littleFoxNav {
+  margin-bottom: 20px; }
+
+.foxFaceNav {
+  margin: 0 10px;
+  float: left;
+  height: 80px; }
+
+.colourCircleNav {
+  margin: 0 10px;
+  margin-top: 40px;
+  float: left;
+  height: 20px;
+  width: 20px;
+  border-radius: 25px;
+  background-color: #333; }
+
+.colourCircleNav:hover {
+  cursor: pointer; }
+
+#orangeCircle {
+  background-color: #ff7B4a; }
+
+#purpleCircle {
+  background-color: #ff99fa; }
+
+#blueCircle {
+  background-color: #36ffff; }
+
+#yellowCircle {
+  background-color: #ffff39; }
+
+#purpleFox {
+  display: none; }
+
+#blueFox {
+  display: none; }
+
+#yellowFox {
+  display: none; }
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none; }
+
+
+button {
+  background: none;
+  border: none; }
 
 .btn-warning {
   font-family: "Fredoka One" !important;
@@ -96,3 +202,4 @@ h3 {
 }
 
 /*# sourceMappingURL=style.css.map */
+
