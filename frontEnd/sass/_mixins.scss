@@ -39,3 +39,9 @@ h3{
     @include buttonSkin('Fredoka One', none, $mainLightBlue);
     color:$black!important;
 }
+
+.btn-warning{
+    @include buttonSkin('Fredoka One', none, $mainLightOrange);
+}
+
+

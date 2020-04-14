@@ -12,11 +12,42 @@
   font-family: 'Fredoka One';
   src: url("../fonts/FredokaOne-Regular.woff2") format("woff2"), url("FredokaOne-Regular.woff") format("woff");
   font-weight: normal;
+
   font-style: normal; }
 
 .card {
+
+  font-style: normal;
+}
+.modal-content {
+  border: 3px solid #000000;
+}
+
+.borderNone {
+  border: none !important;
+}
+
+.cardSkin {
   border: 2px solid #6fc7e1;
+}
+
+.avatarSkin {
+  border: 3px solid #6fc7e1;
+}
+
+.closeModalSkin {
+
+  border: 2px solid #6fc7e1;
+  background-color: #6fc7e1;
+}
+
+.form-control {
+  border: 1px solid #000000 !important;
+}
+
+.card {
   border-radius: 20px;
+
   width: 18em; }
   .card .card-img-top {
     width: 95%;
@@ -28,6 +59,25 @@
     border-radius: 50%; }
   .card .card-body .avatarSkin {
     border: 3px solid #6fc7e1; }
+
+  width: 18em;
+}
+.card .card-img-top {
+  width: 95%;
+  height: 16em;
+  border-radius: 20px;
+}
+.card .card-body img {
+  width: 2.5em;
+  height: 2.5em;
+  border-radius: 50%;
+}
+
+.closeModalStructure {
+  border-radius: 10px;
+  width: 1.5em;
+  height: 1.5em;
+}
 
 h1 {
   font-family: "Fredoka One" !important;
@@ -140,6 +190,16 @@ h3 {
   box-sizing: border-box;
   text-decoration: none; }
 
+
 button {
   background: none;
   border: none; }
+
+.btn-warning {
+  font-family: "Fredoka One" !important;
+  border: none !important;
+  background-color: #FFA883 !important;
+}
+
+/*# sourceMappingURL=style.css.map */
+
