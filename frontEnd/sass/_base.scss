@@ -25,15 +25,68 @@
 
 // icon css style
 
-// .iconDiv{
-//   @import iconSkin(25px, $mainLightOrange,40px,40px);
-// }
-
 .icons{
   height: 20px;
-  float: left;
 }
 
 .icons:hover{
   cursor: pointer;
 }
+
+//homePage basic styles
+
+.homePageDiscription em{
+  font-family: 'Fredoka One';
+  color: $mainLightOrange;
+}
+
+.paraLogIn{
+  font-family: 'Fredoka One';
+  color: $mainLightBlue;
+}
+
+.homeParaStartAdventure{
+  color: #A2C76A;
+}
+
+.arrowBtn{
+  color: $mainLightBlue;
+  font-family: 'Fredoka One';
+}
+
+.hideSeekExitMessage{
+  top: 10%;
+  left: 70%;
+  position: absolute;
+  font-family: 'Fredoka One';
+}
+
+.hideSeekMessageText{
+  top: 30%;
+  left: 10%;
+  position: absolute;
+  color: $mainLightBlue;
+  font-family: 'Fredoka One';
+}
+
+.hideSeekExitMessage:hover{
+  cursor: pointer;
+  color: $mainLightOrange;
+}
+
+#vineImg{
+  right: 0%;
+  top: 55%;
+  position: absolute;
+  height: 200px;
+}
+
+
+
+#signUpHomePage{
+  margin-left: 30px;
+}
+
+
+
+//end of homePage basic styles

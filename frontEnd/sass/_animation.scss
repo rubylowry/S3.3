@@ -94,6 +94,10 @@
   display: none;
 }
 
+#hideAndSeekPopUp{
+  display: none;
+}
+
 
 
 // End of Navbar id/class elements for animations
@@ -107,6 +111,12 @@
 
 #missionThreeSound{
   display: none;
+}
+
+#clickHereImg{
+  height: 80px;
+  left: 25%;
+  position: absolute;
 }
 
 @keyframes fadeIn{
@@ -126,6 +136,10 @@
 }
 
 .missionTwoText{
+    animation: fadeIn 25s ease;
+}
+
+.missionThreeText{
     animation: fadeIn 25s ease;
 }
 

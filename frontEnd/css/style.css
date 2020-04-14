@@ -39,11 +39,51 @@
     border: 3px solid #6fc7e1; }
 
 .icons {
-  height: 20px;
-  float: left; }
+  height: 20px; }
 
 .icons:hover {
   cursor: pointer; }
+
+.homePageDiscription em {
+  font-family: 'Fredoka One';
+  color: #FFA883; }
+
+.paraLogIn {
+  font-family: 'Fredoka One';
+  color: #6fc7e1; }
+
+.homeParaStartAdventure {
+  color: #A2C76A; }
+
+.arrowBtn {
+  color: #6fc7e1;
+  font-family: 'Fredoka One'; }
+
+.hideSeekExitMessage {
+  top: 10%;
+  left: 70%;
+  position: absolute;
+  font-family: 'Fredoka One'; }
+
+.hideSeekMessageText {
+  top: 30%;
+  left: 10%;
+  position: absolute;
+  color: #6fc7e1;
+  font-family: 'Fredoka One'; }
+
+.hideSeekExitMessage:hover {
+  cursor: pointer;
+  color: #FFA883; }
+
+#vineImg {
+  right: 0%;
+  top: 55%;
+  position: absolute;
+  height: 200px; }
+
+#signUpHomePage {
+  margin-left: 30px; }
 
 h1 {
   font-family: "Fredoka One" !important;
@@ -79,6 +119,18 @@ h3 {
   background-color: #6fc7e1 !important;
   color: #000000 !important; }
 
+.hideAndSeekIcon {
+  border-radius: 25px !important;
+  background-color: #6fc7e1 !important;
+  height: 50px !important;
+  width: 50px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 10%;
+  top: 75%;
+  position: absolute; }
+
 .soundIcon {
   border-radius: 25px !important;
   background-color: #FFA883 !important;
@@ -89,6 +141,15 @@ h3 {
   justify-content: center;
   left: 30%;
   top: 40%;
+  position: absolute; }
+
+.homePageArrowDownBtn {
+  border-radius: 25px !important;
+  background-color: #ffffff !important;
+  height: 30px !important;
+  width: 30px !important;
+  left: 50%;
+  transform: translate(-50%);
   position: absolute; }
 
 .leftCornerDivNav {
@@ -162,11 +223,19 @@ h3 {
 #yellowFox {
   display: none; }
 
+#hideAndSeekPopUp {
+  display: none; }
+
 #missionTwoSound {
   display: none; }
 
 #missionThreeSound {
   display: none; }
+
+#clickHereImg {
+  height: 80px;
+  left: 25%;
+  position: absolute; }
 
 @keyframes fadeIn {
   0% {
@@ -180,6 +249,9 @@ h3 {
   animation: fadeIn 25s ease; }
 
 .missionTwoText {
+  animation: fadeIn 25s ease; }
+
+.missionThreeText {
   animation: fadeIn 25s ease; }
 
 .missionImages {
@@ -227,6 +299,38 @@ h3 {
   color: #FFA883 !important;
   font-size: 1.5rem !important; }
 
+.missionThreeSplash {
+  display: none;
+  width: 200px;
+  height: 200px;
+  background-color: #ffffff;
+  top: 35%;
+  left: 60%;
+  position: absolute;
+  clip-path: url(#missionThreeSplash); }
+
+.missionThreeSplashText {
+  margin-top: 60px;
+  font-family: "Fredoka One" !important;
+  color: #A2C76A !important;
+  font-size: 1.5rem !important; }
+
+.messagePopUp {
+  z-index: 20;
+  width: 200px;
+  height: 200px;
+  background-color: #ffffff;
+  top: 50%;
+  left: 10%;
+  position: absolute;
+  clip-path: url(#hideSeekPopUp); }
+
+.hideSeekPopUpImg {
+  height: 270px;
+  top: 42%;
+  left: 8%;
+  position: absolute; }
+
 * {
   padding: 0;
   margin: 0;
@@ -236,3 +340,7 @@ h3 {
 button {
   background: none;
   border: none; }
+
+a, a:hover, a:focus, a:active {
+  text-decoration: none;
+  color: inherit; }

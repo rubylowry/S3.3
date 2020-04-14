@@ -19,6 +19,16 @@ $("#hideSeal").click(function(){
 
 });
 
+$(".hideSeekExitMessage").click(function(){
+  $("#hideAndSeekPopUp").hide();
+});
+
+$("#hideAndSeek").click(function(){
+  $("#hideAndSeekPopUp").toggle();
+});
+
+
+
 // End of hide and seek animation
 
 //fox animation
@@ -96,6 +106,9 @@ $("#yellowCircle").click(function(){
       $("#missionThreeSound").click(function(){
         var audio = new Audio("assets/mission3Sound.mp3");
         audio.play();
+
+        $(".missionThreeSplash").show();
+        $(".missionThreeSplash").addClass("missionThreeText");
       });
 
 
