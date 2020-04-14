@@ -12,8 +12,32 @@
   font-weight: normal;
   font-style: normal;
 }
-.card {
+.modal-content {
+  border: 3px solid #000000;
+}
+
+.borderNone {
+  border: none !important;
+}
+
+.cardSkin {
   border: 2px solid #6fc7e1;
+}
+
+.avatarSkin {
+  border: 3px solid #6fc7e1;
+}
+
+.closeModalSkin {
+  border: 2px solid #6fc7e1;
+  background-color: #6fc7e1;
+}
+
+.form-control {
+  border: 1px solid #000000 !important;
+}
+
+.card {
   border-radius: 20px;
   width: 18em;
 }
@@ -27,8 +51,11 @@
   height: 2.5em;
   border-radius: 50%;
 }
-.card .card-body .avatarSkin {
-  border: 3px solid #6fc7e1;
+
+.closeModalStructure {
+  border-radius: 10px;
+  width: 1.5em;
+  height: 1.5em;
 }
 
 h1 {
@@ -60,6 +87,12 @@ h3 {
   border: none !important;
   background-color: #6fc7e1 !important;
   color: #000000 !important;
+}
+
+.btn-warning {
+  font-family: "Fredoka One" !important;
+  border: none !important;
+  background-color: #FFA883 !important;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -50,7 +50,8 @@ app.post('/addUser', (req,res)=>{
         _id : new mongoose.Types.ObjectId,
         username : req.body.username,
         email : req.body.email,
-        password :hash
+        password :hash,
+        avatar : req.body.avatar
       });
       user.save().then(result =>{
         res.send(result);
@@ -64,6 +65,43 @@ app.get('/allUsers', (req,res)=>{
     res.send(result);
   })
 });
+//register user
+app.post('/registerUser', (req,res)=>{
+  User.findOne({username:req.body.username},(err,userResult)=>{
+    if (userResult){
+      res.send('username taken already. Please try another one');
+    } else{
+       const hash = bcryptjs.hashSync(req.body.password); //hash the password
+       const user = new User({
+         _id : new mongoose.Types.ObjectId,
+         username : req.body.username,
+         email : req.body.email,
+         password :hash
+       });
+       user.save().then(result =>{
+         res.send(result);
+       }).catch(err => res.send(err));
+    }
+  })
+});
+
+//user login
+app.post('/loginUser', (req, res) =>{
+  User.findOne({username:req.body.username},(err, userResult) =>{
+    if (userResult) {
+      if (bcryptjs.compareSync(req.body.password, userResult.password)){
+        res.send(userResult);
+      } else {
+        res.send('Not Authorized');
+      }
+    } else if (req.body.username === "") {
+      res.send('Please fill in all areas');
+    } else {
+      res.send('User not found. Please register');
+    }
+  });
+});
+
 // ========= code from Natalia end here
 
 
