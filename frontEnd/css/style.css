@@ -2,11 +2,20 @@
   background-color: #faf2e8; }
 
 .navbar {
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  position: absolute;
+  position: fixed;
   height: 150px;
   width: 100%;
   box-shadow: none !important;
   display: flex;
   justify-content: space-between; }
+
+.navBlock {
+  height: 150px;
+  width: 100%; }
 
 @font-face {
   font-family: 'Fredoka One';
@@ -28,6 +37,13 @@
     border-radius: 50%; }
   .card .card-body .avatarSkin {
     border: 3px solid #6fc7e1; }
+
+.icons {
+  height: 20px;
+  float: left; }
+
+.icons:hover {
+  cursor: pointer; }
 
 h1 {
   font-family: "Fredoka One" !important;
@@ -62,6 +78,18 @@ h3 {
   border: none !important;
   background-color: #6fc7e1 !important;
   color: #000000 !important; }
+
+.soundIcon {
+  border-radius: 25px !important;
+  background-color: #FFA883 !important;
+  height: 40px !important;
+  width: 40px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 30%;
+  top: 40%;
+  position: absolute; }
 
 .leftCornerDivNav {
   position: relative;
@@ -133,6 +161,71 @@ h3 {
 
 #yellowFox {
   display: none; }
+
+#missionTwoSound {
+  display: none; }
+
+#missionThreeSound {
+  display: none; }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  80% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+.missionOneText {
+  animation: fadeIn 25s ease; }
+
+.missionTwoText {
+  animation: fadeIn 25s ease; }
+
+.missionImages {
+  margin-top: 50px; }
+
+.missionOneImg {
+  height: 450px; }
+
+.missionTwoImg, .missionThreeImg {
+  display: none;
+  height: 450px; }
+
+.missionOneSplash {
+  display: none;
+  width: 200px;
+  height: 200px;
+  background-color: #ffffff;
+  top: 35%;
+  left: 60%;
+  position: absolute;
+  clip-path: url(#missionOneSplash); }
+
+.missionOneSplashText {
+  margin-top: 45px;
+  font-family: "Fredoka One" !important;
+  color: #FFA883 !important;
+  font-size: 1.5rem !important; }
+
+.missionOneSplashText:hover, .missionTwoSplashText:hover {
+  cursor: pointer; }
+
+.missionTwoSplash {
+  display: none;
+  width: 200px;
+  height: 200px;
+  background-color: #ffffff;
+  top: 35%;
+  left: 35%;
+  position: absolute;
+  clip-path: url(#missionTwoSplash); }
+
+.missionTwoSplashText {
+  margin-top: 70px;
+  font-family: "Fredoka One" !important;
+  color: #FFA883 !important;
+  font-size: 1.5rem !important; }
 
 * {
   padding: 0;

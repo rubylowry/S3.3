@@ -1,7 +1,10 @@
+//Jacob
+// css elements for objects used in animations
+// example onclick hide and shadow ect..
+//For keyframe css
+
+
 //Navbar id/class elements for animations
-
-
-
 .leftCornerDivNav{
   position: relative;
   height:150px;
@@ -93,11 +96,50 @@
 
 
 
-
-
-
-
-
-
-
 // End of Navbar id/class elements for animations
+
+// start of landing homepage mission animations
+
+
+#missionTwoSound{
+  display: none;
+}
+
+#missionThreeSound{
+  display: none;
+}
+
+@keyframes fadeIn{
+  0%{
+    opacity: 0;
+  }
+  80%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+.missionOneText{
+  animation: fadeIn 25s ease;
+}
+
+.missionTwoText{
+    animation: fadeIn 25s ease;
+}
+
+.missionImages{
+  margin-top: 50px;
+}
+
+.missionOneImg{
+  height: 450px;
+}
+
+.missionTwoImg, .missionThreeImg{
+  display: none;
+  height: 450px;
+}
+
+// End of landing page animations

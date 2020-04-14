@@ -54,9 +54,54 @@ $("#yellowCircle").click(function(){
 //End of fox animation
 
 
-
-
 //End of Javascript for navbar and main homePage animations
+
+
+// start of mission sound animations
+
+
+      $("#missionOneSound").click(function(){
+        var audio = new Audio("assets/mission1Sound.mp3");
+          audio.play();
+        $(".missionOneSplash").show();
+        $(".missionOneSplash").addClass("missionOneText");
+      });
+
+
+      $(".missionOneSplashText").click(function(){
+        $(".missionTwoImg").show();
+        $("#missionTwoSound").show();
+        $(".missionOneSplash").hide();
+        $(".missionOneImg").hide();
+        $("#missionOneSound").hide();
+      });
+
+      $("#missionTwoSound").click(function(){
+        var audio = new Audio("assets/mission2Sound.mp3");
+          audio.play();
+
+          $(".missionTwoSplash").show();
+          $(".missionTwoSplash").addClass("missionTwoText");
+      });
+
+      $(".missionTwoSplashText").click(function(){
+        $(".missionThreeImg").show();
+        $("#missionThreeSound").show();
+        $(".missionTwoSplash").hide();
+        $(".missionTwoImg").hide();
+        $("#missionTwoSound").hide();
+        console.log("i am clicked");
+      });
+
+      $("#missionThreeSound").click(function(){
+        var audio = new Audio("assets/mission3Sound.mp3");
+        audio.play();
+      });
+
+
+
+
+// end of misiion sound animations
 
 
 

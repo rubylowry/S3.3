@@ -1,0 +1,52 @@
+//Jacob
+//use for styles with cliiping masks
+//and for content within the masked style
+
+
+
+// .homeMessagePopUp{
+//   width: 200px;
+//   height: 200px;
+//   background-color: tomato;
+//   top:60;
+//   left: 30;
+//   position: absolute;
+//   clip-path: polygon(0 0, 100% 0, 100% 75%, 49% 76%, 24% 96%, 23% 75%, 0% 75%);
+// }
+
+.missionOneSplash{
+  display: none;
+  width: 200px;
+  height: 200px;
+  background-color: $white;
+  top:35%;
+  left: 60%;
+  position: absolute;
+  clip-path: url(#missionOneSplash);
+}
+
+.missionOneSplashText{
+  margin-top: 45px;
+  @include headline ('Fredoka One',1.5rem, $c:$mainLightOrange);
+}
+
+.missionOneSplashText:hover, .missionTwoSplashText:hover {
+  cursor: pointer;
+}
+
+
+.missionTwoSplash{
+  display: none;
+  width: 200px;
+  height: 200px;
+  background-color: $white;
+  top:35%;
+  left: 35%;
+  position: absolute;
+  clip-path: url(#missionTwoSplash);
+}
+
+.missionTwoSplashText{
+  margin-top: 70px;
+  @include headline ('Fredoka One',1.5rem, $c:$mainLightOrange);
+}

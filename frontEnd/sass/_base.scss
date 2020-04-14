@@ -22,3 +22,18 @@
     }
 
 }
+
+// icon css style
+
+// .iconDiv{
+//   @import iconSkin(25px, $mainLightOrange,40px,40px);
+// }
+
+.icons{
+  height: 20px;
+  float: left;
+}
+
+.icons:hover{
+  cursor: pointer;
+}
