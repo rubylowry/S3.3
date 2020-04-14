@@ -1,0 +1,103 @@
+//Navbar id/class elements for animations
+
+
+
+.leftCornerDivNav{
+  position: relative;
+  height:150px;
+  width: 200px;
+  z-index: 100;
+}
+
+#hidePlants{
+  top: 0;
+  left: 0;
+  position: absolute;
+  z-index: 3;
+}
+
+#hidePlants{
+  cursor: pointer;
+}
+
+#hideSeal{
+  display: none;
+}
+
+.hideAndSeekAnimals{
+  margin-top: 20px;
+  margin-left: 50px;
+  height: 100px;
+  z-index: 1;
+}
+
+.hideAndSeekAnimals:hover{
+  cursor: pointer;
+}
+
+.centerDivNav{
+  text-align: center;
+}
+
+.littleFoxNav{
+  margin-bottom: 20px;
+}
+
+.foxFaceNav{
+  margin: 0 10px;
+  float: left;
+  height: 80px;
+}
+
+.colourCircleNav{
+  margin: 0 10px;
+  margin-top: 40px;
+  float: left;
+  height: 20px;
+  width: 20px;
+  border-radius: 25px;
+  background-color: #333;
+}
+
+.colourCircleNav:hover{
+  cursor: pointer;
+}
+
+#orangeCircle{
+  background-color: #ff7B4a;
+}
+
+#purpleCircle{
+  background-color: #ff99fa;
+}
+
+#blueCircle{
+  background-color: #36ffff;
+}
+
+#yellowCircle{
+  background-color: #ffff39;
+}
+
+#purpleFox{
+  display: none;
+}
+
+#blueFox{
+  display: none;
+}
+
+#yellowFox{
+  display: none;
+}
+
+
+
+
+
+
+
+
+
+
+// End of Navbar id/class elements for animations

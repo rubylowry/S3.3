@@ -11,10 +11,20 @@ $black: #000000;
 
 .navbar, .jumbotron {
     background-color: $mainBackgroundLight;
+
 }
+
 .navbar{
+  // top: 0;
+  // left: 0;
+  // position: absolute;
+    height:150px;
+    width: 100%;
     box-shadow: none!important;
+    display: flex;
+ justify-content: space-between ;
 }
+
 @font-face {
     font-family: 'Fredoka One';
     src: url('../fonts/FredokaOne-Regular.woff2') format('woff2'),
@@ -24,6 +34,25 @@ $black: #000000;
 }
 
 
+.modal-content{
+    border:3px solid $black;
+}
+.borderNone{
+    border:none!important;
+}
+.cardSkin{
+    border:2px solid $mainLightBlue;
+}
+.avatarSkin{
+    border:3px solid $mainLightBlue;
+}
+.closeModalSkin{
+    border: 2px solid $mainLightBlue;
+    background-color: $mainLightBlue;
+}
+.form-control{
+    border:1px solid $black!important;
+}
 
 
 

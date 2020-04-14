@@ -21,11 +21,27 @@ h3{
     border:$b!important;
     background-color:$c!important;
 }
+
+
+
 .btn-primary{
+    font-size: 20px;
     @include buttonSkin('Fredoka One', none, $mainLightBlue);
 }
+
+.btn-login{
+  font-size: 20px;
+  @include buttonSkin('Fredoka One', none, none);
+  color:$mainLightBlue!important;
+}
+
 .btnPrimaryBlackFont{
     @include buttonSkin('Fredoka One', none, $mainLightBlue);
     color:$black!important;
 }
+
+.btn-warning{
+    @include buttonSkin('Fredoka One', none, $mainLightOrange);
+}
+
 
