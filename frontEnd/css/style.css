@@ -23,8 +23,33 @@
   font-weight: normal;
   font-style: normal; }
 
-.card {
+.modal-content {
+  border: 3px solid #000000; }
+
+.borderNone {
+  border: none !important; }
+
+.cardSkin {
+  border: 2px solid #6fc7e1; }
+
+.avatarSkin {
+  border: 3px solid #6fc7e1; }
+
+.closeModalSkin {
   border: 2px solid #6fc7e1;
+  background-color: #6fc7e1; }
+
+.form-control {
+  border: 1px solid #000000 !important; }
+
+.cardStructure {
+  position: relative; }
+
+.containerImage .container {
+  position: relative;
+  width: 50%; }
+
+.card {
   border-radius: 20px;
   width: 18em; }
   .card .card-img-top {
@@ -35,8 +60,11 @@
     width: 2.5em;
     height: 2.5em;
     border-radius: 50%; }
-  .card .card-body .avatarSkin {
-    border: 3px solid #6fc7e1; }
+
+.closeModalStructure {
+  border-radius: 10px;
+  width: 1.5em;
+  height: 1.5em; }
 
 .icons {
   height: 20px; }
@@ -204,6 +232,12 @@ h3 {
   border: none !important;
   background-color: none !important;
   color: #6fc7e1 !important; }
+
+.btn-about {
+  font-size: 20px;
+  font-family: "Fredoka One" !important;
+  border: none !important;
+  background-color: #6fc7e1 !important; }
 
 .btnPrimaryBlackFont {
   font-family: "Fredoka One" !important;
