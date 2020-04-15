@@ -264,6 +264,18 @@ h3 {
   display: none;
   height: 450px; }
 
+@keyframes shake {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg); }
+  25% {
+    transform: translate(-50%, -50%) rotate(3deg); }
+  50% {
+    transform: translate(-50%, -50%) rotate(0deg); }
+  75% {
+    transform: translate(-50%, -50%) rotate(3deg); }
+  100% {
+    transform: translate(-50%, -50%) rotate(0deg); } }
+
 .missionOneSplash {
   display: none;
   width: 200px;
@@ -330,6 +342,123 @@ h3 {
   top: 42%;
   left: 8%;
   position: absolute; }
+
+#loginPage {
+  display: none !important;
+  height: 100vh;
+  display: flex;
+  position: relative;
+  transition: background 0.5s ease;
+  width: 100%;
+  background-color: #faf2e8; }
+
+.loginPageText {
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -30%);
+  position: absolute;
+  text-align: center;
+  font-family: "Fredoka One" !important;
+  color: #FFA883 !important;
+  font-size: 1.5rem !important; }
+
+.emailText {
+  display: none; }
+
+.emailText em {
+  color: #6fc7e1; }
+
+.emailText em:hover {
+  color: #000000; }
+
+.passwordText {
+  display: none; }
+
+#errorMessage {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -55%);
+  height: 30px;
+  width: 400px;
+  color: #333;
+  text-align: center;
+  display: none; }
+
+#loginPassword {
+  display: none;
+  font-family: "Fredoka One" !important;
+  color: tomato !important;
+  font-size: 1rem !important; }
+
+#loginUserName {
+  display: none;
+  font-family: "Fredoka One" !important;
+  color: tomato !important;
+  font-size: 1rem !important; }
+
+#loginEmail {
+  display: none;
+  font-family: "Fredoka One" !important;
+  color: tomato !important;
+  font-size: 1rem !important; }
+
+.signUpForm {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -60%); }
+
+.fieldName,
+.fieldEmail,
+.fieldPassword {
+  padding: 10px;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -60%);
+  background: #FFF7ED;
+  height: 50px;
+  width: 400px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+  border: 2px solid #6fc7e1;
+  transition: all 0.5s ease; }
+
+.fieldName i, .fieldEmail i,
+.fieldPassword i {
+  padding: 20px; }
+
+.fa-arrow-down {
+  cursor: pointer; }
+
+.fieldName input,
+.fieldEmail input,
+.fieldPassword input {
+  background: none;
+  border: none;
+  outline: none;
+  height: 100%;
+  flex: 1;
+  width: 400px; }
+
+div.inactive {
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, 50%); }
+
+div.active {
+  opacity: 1;
+  pointer-events: all;
+  transform: translate(-50%, -50%); }
+
+.flowerLogin {
+  height: 300px;
+  position: absolute;
+  right: 10%;
+  bottom: 0%; }
 
 * {
   padding: 0;

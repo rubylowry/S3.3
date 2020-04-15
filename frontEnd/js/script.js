@@ -117,6 +117,124 @@ $("#yellowCircle").click(function(){
 // end of misiion sound animations
 
 
+// start of form animation and form validation
+
+//testing login navigation
+// $("#logInHomePage").click(function(){
+//   $("#loginPage").show();
+//   $("#loginPage").css( "display: block !important");
+//   $("#homePage").hide();
+//   console.log("i am clicked");
+// });
+
+function animatedForm(){
+
+	const arrows = document.querySelectorAll(".fa-arrow-down");
+
+	arrows.forEach(arrow =>{
+
+		arrow.addEventListener("click",() => {
+
+			const input = arrow.previousElementSibling;
+			const parent = arrow.parentElement;
+			const nextForm = parent.nextElementSibling;
+			console.log(input);
+			console.log(parent);
+
+			// validation checking
+			if(input.type === "text" && validateUser(input)){
+				nextSlide(parent, nextForm);
+			} else if(input.type === "email" && validateEmail(input)){
+				nextSlide(parent, nextForm);
+			}else if (input.type === "password" && validatePassword(input)){
+				nextSlide(parent, nextForm);
+			}else{
+				parent.style.animation = "shake 0.6s ease";
+			}
+
+			parent.addEventListener('animationend', () =>{
+				parent.style.animation = "";
+			});
+
+		});
+	});
+}
+
+
+function validateUser(user){
+		const validateUserName = /^\w{6,30}$/;
+		if (validateUserName.test(user.value)){
+			success();
+			$('#errorMessage').hide();
+			$('#loginUserName').hide();
+      $(".userNameText").hide();
+      $(".emailText").show();
+			return true;
+		}else {
+			error();
+			$('#errorMessage').show();
+			$('#loginUserName').show();
+		}
+}
+
+function validateEmail(email){
+	const validationEmail = /^[^\s@]+@[^0-9][^\s@]+\.(?=.{1,5}$)[^0-9][^\s@]+$/;
+	if (validationEmail.test(email.value)){
+		success();
+		$('#errorMessage').hide();
+		$('#loginEmail').hide();
+    $(".emailText").hide();
+    $(".passwordText").show();
+		return true
+	} else {
+		error();
+		$('#errorMessage').show();
+		$('#loginEmail').show();
+	}
+}
+
+function validatePassword(password){
+	const passwordValidation = /(?=.{6,40}$)/;
+	if(passwordValidation.test(password.value)){
+		success();
+		$('#errorMessage').hide();
+		$('#loginPassword').hide();
+		return true;
+	} else {
+		console.log('not enough characters');
+		error();
+		$('#errorMessage').show();
+		$('#loginPassword').show();
+	}
+}
+
+function nextSlide(parent, nextForm){
+	parent.classList.add('inactive');
+	parent.classList.remove('active');
+	nextForm.classList.add('active');
+}
+
+function error(){
+
+  $("#loginPage").css("backgroundColor","#ffffff");
+  $(".fieldName").css("border","2px solid tomato");
+  $(".fieldName").css("backgroundColor","#ffffff");
+
+}
+
+function success(){
+  $("#loginPage").css("backgroundColor","#faf2e8");
+}
+
+animatedForm();
+
+
+
+
+
+//end of form animation and and form validation
+
+
 
 
 
