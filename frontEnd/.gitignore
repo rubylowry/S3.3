@@ -3,6 +3,3 @@ config.json
 Gruntfile.js
 .DS_Store
 *.DS_Store
-.sass-cache/
-**.sass-cache**
-!css/style.css.map
