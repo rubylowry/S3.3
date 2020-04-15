@@ -44,6 +44,9 @@
 .icons:hover {
   cursor: pointer; }
 
+#loginLandingPage {
+  display: none; }
+
 .homePageDiscription em {
   font-family: 'Fredoka One';
   color: #FFA883; }
@@ -84,6 +87,95 @@
 
 #signUpHomePage {
   margin-left: 30px; }
+
+.logedInImg {
+  height: 300px;
+  margin-top: 50px;
+  margin-bottom: 200px; }
+
+#goToProfileBtn {
+  position: absolute;
+  left: 50%;
+  top: 80%;
+  transform: translate(-50%, -80%); }
+
+.foxFaceNav:hover {
+  cursor: pointer; }
+
+.missionThreeSplashText:hover {
+  cursor: pointer; }
+
+#footer {
+  background-color: #333;
+  height: 200px;
+  margin-top: 50px;
+  width: 100%; }
+
+.littleFoxFooter {
+  width: 200px;
+  height: 200px;
+  text-align: center;
+  float: left;
+  position: absolute;
+  left: 5%;
+  padding-top: 25px; }
+
+.footerList {
+  width: 200px;
+  height: 200px;
+  text-align: right;
+  float: left;
+  position: absolute;
+  right: 5%;
+  padding-top: 30px; }
+
+.footerList ul li {
+  font-size: 20px;
+  color: #ffffff;
+  font-family: 'Fredoka One';
+  margin-bottom: 20px; }
+
+.footerFoxImg {
+  height: 100px;
+  position: absolute;
+  left: 20%; }
+
+.footerBackToTop {
+  position: absolute;
+  left: 50%;
+  font-family: 'Fredoka One';
+  font-size: 30px;
+  color: #6fc7e1;
+  margin-top: 70px; }
+
+#aboutPage {
+  display: none !important;
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  position: relative;
+  transition: background 0.5s ease;
+  width: 100%;
+  background-color: #faf2e8; }
+
+.aboutTitle {
+  color: #FFA883;
+  font-family: 'Fredoka One';
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -10%); }
+
+.aboutPhoto {
+  height: 300px;
+  margin-top: 50px;
+  margin-bottom: 50px; }
+
+.aboutPageText {
+  color: #FFA883;
+  font-family: 'Fredoka One';
+  font-size: 25px;
+  margin-bottom: 50px; }
 
 h1 {
   font-family: "Fredoka One" !important;
@@ -474,6 +566,23 @@ div.active {
   position: absolute;
   left: 10%;
   bottom: 0%; }
+
+#signUpSubmitBtn {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -70%);
+  display: none; }
+
+.thankYouMessage {
+  display: none;
+  width: 400px;
+  height: 500px; }
+
+.modalFoxImg {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  height: 100px; }
 
 #loginPage {
   display: none !important;

@@ -3,7 +3,7 @@
 // basic display none(hide) and display block(show) of main div elements
 
 // #homePage{
-//   display: none;
+//   display: none !important;
 // }
 
 .card {
@@ -39,6 +39,14 @@
 }
 
 //homePage basic styles
+
+#loginLandingPage{
+  display: none;
+}
+
+// #landingHomePage{
+//   display: none;
+// }
 
 .homePageDiscription em{
   font-family: 'Fredoka One';
@@ -87,11 +95,118 @@
 }
 
 
-
 #signUpHomePage{
   margin-left: 30px;
+}
+
+.logedInImg{
+  height: 300px;
+  margin-top: 50px;
+  margin-bottom: 200px;
+}
+
+#goToProfileBtn{
+  position: absolute;
+  left: 50%;
+  top:80%;
+  transform: translate(-50%,-80%);
+}
+
+.foxFaceNav:hover{
+  cursor: pointer;
+}
+
+.missionThreeSplashText:hover{
+  cursor: pointer;
+}
+
+#footer{
+  background-color: #333;
+  height: 200px;
+  margin-top: 50px;
+  width: 100%;
+}
+
+.littleFoxFooter{
+  width: 200px;
+  height: 200px;
+  text-align: center;
+  float: left;
+  position: absolute;
+  left: 5%;
+  padding-top: 25px;
+}
+
+.footerList{
+  width: 200px;
+  height: 200px;
+  text-align: right;
+  float: left;
+  position: absolute;
+  right: 5%;
+  padding-top: 30px;
+}
+
+.footerList ul li{
+  font-size: 20px;
+  color: $white;
+  font-family: 'Fredoka One';
+  margin-bottom: 20px;
+}
+
+.footerFoxImg{
+  height: 100px;
+  position: absolute;
+  // top: 20%;
+  left: 20%;
+}
+
+.footerBackToTop{
+  position: absolute;
+  left: 50%;
+  font-family: 'Fredoka One';
+  font-size: 30px;
+  color: $mainLightBlue;
+  margin-top: 70px;
 }
 
 
 
 //end of homePage basic styles
+
+// about page stylesheet
+#aboutPage{
+  display: none !important;
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  position: relative;
+  transition: background 0.5s ease;
+  width: 100%;
+  background-color: $mainBackgroundLight;
+}
+
+.aboutTitle{
+  color: $mainLightOrange;
+  font-family: 'Fredoka One';
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%,-10%);
+}
+
+.aboutPhoto{
+  height: 300px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.aboutPageText{
+  color: $mainLightOrange;
+  font-family: 'Fredoka One';
+  font-size: 25px;
+  margin-bottom: 50px;
+}
+
+
+//end of aboutPage styles

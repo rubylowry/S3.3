@@ -122,19 +122,64 @@ $("#yellowCircle").click(function(){
 //testing login / sign up navigation
 $("#signUpHomePage").click(function(){
   $("#signUpPage").attr('style',"display: block !important");
-  $("#loginPage").attr('style',"display: nnone !important")
+  $("#loginPage").attr('style',"display: none !important");
+  $("#aboutPage").attr('style',"display: none !important");
+  $("#homePage").hide();
+});
+
+$("#signUpAbout").click(function(){
+  $("#signUpPage").attr('style',"display: none !important");
+  $("#aboutPage").attr('style',"display: block !important");
+  $("#loginPage").attr('style',"display: none !important");
   $("#homePage").hide();
   $(".navBlock").hide();
+
 });
 
 $("#logInHomePage").click(function(){
   $("#loginPage").attr('style',"display: block !important")
   $("#signUpPage").attr('style',"display: none !important");
+  $("#aboutPage").attr('style',"display: none !important");
   $("#homePage").hide();
   $(".navBlock").hide();
 });
 
+$("#aboutHomePage").click(function(){
+  $("#signUpPage").attr('style',"display: block !important");
+  $("#aboutPage").attr('style',"display: none !important");
+  $("#homePage").hide();
+});
+
+$(".foxFaceNav").click(function(){
+  $(".navBlock").show();
+  $("#homePage").show();
+  $("#loginPage").attr('style',"display: none !important");
+  $("#signUpPage").attr('style',"display: none !important");
+  $("#aboutPage").attr('style',"display: none !important");
+});
+
+$(".missionThreeSplashText").click(function(){
+  $(".navBlock").hide();
+  $("#homePage").hide();
+  $("#signUpPage").attr('style',"display: block !important");
+});
+
+$("#signUpData").click(function(){
+  $("#loginPage").attr('style',"display: block !important")
+  $("#signUpPage").attr('style',"display: none !important");
+});
+
 //end of login /sign up navigation
+
+$("#signUpSubmitBtn").click(function(){
+    var username = $("#username").val();
+    var useremail = $("#email").val();
+    var userpassword = $("#password").val();
+    console.log(username);
+    console.log(useremail);
+    console.log(userpassword);
+});
+
 
 
 
@@ -158,7 +203,8 @@ function animatedForm(){
 			} else if(input.type === "email" && validateEmail(input)){
 				nextSlide(parent, nextForm);
 			}else if (input.type === "password" && validatePassword(input)){
-				nextSlide(parent, nextForm);
+				$(".fieldPassword").hide();
+        $("#signUpSubmitBtn").show();
 			}else{
 				parent.style.animation = "shake 0.6s ease";
 			}
@@ -212,6 +258,8 @@ function validatePassword(password){
 		success();
 		$('#errorMessage').hide();
 		$('#signUpPassword').hide();
+		$('.passwordText').hide();
+		$('.thankYouMessage').show();
 		return true;
 	} else {
 		console.log('not enough characters');

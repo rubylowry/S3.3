@@ -1,3 +1,4 @@
 node_modules
 config.json
 Gruntfile.js
+*.DS_Store
