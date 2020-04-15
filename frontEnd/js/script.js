@@ -119,13 +119,24 @@ $("#yellowCircle").click(function(){
 
 // start of form animation and form validation
 
-//testing login navigation
-// $("#logInHomePage").click(function(){
-//   $("#loginPage").show();
-//   $("#loginPage").css( "display: block !important");
-//   $("#homePage").hide();
-//   console.log("i am clicked");
-// });
+//testing login / sign up navigation
+$("#signUpHomePage").click(function(){
+  $("#signUpPage").attr('style',"display: block !important");
+  $("#loginPage").attr('style',"display: nnone !important")
+  $("#homePage").hide();
+  $(".navBlock").hide();
+});
+
+$("#logInHomePage").click(function(){
+  $("#loginPage").attr('style',"display: block !important")
+  $("#signUpPage").attr('style',"display: none !important");
+  $("#homePage").hide();
+  $(".navBlock").hide();
+});
+
+//end of login /sign up navigation
+
+
 
 function animatedForm(){
 
@@ -141,7 +152,7 @@ function animatedForm(){
 			console.log(input);
 			console.log(parent);
 
-			// validation checking
+			// validation checking sign up
 			if(input.type === "text" && validateUser(input)){
 				nextSlide(parent, nextForm);
 			} else if(input.type === "email" && validateEmail(input)){
@@ -152,6 +163,7 @@ function animatedForm(){
 				parent.style.animation = "shake 0.6s ease";
 			}
 
+
 			parent.addEventListener('animationend', () =>{
 				parent.style.animation = "";
 			});
@@ -161,19 +173,20 @@ function animatedForm(){
 }
 
 
+
 function validateUser(user){
 		const validateUserName = /^\w{6,30}$/;
 		if (validateUserName.test(user.value)){
 			success();
 			$('#errorMessage').hide();
-			$('#loginUserName').hide();
+			$('#signUpUserName').hide();
       $(".userNameText").hide();
       $(".emailText").show();
 			return true;
 		}else {
 			error();
 			$('#errorMessage').show();
-			$('#loginUserName').show();
+			$('#signUpUserName').show();
 		}
 }
 
@@ -182,14 +195,14 @@ function validateEmail(email){
 	if (validationEmail.test(email.value)){
 		success();
 		$('#errorMessage').hide();
-		$('#loginEmail').hide();
+		$('#signUpEmail').hide();
     $(".emailText").hide();
     $(".passwordText").show();
 		return true
 	} else {
 		error();
 		$('#errorMessage').show();
-		$('#loginEmail').show();
+		$('#signUpEmail').show();
 	}
 }
 
@@ -198,13 +211,13 @@ function validatePassword(password){
 	if(passwordValidation.test(password.value)){
 		success();
 		$('#errorMessage').hide();
-		$('#loginPassword').hide();
+		$('#signUpPassword').hide();
 		return true;
 	} else {
 		console.log('not enough characters');
 		error();
 		$('#errorMessage').show();
-		$('#loginPassword').show();
+		$('#signUpPassword').show();
 	}
 }
 
@@ -214,22 +227,24 @@ function nextSlide(parent, nextForm){
 	nextForm.classList.add('active');
 }
 
+
 function error(){
 
-  $("#loginPage").css("backgroundColor","#ffffff");
+  $("#signUpPage").css("backgroundColor","#ffffff");
   $(".fieldName").css("border","2px solid tomato");
   $(".fieldName").css("backgroundColor","#ffffff");
+  $(".fieldEmail").css("border","2px solid tomato");
+  $(".fieldEmail").css("backgroundColor","#ffffff");
+  $(".fieldPassword").css("border","2px solid tomato");
+  $(".fieldPassword").css("backgroundColor","#ffffff");
 
 }
 
 function success(){
-  $("#loginPage").css("backgroundColor","#faf2e8");
+  $("#signUpPage").css("backgroundColor","#faf2e8");
 }
 
 animatedForm();
-
-
-
 
 
 //end of form animation and and form validation

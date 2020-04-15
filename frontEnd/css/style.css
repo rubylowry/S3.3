@@ -276,6 +276,18 @@ h3 {
   100% {
     transform: translate(-50%, -50%) rotate(0deg); } }
 
+@keyframes shakeLogin {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg); }
+  25% {
+    transform: translate(-50%, -50%) rotate(3deg); }
+  50% {
+    transform: translate(-50%, -50%) rotate(0deg); }
+  75% {
+    transform: translate(-50%, -50%) rotate(3deg); }
+  100% {
+    transform: translate(-50%, -50%) rotate(0deg); } }
+
 .missionOneSplash {
   display: none;
   width: 200px;
@@ -343,7 +355,7 @@ h3 {
   left: 8%;
   position: absolute; }
 
-#loginPage {
+#signUpPage {
   display: none !important;
   height: 100vh;
   display: flex;
@@ -352,7 +364,7 @@ h3 {
   width: 100%;
   background-color: #faf2e8; }
 
-.loginPageText {
+.signUpPageText {
   top: 30%;
   left: 50%;
   transform: translate(-50%, -30%);
@@ -385,19 +397,19 @@ h3 {
   text-align: center;
   display: none; }
 
-#loginPassword {
+#signUpPassword {
   display: none;
   font-family: "Fredoka One" !important;
   color: tomato !important;
   font-size: 1rem !important; }
 
-#loginUserName {
+#signUpUserName {
   display: none;
   font-family: "Fredoka One" !important;
   color: tomato !important;
   font-size: 1rem !important; }
 
-#loginEmail {
+#signUpEmail {
   display: none;
   font-family: "Fredoka One" !important;
   color: tomato !important;
@@ -409,9 +421,7 @@ h3 {
   left: 50%;
   transform: translate(-50%, -60%); }
 
-.fieldName,
-.fieldEmail,
-.fieldPassword {
+.fieldName, .fieldEmail, .fieldPassword {
   padding: 10px;
   position: absolute;
   top: 60%;
@@ -427,16 +437,15 @@ h3 {
   border: 2px solid #6fc7e1;
   transition: all 0.5s ease; }
 
-.fieldName i, .fieldEmail i,
-.fieldPassword i {
+.fieldName i, .fieldEmail i, .fieldPassword i,
+.fieldNameLogin i, .fieldPasswordLogin i {
   padding: 20px; }
 
 .fa-arrow-down {
   cursor: pointer; }
 
-.fieldName input,
-.fieldEmail input,
-.fieldPassword input {
+.fieldName input, .fieldEmail input, .fieldPassword input,
+.fieldNameLogin input, .fieldPasswordLogin input {
   background: none;
   border: none;
   outline: none;
@@ -459,6 +468,60 @@ div.active {
   position: absolute;
   right: 10%;
   bottom: 0%; }
+
+.loginFlower {
+  height: 300px;
+  position: absolute;
+  left: 10%;
+  bottom: 0%; }
+
+#loginPage {
+  display: none !important;
+  height: 100vh;
+  display: flex;
+  position: relative;
+  transition: background 0.5s ease;
+  width: 100%;
+  background-color: #faf2e8; }
+
+.fieldPasswordLogin, .fieldNameLogin {
+  padding: 10px;
+  background: #FFF7ED;
+  height: 50px;
+  width: 400px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+  border: 2px solid #6fc7e1; }
+
+.fieldNameLogin {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -40%); }
+
+.fieldPasswordLogin {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+
+#loginFormBtn {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -60%); }
+
+.loginPageText {
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -30%);
+  position: absolute;
+  text-align: center;
+  font-family: "Fredoka One" !important;
+  color: #FFA883 !important;
+  font-size: 1.5rem !important; }
 
 * {
   padding: 0;

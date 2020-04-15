@@ -138,27 +138,20 @@
 
     </main>
 
+
+
+
     <!-- Sign up page -->
     <div id="signUpPage">
-
-    </div>
-
-
-
-
-
-    <!-- Login page -->
-    <div id="loginPage">
-
-      <div class="loginPageText">
+      <div class="signUpPageText">
         <p class="userNameText">Grab a parent or guardian to help <br />sign up and start the adventure.<br /> <br />
         First thing what is you adventure name? <br />Enter a name but just be super sure to make sure that its longer then 6 letters. </p>
 
         <p class="emailText">What is your parent or gardians email<br /> address? <br /><br />
-          <a class="infoHover" href="#"><em>For mor information click here</em></a>
+          <a class="infoHover" href="#"><em>For more information click here</em></a>
         </p>
 
-        <p class="passwordText">Enter your secret cod, just <br /> remember not to tell anyone. <br /><br />
+        <p class="passwordText">Enter your secret code, just <br /> remember not to tell anyone. <br /><br />
           Let's make the secret code longer the 6 letters,<br /> so it's hard for other people to crack the code.
         </p>
 
@@ -167,9 +160,9 @@
 
 
       <div id="errorMessage">
-        <p id="loginUserName">User name must be 6 characters or longer</p>
-        <p id="loginEmail">Invalid Email</p>
-        <p id="loginPassword">Invalid Password</p>
+        <p id="signUpUserName">User name must be 6 characters or longer</p>
+        <p id="signUpEmail">Invalid Email</p>
+        <p id="signUpPassword">Invalid Password</p>
       </div>
 
       <form class="signUpForm">
@@ -177,7 +170,7 @@
 
               <div class="fieldName">
                 <i class="fas fa-user"></i>
-                <input type="text" placeholder="please enter your adventurer name" required />
+                <input type="text" placeholder="please enter an adventurer name" required />
                 <i class="fas fa-arrow-down"></i>
               </div>
 
@@ -197,7 +190,37 @@
 
       <img src="assets/flowerLogin.svg" class="flowerLogin">
 
+    </div>
 
+
+
+
+
+    <!-- Login page -->
+    <div id="loginPage">
+
+
+      <div class="loginPageText">
+        <p class="loginName">Please enter your username <br /> and password.</p>
+      </div>
+
+
+              <div class="fieldNameLogin">
+                <i class="fas fa-user"></i>
+                <input type="text" placeholder="please enter your adventurer name" required />
+              </div>
+
+
+              <div class="fieldPasswordLogin">
+                <i class"fas fa-key"></i>
+                <input type="password" placeholder="enter your secret code" required minlength="6" maxlength="30" />
+              </div>
+
+              <button id="loginFormBtn" class="btn btn-primary">Login</button>
+
+
+      <img src="assets/loginFlower.svg" class="loginFlower">
+      <img src="assets/flowerLogin.svg" class="flowerLogin">
 
     </div>
 

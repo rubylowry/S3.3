@@ -1,6 +1,6 @@
 //code for sign up and log in forms
 
-  #loginPage{
+  #signUpPage{
     display: none !important;
     height: 100vh;
     display: flex;
@@ -10,7 +10,7 @@
     background-color: $mainBackgroundLight;
   }
 
-  .loginPageText{
+  .signUpPageText{
     top: 30%;
     left: 50%;
     transform: translate(-50%, -30%);
@@ -50,17 +50,17 @@
     	display:none;
     }
 
-    #loginPassword{
+    #signUpPassword{
     	display: none;
       @include headline('Fredoka One', 1rem, $c:tomato);
     }
 
-    #loginUserName{
+    #signUpUserName{
     	display: none;
       @include headline('Fredoka One', 1rem, $c:tomato);
     }
 
-    #loginEmail{
+    #signUpEmail{
     	display: none;
       @include headline('Fredoka One', 1rem, $c:tomato);
     }
@@ -74,9 +74,8 @@
     }
 
 
-    .fieldName,
-    .fieldEmail,
-    .fieldPassword{
+    .fieldName, .fieldEmail, .fieldPassword,
+    {
       padding: 10px;
       position:absolute;
       top: 60%;
@@ -94,8 +93,9 @@
     }
 
 
-    .fieldName i, .fieldEmail i,
-    .fieldPassword i{
+
+    .fieldName i, .fieldEmail i, .fieldPassword i,
+    .fieldNameLogin i, .fieldPasswordLogin i{
     padding: 20px;
     }
 
@@ -104,9 +104,8 @@
     }
 
 
-    .fieldName input,
-    .fieldEmail input,
-    .fieldPassword input{
+    .fieldName input, .fieldEmail input, .fieldPassword input,
+    .fieldNameLogin input, .fieldPasswordLogin input{
     	background: none;
     	border: none;
     	outline: none;
@@ -136,4 +135,75 @@
       right: 10%;
       bottom: 0%;
 
+    }
+
+    .loginFlower{
+      height: 300px;
+      position: absolute;
+      left: 10%;
+      bottom: 0%;
+
+    }
+
+    // end of sign up form
+
+
+
+
+
+
+    // start of login form
+
+
+    #loginPage{
+      display: none !important;
+      height: 100vh;
+      display: flex;
+    	position: relative;
+    	transition: background 0.5s ease;
+      width: 100%;
+      background-color: $mainBackgroundLight;
+    }
+
+    .fieldPasswordLogin, .fieldNameLogin {
+      padding: 10px;
+      background: #FFF7ED;
+      height: 50px;
+      width: 400px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: 10px;
+      border: 2px solid $mainLightBlue;
+    }
+
+    .fieldNameLogin{
+      position:absolute;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%,-40%);
+    }
+
+    .fieldPasswordLogin{
+      position:absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+    }
+
+    #loginFormBtn{
+      position:absolute;
+      top: 60%;
+      left: 50%;
+      transform: translate(-50%,-60%);
+    }
+
+
+    .loginPageText{
+      top: 30%;
+      left: 50%;
+      transform: translate(-50%, -30%);
+      position: absolute;
+      text-align: center;
+      @include headline('Fredoka One', 1.5rem, $c:$mainLightOrange);
     }
