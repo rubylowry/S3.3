@@ -1,32 +1,54 @@
 //natalia
 //basic app styles
+
 // basic display none(hide) and display block(show) of main div elements
 
 // #homePage{
 //   display: none;
 // }
 
+.cardStructure{
+    position: relative;
+}
+.containerImage{
+    .container {
+        position: relative;
+        width: 50%;
+      }
+}
+
+
 .card {
-    border:2px solid $mainLightBlue;
     border-radius: 20px;
     width:18em;
-    .card-img-top{
-        width:95%;
-        height:16em;
-        border-radius: 20px;
-    }
-    .card-body{
-        img{
-            width:2.5em;
-            height:2.5em;
-            border-radius: 50%;
+        .card-img-top{
+            width:95%;
+            height:16em;
+            border-radius: 20px;
         }
-        .avatarSkin{
-            border:3px solid $mainLightBlue;
+        .card-body{
+            img{
+                width:2.5em;
+                height:2.5em;
+                border-radius: 50%;
+            }
+
         }
+    
     }
 
+.closeModalStructure{
+    border-radius: 10px;
+    width:1.5em;
+    height:1.5em;
 }
+
+//start of styles for about page
+
+.aboutPhoto{
+
+}
+
 
 // icon css style
 
@@ -95,3 +117,48 @@
 
 
 //end of homePage basic styles
+
+//end of styles for about page
+
+//start of styles for add photo page
+
+.addPhoto {
+  
+}
+
+
+//end of styles for add photo page
+
+/* Container needed to position the button. Adjust the width as needed */
+.container {
+    position: relative;
+    width: 50%;
+  }
+  
+  /* Make the image responsive */
+  .container img {
+    width: 100%;
+    height: auto;
+  }
+  
+  /* Style the button and place it in the middle of the container/image */
+  .container .btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: #555;
+    color: white;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .container .btn:hover {
+    background-color: black;
+  }
+
+

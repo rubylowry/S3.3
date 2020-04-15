@@ -7,12 +7,16 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
     <script src="https://kit.fontawesome.com/5a8c51c16a.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+
     <link rel="stylesheet" href="css/style.css">
-    <title>Hello, world!</title>
+    <title>Little Fox</title>
   </head>
   <body>
-    <!-- Home page -->
+    <!-- Home page Natalia, Jake, Ruby-->
     <header>
 
       <!-- nav block filler -->
@@ -52,6 +56,7 @@
           </span>
 
 
+
         </div>
 
       </div>
@@ -65,6 +70,11 @@
     <main id="homePage" role="main">
 
   <div class="landingHomePage">
+
+
+      </div>
+
+    </header>
 
 
       <section class="jumbotron text-center">
@@ -130,15 +140,50 @@
       <div class="album py-1">
         <h1 class="text-center mb-5">Latest community photos</h1>
         <h2 class="text-center mb-5">Please login to upload images and participate in discussions</h2>
-        <div class="container">
+        <!--modal home page Natalia-->
+        <!-- Button trigger modal -->
+        <div class="text-center">
+          <button id="btnViewHomeTest" type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+            Launch demo modal
+          </button>
+        </div>
+
+        <div id="myModalContainer"></div>
+        <!--modal ENDS, Natalia-->
+          <div class="container">
           <div id="communityPhotos" class="row">
           </div>
         </div>
       </div>
 
+
     </main>
 
 
+
+
+
+    <!-- About page -->
+    <div id="aboutPage">
+      <section class="jumbotron text-center">
+         <div class="container">
+              <h2 class="aboutTitle align-center mb-5">What We Do</h2>
+              <div class="row justify-content-center">
+                     <img class="aboutPhoto" src="" alt="about">
+                              <div class="text-center mb-5">We want to inspire you to go outside and explore your city.
+                                What is out there? Can you find animals that other countries don't have?
+                                This is a space where you can see what animals are roaming the earth today.
+                                Leave feedback on your friends post and get creating yourself!
+                                <br><br>Sign yourself up to join the fun
+                              </div>
+                         <span class="text-center">
+                       <button type="button" id="aboutHomePage" class="btn btn-primary">Start the adventure</button>
+                    </span>
+              </div>
+           </div>
+       </section>
+    </div>
+ <!--end of About page-->
 
 
     <!-- Sign up page -->
@@ -232,19 +277,68 @@
 
     <!-- Profile page -->
     <div id="profilePage">
-
+      <div class="album py-1">
+        <h1 class="text-center mb-5">My uploads</h1>
+        <!--modal home page Natalia-->
+        <!-- Button trigger modal -->
+        <div class="text-center">
+          <button id="btnViewProfilePageTest" type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+            Launch demo modal profile page
+          </button>
+        </div>
+        <div id="myModalProfileContainer"></div>
+        <!--modal ENDS, Natalia-->
+          <div class="container">
+          <div id="communityPhotosProfilePage" class="row">
+          </div>
+        </div>
+      </div>
     </div>
 
-    <!-- Add photo form -->
-    <div id="addPhotoPage">
+    <!-- Add photo Start -->
 
-    </div>
+      <form class="form-example" id="addPhotoPage">
+        <h2 class="addPhotoTitle align-center">Add Photo</h2>
+
+            <label for="addPhotoId"></label>
+                  <input type="text" class="form-control" id="addPhotoId"  name="addPhotoId" value="Upload image">
+                </div>
+             <!--Name image -->
+             <div class="form-group row">
+               <label class="col-sm-2 col-form-label" for="addPhotoName">Name image</label>
+               <div class="col-sm-10">
+                 <input type="text" class="form-control" id="addPhotoName" name="addPhotoName">
+               </div>
+
+              <!--Name image ends here-->
+              <!--Description -->
+
+                <label class="col-sm-2 col-form-label" for="addPhotoDescription">Description</label>
+                <div class="col-sm-10">
+                  <textarea class="form-control" id="addPhotoDescription" name="addPhotoDescription"></textarea>
+              </div>
+               <!--Description ends here-->
+               <!--Owner starts here-->
+
+                <label class="col-sm-2 col-form-label" for="addOwnerName">Owner</label>
+                <div class="col-sm-10">
+                   <input type="text" class="form-control" id="addOwnerName" name="addOwnerName" readonly>
+                </div>
+
+                 <!--Owner ends here-->
+
+              <button type="button" id="addPhotoBtn" class="btn btn-primary mt-5">Post!</button>
+  </div>
+       </form>
+
+					<!-- Add photo Finish -->
 
     <!-- Update photo form -->
     <div id="updatePhotoPage">
 
     </div>
     <!-- Delete photo confirmation message -->
+
 
     <footer class="text-muted">
       <div class="container">
@@ -318,6 +412,7 @@
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="js/script.js"></script>
   </body>
-</html>
+</html>-
