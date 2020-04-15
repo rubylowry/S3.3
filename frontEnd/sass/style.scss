@@ -4,6 +4,12 @@
 @import 'media';
 @import 'mixins';
 @import 'animation';
+@import 'clippingMasks';
+@import 'forms';
+
+
+//css resets
+// css elemtent resets
 
 *{
   padding: 0;
@@ -15,4 +21,9 @@
 button{
   background: none;
   border: none;
+}
+
+a,a:hover, a:focus, a:active{
+  text-decoration: none;
+  color: inherit;
 }

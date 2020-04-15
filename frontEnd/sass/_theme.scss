@@ -9,20 +9,28 @@ $mainLightOrange: #FFA883;
 $white: #ffffff;
 $black: #000000;
 
+
 .navbar, .jumbotron {
     background-color: $mainBackgroundLight;
 
 }
 
 .navbar{
-  // top: 0;
-  // left: 0;
-  // position: absolute;
-    height:150px;
-    width: 100%;
-    box-shadow: none!important;
-    display: flex;
- justify-content: space-between ;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  position: absolute;
+  position: fixed;
+  height:150px;
+  width: 100%;
+  box-shadow: none!important;
+  display: flex;
+  justify-content: space-between ;
+}
+
+.navBlock{
+  height:150px;
+  width: 100%;
 }
 
 @font-face {

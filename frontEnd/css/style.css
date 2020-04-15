@@ -2,11 +2,20 @@
   background-color: #faf2e8; }
 
 .navbar {
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  position: absolute;
+  position: fixed;
   height: 150px;
   width: 100%;
   box-shadow: none !important;
   display: flex;
   justify-content: space-between; }
+
+.navBlock {
+  height: 150px;
+  width: 100%; }
 
 @font-face {
   font-family: 'Fredoka One';
@@ -60,6 +69,52 @@
   .card .card-body .avatarSkin {
     border: 3px solid #6fc7e1; }
 
+.icons {
+  height: 20px; }
+
+.icons:hover {
+  cursor: pointer; }
+
+.homePageDiscription em {
+  font-family: 'Fredoka One';
+  color: #FFA883; }
+
+.paraLogIn {
+  font-family: 'Fredoka One';
+  color: #6fc7e1; }
+
+.homeParaStartAdventure {
+  color: #A2C76A; }
+
+.arrowBtn {
+  color: #6fc7e1;
+  font-family: 'Fredoka One'; }
+
+.hideSeekExitMessage {
+  top: 10%;
+  left: 70%;
+  position: absolute;
+  font-family: 'Fredoka One'; }
+
+.hideSeekMessageText {
+  top: 30%;
+  left: 10%;
+  position: absolute;
+  color: #6fc7e1;
+  font-family: 'Fredoka One'; }
+
+.hideSeekExitMessage:hover {
+  cursor: pointer;
+  color: #FFA883; }
+
+#vineImg {
+  right: 0%;
+  top: 55%;
+  position: absolute;
+  height: 200px; }
+
+#signUpHomePage {
+  margin-left: 30px; }
   width: 18em;
 }
 .card .card-img-top {
@@ -112,6 +167,39 @@ h3 {
   border: none !important;
   background-color: #6fc7e1 !important;
   color: #000000 !important; }
+
+.hideAndSeekIcon {
+  border-radius: 25px !important;
+  background-color: #6fc7e1 !important;
+  height: 50px !important;
+  width: 50px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 10%;
+  top: 75%;
+  position: absolute; }
+
+.soundIcon {
+  border-radius: 25px !important;
+  background-color: #FFA883 !important;
+  height: 40px !important;
+  width: 40px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 30%;
+  top: 40%;
+  position: absolute; }
+
+.homePageArrowDownBtn {
+  border-radius: 25px !important;
+  background-color: #ffffff !important;
+  height: 30px !important;
+  width: 30px !important;
+  left: 50%;
+  transform: translate(-50%);
+  position: absolute; }
 
 .leftCornerDivNav {
   position: relative;
@@ -184,6 +272,306 @@ h3 {
 #yellowFox {
   display: none; }
 
+#hideAndSeekPopUp {
+  display: none; }
+
+#missionTwoSound {
+  display: none; }
+
+#missionThreeSound {
+  display: none; }
+
+#clickHereImg {
+  height: 80px;
+  left: 25%;
+  position: absolute; }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  80% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+.missionOneText {
+  animation: fadeIn 25s ease; }
+
+.missionTwoText {
+  animation: fadeIn 25s ease; }
+
+.missionThreeText {
+  animation: fadeIn 25s ease; }
+
+.missionImages {
+  margin-top: 50px; }
+
+.missionOneImg {
+  height: 450px; }
+
+.missionTwoImg, .missionThreeImg {
+  display: none;
+  height: 450px; }
+
+@keyframes shake {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg); }
+  25% {
+    transform: translate(-50%, -50%) rotate(3deg); }
+  50% {
+    transform: translate(-50%, -50%) rotate(0deg); }
+  75% {
+    transform: translate(-50%, -50%) rotate(3deg); }
+  100% {
+    transform: translate(-50%, -50%) rotate(0deg); } }
+
+@keyframes shakeLogin {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg); }
+  25% {
+    transform: translate(-50%, -50%) rotate(3deg); }
+  50% {
+    transform: translate(-50%, -50%) rotate(0deg); }
+  75% {
+    transform: translate(-50%, -50%) rotate(3deg); }
+  100% {
+    transform: translate(-50%, -50%) rotate(0deg); } }
+
+.missionOneSplash {
+  display: none;
+  width: 200px;
+  height: 200px;
+  background-color: #ffffff;
+  top: 35%;
+  left: 60%;
+  position: absolute;
+  clip-path: url(#missionOneSplash); }
+
+.missionOneSplashText {
+  margin-top: 45px;
+  font-family: "Fredoka One" !important;
+  color: #FFA883 !important;
+  font-size: 1.5rem !important; }
+
+.missionOneSplashText:hover, .missionTwoSplashText:hover {
+  cursor: pointer; }
+
+.missionTwoSplash {
+  display: none;
+  width: 200px;
+  height: 200px;
+  background-color: #ffffff;
+  top: 35%;
+  left: 35%;
+  position: absolute;
+  clip-path: url(#missionTwoSplash); }
+
+.missionTwoSplashText {
+  margin-top: 70px;
+  font-family: "Fredoka One" !important;
+  color: #FFA883 !important;
+  font-size: 1.5rem !important; }
+
+.missionThreeSplash {
+  display: none;
+  width: 200px;
+  height: 200px;
+  background-color: #ffffff;
+  top: 35%;
+  left: 60%;
+  position: absolute;
+  clip-path: url(#missionThreeSplash); }
+
+.missionThreeSplashText {
+  margin-top: 60px;
+  font-family: "Fredoka One" !important;
+  color: #A2C76A !important;
+  font-size: 1.5rem !important; }
+
+.messagePopUp {
+  z-index: 20;
+  width: 200px;
+  height: 200px;
+  background-color: #ffffff;
+  top: 50%;
+  left: 10%;
+  position: absolute;
+  clip-path: url(#hideSeekPopUp); }
+
+.hideSeekPopUpImg {
+  height: 270px;
+  top: 42%;
+  left: 8%;
+  position: absolute; }
+
+#signUpPage {
+  display: none !important;
+  height: 100vh;
+  display: flex;
+  position: relative;
+  transition: background 0.5s ease;
+  width: 100%;
+  background-color: #faf2e8; }
+
+.signUpPageText {
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -30%);
+  position: absolute;
+  text-align: center;
+  font-family: "Fredoka One" !important;
+  color: #FFA883 !important;
+  font-size: 1.5rem !important; }
+
+.emailText {
+  display: none; }
+
+.emailText em {
+  color: #6fc7e1; }
+
+.emailText em:hover {
+  color: #000000; }
+
+.passwordText {
+  display: none; }
+
+#errorMessage {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -55%);
+  height: 30px;
+  width: 400px;
+  color: #333;
+  text-align: center;
+  display: none; }
+
+#signUpPassword {
+  display: none;
+  font-family: "Fredoka One" !important;
+  color: tomato !important;
+  font-size: 1rem !important; }
+
+#signUpUserName {
+  display: none;
+  font-family: "Fredoka One" !important;
+  color: tomato !important;
+  font-size: 1rem !important; }
+
+#signUpEmail {
+  display: none;
+  font-family: "Fredoka One" !important;
+  color: tomato !important;
+  font-size: 1rem !important; }
+
+.signUpForm {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -60%); }
+
+.fieldName, .fieldEmail, .fieldPassword {
+  padding: 10px;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -60%);
+  background: #FFF7ED;
+  height: 50px;
+  width: 400px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+  border: 2px solid #6fc7e1;
+  transition: all 0.5s ease; }
+
+.fieldName i, .fieldEmail i, .fieldPassword i,
+.fieldNameLogin i, .fieldPasswordLogin i {
+  padding: 20px; }
+
+.fa-arrow-down {
+  cursor: pointer; }
+
+.fieldName input, .fieldEmail input, .fieldPassword input,
+.fieldNameLogin input, .fieldPasswordLogin input {
+  background: none;
+  border: none;
+  outline: none;
+  height: 100%;
+  flex: 1;
+  width: 400px; }
+
+div.inactive {
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, 50%); }
+
+div.active {
+  opacity: 1;
+  pointer-events: all;
+  transform: translate(-50%, -50%); }
+
+.flowerLogin {
+  height: 300px;
+  position: absolute;
+  right: 10%;
+  bottom: 0%; }
+
+.loginFlower {
+  height: 300px;
+  position: absolute;
+  left: 10%;
+  bottom: 0%; }
+
+#loginPage {
+  display: none !important;
+  height: 100vh;
+  display: flex;
+  position: relative;
+  transition: background 0.5s ease;
+  width: 100%;
+  background-color: #faf2e8; }
+
+.fieldPasswordLogin, .fieldNameLogin {
+  padding: 10px;
+  background: #FFF7ED;
+  height: 50px;
+  width: 400px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+  border: 2px solid #6fc7e1; }
+
+.fieldNameLogin {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -40%); }
+
+.fieldPasswordLogin {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+
+#loginFormBtn {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -60%); }
+
+.loginPageText {
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -30%);
+  position: absolute;
+  text-align: center;
+  font-family: "Fredoka One" !important;
+  color: #FFA883 !important;
+  font-size: 1.5rem !important; }
+
 * {
   padding: 0;
   margin: 0;
@@ -203,3 +591,6 @@ button {
 
 /*# sourceMappingURL=style.css.map */
 
+a, a:hover, a:focus, a:active {
+  text-decoration: none;
+  color: inherit; }

@@ -23,7 +23,6 @@ h3{
 }
 
 
-
 .btn-primary{
     font-size: 20px;
     @include buttonSkin('Fredoka One', none, $mainLightBlue);
@@ -45,6 +44,43 @@ h3{
     color:$black!important;
 }
 
+<<<<<<< HEAD
 .btn-warning{
     @include buttonSkin('Fredoka One', none, $mainLightOrange);
+=======
+// jacob's code
+
+@mixin iconSkin ($b,$c,$h,$w){
+  border-radius:$b!important;
+  background-color:$c!important;
+  height:$h!important;
+  width:$w!important;
+}
+
+.hideAndSeekIcon{
+  @include iconSkin(25px, $mainLightBlue,50px,50px);
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  left: 10%;
+  top: 75%;
+  position: absolute;
+}
+
+.soundIcon{
+  @include iconSkin(25px, $mainLightOrange,40px,40px);
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  left: 30%;
+  top: 40%;
+  position: absolute;
+}
+
+.homePageArrowDownBtn{
+  @include iconSkin(25px, $white,30px,30px);
+  left: 50%;
+  transform: translate(-50%);
+  position: absolute;
+>>>>>>> origin/jake-dev
 }

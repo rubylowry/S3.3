@@ -1,5 +1,6 @@
 //natalia
 //basic app styles
+<<<<<<< HEAD
 .cardStructure{
     position: relative;
 }
@@ -9,6 +10,13 @@
         width: 50%;
       }
 }
+=======
+// basic display none(hide) and display block(show) of main div elements
+
+// #homePage{
+//   display: none;
+// }
+>>>>>>> origin/jake-dev
 
 .card {
     border-radius: 20px;
@@ -41,6 +49,7 @@
 
 }
 
+<<<<<<< HEAD
 //end of styles for about page
 
 //start of styles for add photo page
@@ -84,3 +93,72 @@
     background-color: black;
   }
 
+=======
+// icon css style
+
+.icons{
+  height: 20px;
+}
+
+.icons:hover{
+  cursor: pointer;
+}
+
+//homePage basic styles
+
+.homePageDiscription em{
+  font-family: 'Fredoka One';
+  color: $mainLightOrange;
+}
+
+.paraLogIn{
+  font-family: 'Fredoka One';
+  color: $mainLightBlue;
+}
+
+.homeParaStartAdventure{
+  color: #A2C76A;
+}
+
+.arrowBtn{
+  color: $mainLightBlue;
+  font-family: 'Fredoka One';
+}
+
+.hideSeekExitMessage{
+  top: 10%;
+  left: 70%;
+  position: absolute;
+  font-family: 'Fredoka One';
+}
+
+.hideSeekMessageText{
+  top: 30%;
+  left: 10%;
+  position: absolute;
+  color: $mainLightBlue;
+  font-family: 'Fredoka One';
+}
+
+.hideSeekExitMessage:hover{
+  cursor: pointer;
+  color: $mainLightOrange;
+}
+
+#vineImg{
+  right: 0%;
+  top: 55%;
+  position: absolute;
+  height: 200px;
+}
+
+
+
+#signUpHomePage{
+  margin-left: 30px;
+}
+
+
+
+//end of homePage basic styles
+>>>>>>> origin/jake-dev

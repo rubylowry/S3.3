@@ -1,3 +1,12 @@
+<<<<<<< HEAD
+=======
+//Jacob
+// css elements for objects used in animations
+// example onclick hide and shadow ect..
+//For keyframe css
+
+
+>>>>>>> origin/jake-dev
 //Navbar id/class elements for animations
 .leftCornerDivNav{
   position: relative;
@@ -88,13 +97,114 @@
   display: none;
 }
 
-
-
-
-
-
-
+#hideAndSeekPopUp{
+  display: none;
+}
 
 
 
 // End of Navbar id/class elements for animations
+
+// start of landing homepage mission animations
+
+
+#missionTwoSound{
+  display: none;
+}
+
+#missionThreeSound{
+  display: none;
+}
+
+#clickHereImg{
+  height: 80px;
+  left: 25%;
+  position: absolute;
+}
+
+
+// keyframes animation for next mission fade in
+
+@keyframes fadeIn{
+  0%{
+    opacity: 0;
+  }
+  80%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+// end of keyframes animation for next mission fade in
+
+.missionOneText{
+  animation: fadeIn 25s ease;
+}
+
+.missionTwoText{
+    animation: fadeIn 25s ease;
+}
+
+.missionThreeText{
+    animation: fadeIn 25s ease;
+}
+
+.missionImages{
+  margin-top: 50px;
+}
+
+.missionOneImg{
+  height: 450px;
+}
+
+.missionTwoImg, .missionThreeImg{
+  display: none;
+  height: 450px;
+}
+
+// End of landing page animations
+
+
+
+
+// Start of form animations
+
+@keyframes shake{
+0%{
+  transform: translate(-50%,-50%) rotate(0deg);
+}
+25%{
+  transform: translate(-50%,-50%) rotate(3deg);
+}
+50%{
+  transform: translate(-50%,-50%) rotate(0deg);
+}
+75%{
+  transform: translate(-50%,-50%) rotate(3deg);
+}
+100%{
+  transform: translate(-50%,-50%) rotate(0deg);
+}
+}
+
+@keyframes shakeLogin{
+0%{
+  transform: translate(-50%,-50%) rotate(0deg);
+}
+25%{
+  transform: translate(-50%,-50%) rotate(3deg);
+}
+50%{
+  transform: translate(-50%,-50%) rotate(0deg);
+}
+75%{
+  transform: translate(-50%,-50%) rotate(3deg);
+}
+100%{
+  transform: translate(-50%,-50%) rotate(0deg);
+}
+}
+
+// End of form animations

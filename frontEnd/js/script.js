@@ -74,14 +74,14 @@ function renderCardProfilePage(){
   <img src="card-img-top m-2" src="https://drive.google.com/uc?export=view&id=12rbthUs_tRTDY4dYBuj5mmxwrj5NaP4V" alt="Card image cap">
   <button class="btn btn-primary">Button</button>
 </div>`
-  
+
   // <div class="container">
   // <div class="cardStructure">
   // <img class="card-img-top m-2" src="https://drive.google.com/uc?export=view&id=12rbthUs_tRTDY4dYBuj5mmxwrj5NaP4V" alt="Card image cap">
   //   <button href="#" class="btn btn-primary buttonOverlay">View post</button>
   // </div>
   // </div>
-  
+
 }
 
 renderCardHomePage();
@@ -145,7 +145,7 @@ $('#btnViewHomeTest').click(function(){
 
 //Natalia's code ENDS
 
-<<<<<<< HEAD
+
 // =========  code from James start
 
 console.log(sessionStorage);
@@ -370,7 +370,7 @@ function showUserName(name){
 
 
 // code from James end here
-=======
+
 //add photo
 
 // empty all inputs on add product form
@@ -436,4 +436,3 @@ function showUserName(name){
                         $('#addPhotoId').val("");
                         $('#addPhotoForm').show();
                       });
->>>>>>> 20b2d124e18a80bec35e3e8ef5440a4ea9890c85
