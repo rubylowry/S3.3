@@ -5,4 +5,4 @@ Gruntfile.js
 *.DS_Store
 .sass-cache/
 **.sass-cache**
-*style.css.map
+!css/style.css.map
