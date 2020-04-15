@@ -274,18 +274,20 @@ $(document).ready(function(){
   });
 
   // View Post
-  $.ajax({
-    url :`${url}/allPosts`,
-    type :'GET',
-    dataType :'json',
-    success : function(postsFromMongo){
-      console.log(postsFromMongo);
-      }
-    },//success
-    error:function(){
-      console.log('error: cannot call api');
-    }//error
-  });//ajax
+  $('#getPosts').click(function(){
+    $.ajax({
+      url :`${url}/allPosts`,
+      type :'GET',
+      dataType :'json',
+      success : function(postsFromMongo){
+        console.log(postsFromMongo);
+      },//success
+      error:function(){
+        console.log('error: cannot call api');
+      }//error
+    });//ajax
+  });
+
 
   // Add Post
   $('#postAddBtn').click(function(){
