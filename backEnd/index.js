@@ -20,7 +20,7 @@ mongoose.connect(mongodbURI, {useNewUrlParser: true, useUnifiedTopology: true}) 
   console.log(`DBConnectionError: ${err.message}`); //error message
 });
 
-//test the connectivity
+//test the connection
 const db = mongoose.connection; // checks for connection
 db.on('error', console.error.bind(console, 'connection error:')); //error message
 db.once('open', function() { // on open do this once
@@ -35,6 +35,10 @@ app.use((req,res,next)=>{
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(cors());
+
+// beginning of Project
+
+app.get('/', (req, res) => res.send('Hello World!'))
 
 //========== code from Natalia start
 //add user
@@ -109,6 +113,28 @@ app.post('/loginUser', (req, res) =>{
 // code from Jake end here
 
 //========== code from Ruby start
+
+//get all posts
+app.get('/posts', (req,res)=>{
+	Post.find().then(result =>{
+		res.send(result);
+	})
+}); // get all products
+
+//add Post
+app.post('/addPost/', (req,res)=>{
+	const dbPost = new Post({
+		_id : new mongoose.Types.ObjectId,
+		title : req.body.title,
+		description : req.body.description,
+		image : req.body.image,
+		}
+	});
+	//save to database and notify the user accordingly
+	dbPost.save().then(result =>{
+		res.send(result);
+	}).catch(err => res.send(err));
+}); // add Products
 // code from Ruby end here
 
 //========== code from James start

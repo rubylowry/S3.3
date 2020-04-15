@@ -1,4 +1,3 @@
-
 //Javascript for navbar and main homePage animations
 
 //hide and seek animation
@@ -10,20 +9,16 @@ $("#hideLion").click(function(){
   $("#hidePlants").show();
   $("#hideSeal").show();
   $("#hideLion").hide();
-
 });
 
 $("#hideSeal").click(function(){
   $("#hidePlants").show();
   $("#hideLion").show();
   $("#hideSeal").hide();
-
 });
 
 // End of hide and seek animation
-
 //fox animation
-
 $("#orangeCircle").click(function(){
   $("#orangeFox").show();
   $("#purpleFox").hide();
@@ -53,22 +48,7 @@ $("#yellowCircle").click(function(){
 });
 
 //End of fox animation
-
-
-
-
 //End of Javascript for navbar and main homePage animations
-
-
-
-
-
-
-
-
-
-
-
 
 //Natalia's code
 
@@ -80,7 +60,7 @@ function renderCardHomePage(){
         <div><img class="avatarSkin d-inline" src="assets/avatar-natalia.jpg"><h2 class="d-inline ml-1">Username</h2></div>
         <p class="card-text">This is a wider card with supporting text</p>
         <div class="text-right">
-          <div >
+          <div>
             <button type="button" class="btn btn-sm btnPrimaryBlackFont">View</button>
           </div>
         </div>
@@ -88,8 +68,24 @@ function renderCardHomePage(){
     </div>
   </div>`
 }
+//not completed - requires styling by Natalia
+function renderCardProfilePage(){
+  document.getElementById('communityPhotosProfilePage').innerHTML = `<div class="card cardSkin containerImg">
+  <img src="card-img-top m-2" src="https://drive.google.com/uc?export=view&id=12rbthUs_tRTDY4dYBuj5mmxwrj5NaP4V" alt="Card image cap">
+  <button class="btn btn-primary">Button</button>
+</div>`
+  
+  // <div class="container">
+  // <div class="cardStructure">
+  // <img class="card-img-top m-2" src="https://drive.google.com/uc?export=view&id=12rbthUs_tRTDY4dYBuj5mmxwrj5NaP4V" alt="Card image cap">
+  //   <button href="#" class="btn btn-primary buttonOverlay">View post</button>
+  // </div>
+  // </div>
+  
+}
 
 renderCardHomePage();
+renderCardProfilePage();
 
 //modal home page
 
@@ -149,6 +145,7 @@ $('#btnViewHomeTest').click(function(){
 
 //Natalia's code ENDS
 
+<<<<<<< HEAD
 // =========  code from James start
 
 console.log(sessionStorage);
@@ -373,3 +370,70 @@ function showUserName(name){
 
 
 // code from James end here
+=======
+//add photo
+
+// empty all inputs on add product form
+	$("#addPhotoBtn").click(function(){
+		    $('#addPhotoName').val('');
+		    $('#addPhotoDescription').val('');
+		    $('#addPhotoId').val('');
+	});
+//add photo
+      $('#addPhotoBtn').click(function(){
+             let name = $('#addPhotoName').val();
+             let desc = $('#addPhotoDescription').val();
+             let imageId = $('#addPhotoId').val();
+             let imageUrl = `https://drive.google.com/uc?id=${imageId}`;
+
+             if(imageId.includes("google") || imageId.includes("drive") || imageId.includes("open")){
+			                swal({
+				                title: 'Wrong image format',
+				                text: 'Please enter the image ID instead of the whole link',
+				                icon: 'warning',
+				                button: 'Yes',
+				                timer: 2500
+			                });
+			                $("#wrongImageAlert").slideDown();
+
+            }
+            else if (name == '' || desc == '' || imageId == ''){
+                           alert('Please enter all details');
+		                     }
+		                     else {
+                           $.ajax({
+                                    url :`${url}/addPhoto`,
+                                    type :'POST',
+                                    data:{
+                                      title : title,
+                                      description : desc,
+                                      image : imageUrl,
+                                    },
+                                    success : function(data){
+                                      showMyPhoto("display");
+                                      $('#addPhotoModal').modal('hide');
+                                      swal({
+                                        title: 'Success!',
+                                        text: `Congratulations! Your photo has been added`,
+                                        icon: 'success',
+                                        button: 'Yes',
+                                        timer: 2500
+                                      });
+                                      showMyPhoto();
+                                    },
+                                    error:function(){
+                                      console.log('error: cannot call api');
+                                    }
+                      });//ajax
+                    } // else
+                  });//add photo form
+
+                  // show add project
+                      $('#addPhotoBtn').click(function(){
+                        document.getElementById("addOwnerName").value = sessionStorage.getItem('userFullName') + " " + sessionStorage.getItem('userLastName');
+                        $('#addPhotoName').val("");
+                        $('#addPhotoDescription').val("");
+                        $('#addPhotoId').val("");
+                        $('#addPhotoForm').show();
+                      });
+>>>>>>> 20b2d124e18a80bec35e3e8ef5440a4ea9890c85
