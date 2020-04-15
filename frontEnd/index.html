@@ -9,10 +9,10 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <title>Hello, world!</title>
+    <title>Little Fox</title>
   </head>
   <body>
-    <!-- Home page Natalia, Jake-->
+    <!-- Home page Natalia, Jake, Ruby-->
     <header>
 
 
@@ -108,7 +108,7 @@
             Launch demo modal
           </button>
         </div>
-        
+
         <div id="myModalContainer"></div>
         <!--modal ENDS, Natalia-->
           <div class="container">
@@ -119,6 +119,28 @@
 
 
     </main>
+
+    <!-- About page -->
+    <div id="aboutPage">
+      <section class="jumbotron text-center">
+         <div class="container">
+              <h2 class="aboutTitle align-center mb-5">What We Do</h2>
+              <div class="row justify-content-center">
+                     <img class="aboutPhoto" src="" alt="about">
+                              <div class="text-center mb-5">We want to inspire you to go outside and explore your city.
+                                What is out there? Can you find animals that other countries don't have?
+                                This is a space where you can see what animals are roaming the earth today.
+                                Leave feedback on your friends post and get creating yourself!
+                                <br><br>Sign yourself up to join the fun
+                              </div>
+                         <span class="text-center">
+                       <button type="button" id="aboutHomePage" class="btn btn-primary">Start the adventure</button>
+                    </span>
+              </div>
+           </div>
+       </section>
+    </div>
+ <!--end of About page-->
 
     <!-- Sign up page -->
     <div id="signUpPage">
@@ -135,10 +157,43 @@
 
     </div>
 
-    <!-- Add photo form -->
-    <div id="addPhotoPage">
+    <!-- Add photo Start -->
 
-    </div>
+      <form class="form-example" id="addPhotoPage">
+        <h2 class="addPhotoTitle align-center">Add Photo</h2>
+
+            <label for="addPhotoId"></label>
+                  <input type="text" class="form-control" id="addPhotoId"  name="addPhotoId" value="Upload image">
+                </div>
+             <!--Name image -->
+             <div class="form-group row">
+               <label class="col-sm-2 col-form-label" for="addPhotoName">Name image</label>
+               <div class="col-sm-10">
+                 <input type="text" class="form-control" id="addPhotoName" name="addPhotoName">
+               </div>
+
+              <!--Name image ends here-->
+              <!--Description -->
+
+                <label class="col-sm-2 col-form-label" for="addPhotoDescription">Description</label>
+                <div class="col-sm-10">
+                  <textarea class="form-control" id="addPhotoDescription" name="addPhotoDescription"></textarea>
+              </div>
+               <!--Description ends here-->
+               <!--Owner starts here-->
+
+                <label class="col-sm-2 col-form-label" for="addOwnerName">Owner</label>
+                <div class="col-sm-10">
+                   <input type="text" class="form-control" id="addOwnerName" name="addOwnerName" readonly>
+                </div>
+
+                 <!--Owner ends here-->
+
+              <button type="button" id="addPhotoBtn" class="btn btn-primary mt-5">Post!</button>
+  </div>
+       </form>
+
+					<!-- Add photo Finish -->
 
     <!-- Update photo form -->
     <div id="updatePhotoPage">
@@ -146,7 +201,7 @@
     </div>
     <!-- Delete photo confirmation message -->
 
-    
+
     <footer class="text-muted">
       <div class="container">
         <p class="float-right">
@@ -165,4 +220,4 @@
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="js/script.js"></script>
   </body>
-</html>
+</html>-

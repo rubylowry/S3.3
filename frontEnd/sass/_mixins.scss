@@ -35,6 +35,11 @@ h3{
   color:$mainLightBlue!important;
 }
 
+.btn-about{
+  font-size: 20px;
+  @include buttonSkin('Fredoka One', none, $mainLightBlue);
+}
+
 .btnPrimaryBlackFont{
     @include buttonSkin('Fredoka One', none, $mainLightBlue);
     color:$black!important;
@@ -43,5 +48,3 @@ h3{
 .btn-warning{
     @include buttonSkin('Fredoka One', none, $mainLightOrange);
 }
-
-

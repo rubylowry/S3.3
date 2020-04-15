@@ -109,6 +109,35 @@ app.post('/loginUser', (req, res) =>{
 // code from Jake end here
 
 //========== code from Ruby start
+//view all posts
+app.get('/allPosts', (req,res) =>{
+	Post.find().then(result =>{
+		res.send(result);
+	});
+});  //all posts end here.
+
+//add user
+app.post('/addPost', (req,res)=>{
+  Post.findOne({username:req.body.username},(err,userResult)=>{
+    if (req.body.username === ""){
+      res.send('Please fill in all areas');
+    } else if (userResult){
+      res.send('Username taken already. Please try another one');
+    } else{
+      const hash = bcryptjs.hashSync(req.body.password);
+      const user = new User({
+        _id : new mongoose.Types.ObjectId,
+        username : req.body.username,
+        email : req.body.email,
+        password :hash,
+        avatar : req.body.avatar
+      });
+      user.save().then(result =>{
+        res.send(result);
+      }).catch(err => res.send(err));
+    }
+  })
+});
 // code from Ruby end here
 
 //========== code from James start

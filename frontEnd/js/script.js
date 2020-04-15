@@ -149,3 +149,68 @@ $('#btnViewHomeTest').click(function(){
 
 //Natalia's code ENDS
 
+//add photo
+
+// empty all inputs on add product form
+	$("#addPhotoBtn").click(function(){
+		    $('#addPhotoName').val('');
+		    $('#addPhotoDescription').val('');
+		    $('#addPhotoId').val('');
+	});
+//add photo
+      $('#addPhotoBtn').click(function(){
+             let name = $('#addPhotoName').val();
+             let desc = $('#addPhotoDescription').val();
+             let imageId = $('#addPhotoId').val();
+             let imageUrl = `https://drive.google.com/uc?id=${imageId}`;
+
+             if(imageId.includes("google") || imageId.includes("drive") || imageId.includes("open")){
+			                swal({
+				                title: 'Wrong image format',
+				                text: 'Please enter the image ID instead of the whole link',
+				                icon: 'warning',
+				                button: 'Yes',
+				                timer: 2500
+			                });
+			                $("#wrongImageAlert").slideDown();
+
+            }
+            else if (name == '' || desc == '' || imageId == ''){
+                           alert('Please enter all details');
+		                     }
+		                     else {
+                           $.ajax({
+                                    url :`${url}/addPhoto`,
+                                    type :'POST',
+                                    data:{
+                                      title : title,
+                                      description : desc,
+                                      image : imageUrl,
+                                    },
+                                    success : function(data){
+                                      showMyPhoto("display");
+                                      $('#addPhotoModal').modal('hide');
+                                      swal({
+                                        title: 'Success!',
+                                        text: `Congratulations! Your photo has been added`,
+                                        icon: 'success',
+                                        button: 'Yes',
+                                        timer: 2500
+                                      });
+                                      showMyPhoto();
+                                    },
+                                    error:function(){
+                                      console.log('error: cannot call api');
+                                    }
+                      });//ajax
+                    } // else
+                  });//add photo form
+
+                  // show add project
+                      $('#addPhotoBtn').click(function(){
+                        document.getElementById("addOwnerName").value = sessionStorage.getItem('userFullName') + " " + sessionStorage.getItem('userLastName');
+                        $('#addPhotoName').val("");
+                        $('#addPhotoDescription').val("");
+                        $('#addPhotoId').val("");
+                        $('#addPhotoForm').show();
+                      });
