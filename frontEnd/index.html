@@ -7,11 +7,13 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-<<<<<<< HEAD
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-=======
     <script src="https://kit.fontawesome.com/5a8c51c16a.js" crossorigin="anonymous"></script>
->>>>>>> origin/jake-dev
+
+
+
+
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+
     <link rel="stylesheet" href="css/style.css">
     <title>Little Fox</title>
   </head>
@@ -19,7 +21,7 @@
     <!-- Home page Natalia, Jake, Ruby-->
     <header>
 
-
+      <!-- nav block filler -->
       <div class="navbar shadow-sm ">
 
 
@@ -56,6 +58,7 @@
           </span>
 
 
+
         </div>
 
       </div>
@@ -68,10 +71,17 @@
 
     <main id="homePage" role="main">
 
-  <div class="landingHomePage">
+  <div class="landingHomePage" id="landingHomePage">
+
+
+      </div>
+
+    </header>
+
+
 
       <section class="jumbotron text-center">
-        <div class="container">
+        <div class="container" id="landingPage">
           <p class="lead text-muted homePageDiscription"> Hello adventurer and welcome.<em>Little Fox</em>&nbsp; is a community of adventures
             like yourself that go out exploring and upload and share photos of their adventure with the community.
             To find out more <em>click the sound icon</em>. If you already have started your adventure then proceed to <a class="paraLogIn" href="">Log in</a>.</p>
@@ -127,6 +137,25 @@
         <div class="homePageArrowDownBtn"><a href="#" class="arrowBtn"><p>v<p><a></div>
       </div>
       </section>
+
+
+      <section class="jumbotron text-center" id="loginLandingPage">
+        <div class="container" >
+          <p class="lead text-muted homePageDiscription"> Kia Ora adventurer and welcome to <em>Little Fox</em>. <br /><br />
+            It is now time to head out on adventures, take some photos and then share what you found with other adventurers.<br />
+            We all can't wait to see what you discover. When your ready click on go to your profile to get started.<br /><br />
+            Happy adventuring from the <em>Little Fox</em>.
+        </div>
+
+        <img src="assets/logedinImg.png" class="logedInImg">
+
+
+    <button type="button" id="goToProfileBtn" class="btn btn-primary">Go to your profile</button>
+  </section>
+
+
+
+
   </div>
 
 
@@ -152,28 +181,33 @@
 
     </main>
 
-<!-- <<<<<<< HEAD -->
+
     <!-- About page -->
     <div id="aboutPage">
-      <section class="jumbotron text-center">
-         <div class="container">
-              <h2 class="aboutTitle align-center mb-5">What We Do</h2>
-              <div class="row justify-content-center">
-                     <img class="aboutPhoto" src="" alt="about">
-                              <div class="text-center mb-5">We want to inspire you to go outside and explore your city.
-                                What is out there? Can you find animals that other countries don't have?
-                                This is a space where you can see what animals are roaming the earth today.
-                                Leave feedback on your friends post and get creating yourself!
-                                <br><br>Sign yourself up to join the fun
-                              </div>
-                         <span class="text-center">
-                       <button type="button" id="aboutHomePage" class="btn btn-primary">Start the adventure</button>
-                    </span>
-              </div>
-           </div>
-       </section>
+      <div class="navBlock"></div>
+      <div class="container">
+          <div>
+            <h2 class="aboutTitle">What We Do</h2>
+            <img class="aboutPhoto" src="assets/aboutPageImg.svg" alt="about">
+            <div class="row justify-content-center">
+                            <div class="aboutPageText">We want to inspire you to go outside and explore your city.
+                              What is out there? Can you find animals that other countries don't have?
+                              This is a space where you can see what animals are roaming the earth today.
+                              Leave feedback on your friends post and get creating yourself!
+                              <br><br>Sign yourself up to join the fun
+                            </div>
+                  <span class="text-center">
+                     <button type="button" id="aboutHomePage" class="btn btn-primary">Start the adventure</button>
+                  </span>
+            </div>
+          </div>
+
+       </div>
     </div>
+
+
  <!--end of About page-->
+
 
     <!-- Sign up page -->
     <div id="signUpPage">
@@ -182,12 +216,19 @@
         First thing what is you adventure name? <br />Enter a name but just be super sure to make sure that its longer then 6 letters. </p>
 
         <p class="emailText">What is your parent or gardians email<br /> address? <br /><br />
-          <a class="infoHover" href="#"><em>For more information click here</em></a>
+          <a class="infoHover" href="#" id="signUpAbout"><em>For more information click here</em></a>
         </p>
 
         <p class="passwordText">Enter your secret code, just <br /> remember not to tell anyone. <br /><br />
           Let's make the secret code longer the 6 letters,<br /> so it's hard for other people to crack the code.
         </p>
+
+        <div class="thankYouMessage">
+          <h1 class="littleFoxTym">Little Fox</h1>
+          <img src="assets/orangeFox.svg" class="modalFoxImg">
+          <p class="signUpModalText">Thanks for signing up, you are now ready to start your adventure.<br /> To continue click
+            proceed to login</p>
+        </div>
 
       </div>
 
@@ -196,31 +237,38 @@
       <div id="errorMessage">
         <p id="signUpUserName">User name must be 6 characters or longer</p>
         <p id="signUpEmail">Invalid Email</p>
-        <p id="signUpPassword">Invalid Password</p>
+        <p id="signUpPassword">Invalid Password. Must be longer that 6 letters</p>
       </div>
 
-      <form class="signUpForm">
+      <form class="signUpForm" method="get" id="signUpForm">
 
 
               <div class="fieldName">
                 <i class="fas fa-user"></i>
-                <input type="text" placeholder="please enter an adventurer name" required />
+                <input type="text" id="username" placeholder="please enter an adventurer name" required />
                 <i class="fas fa-arrow-down"></i>
               </div>
 
               <div class="fieldEmail inactive">
                 <i class="fas fa-envelope"></i>
-                <input type="email" placeholder="enter parent or gardians email" required minlength="10" maxlength="40" />
+                <input type="email" id="email" placeholder="enter parent or gardians email" required minlength="10" maxlength="40" />
                 <i class="fas fa-arrow-down"></i>
               </div>
 
               <div class="fieldPassword inactive">
                 <i class"fas fa-key"></i>
-                <input type="password" placeholder="enter a secret code" required minlength="6" maxlength="30" />
+                <input type="password" id="password" placeholder="enter a secret code" required minlength="6" maxlength="30" />
                 <i class="fas fa-arrow-down"></i>
               </div>
 
+
+              <button type="submit" form="signUpForm" value="Submit" id="signUpSubmitBtn" class="btn btn-primary">
+                Continue to login
+              </button>
+
       </form>
+
+
 
       <img src="assets/flowerLogin.svg" class="flowerLogin">
 
@@ -259,85 +307,52 @@
     </div>
 
 
+<div id="addPhotoPage">
+          <!-- add ruby's html/css -->
+</div>
 
 
 
 
 
-    <!-- Profile page -->
-    <div id="profilePage">
-      <div class="album py-1">
-        <h1 class="text-center mb-5">My uploads</h1>
-        <!--modal home page Natalia-->
-        <!-- Button trigger modal -->
-        <div class="text-center">
-          <button id="btnViewProfilePageTest" type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-            Launch demo modal profile page
-          </button>
-        </div>
-        <div id="myModalProfileContainer"></div>
-        <!--modal ENDS, Natalia-->
-          <div class="container">
-          <div id="communityPhotosProfilePage" class="row">
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <!-- Add photo Start -->
-
-      <form class="form-example" id="addPhotoPage">
-        <h2 class="addPhotoTitle align-center">Add Photo</h2>
-
-            <label for="addPhotoId"></label>
-                  <input type="text" class="form-control" id="addPhotoId"  name="addPhotoId" value="Upload image">
-                </div>
-             <!--Name image -->
-             <div class="form-group row">
-               <label class="col-sm-2 col-form-label" for="addPhotoName">Name image</label>
-               <div class="col-sm-10">
-                 <input type="text" class="form-control" id="addPhotoName" name="addPhotoName">
-               </div>
-
-              <!--Name image ends here-->
-              <!--Description -->
-
-                <label class="col-sm-2 col-form-label" for="addPhotoDescription">Description</label>
-                <div class="col-sm-10">
-                  <textarea class="form-control" id="addPhotoDescription" name="addPhotoDescription"></textarea>
-              </div>
-               <!--Description ends here-->
-               <!--Owner starts here-->
-
-                <label class="col-sm-2 col-form-label" for="addOwnerName">Owner</label>
-                <div class="col-sm-10">
-                   <input type="text" class="form-control" id="addOwnerName" name="addOwnerName" readonly>
-                </div>
-
-                 <!--Owner ends here-->
-
-              <button type="button" id="addPhotoBtn" class="btn btn-primary mt-5">Post!</button>
-  </div>
-       </form>
-
-					<!-- Add photo Finish -->
 
     <!-- Update photo form -->
-    <div id="updatePhotoPage">
-
-    </div>
+    <!-- <div id="updatePhotoPage"> -->
+        <!-- add ruby's html/css -->
+    <!-- </div> -->
     <!-- Delete photo confirmation message -->
 
 
-    <footer class="text-muted">
+<div>
+    <footer class="text-muted" id="footer">
       <div class="container">
-        <p class="float-right">
+
+      <div class="toTopTextContainer">
+        <p class="footerBackToTop">
           <a href="#">Back to top</a>
         </p>
-        <p>Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
-        <p>New to Bootstrap? <a href="https://getbootstrap.com/">Visit the homepage</a> or read our <a href="/docs/4.4/getting-started/introduction/">getting started guide</a>.</p>
+      </div>
+
+
+      <div class="littleFoxFooter">
+        <h1 class="littleFoxNav">Little Fox</h1>
+        <img src="assets/orangeFox.svg" class="footerFoxImg">
+      </div>
+
+      <div class="footerList">
+        <ul style="list-style: none;">
+          <li>For Parents</li>
+          <li>Login</li>
+          <li>Sign Up</li>
+        <ul>
+      </div>
+
+        <!-- <p>Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
+        <p>New to Bootstrap? <a href="https://getbootstrap.com/">Visit the homepage</a> or read our <a href="/docs/4.4/getting-started/introduction/">getting started guide</a>.</p> -->
       </div>
     </footer>
+</div>
 
 
 

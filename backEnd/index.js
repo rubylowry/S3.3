@@ -83,7 +83,34 @@ app.post('/loginUser', (req, res) =>{
 });
 //Natalia's code ENDS
 
+
 //Ruby's code START
+=======
+// ========= code from Natalia end here
+
+
+// =========  code from Jake start
+// code from Jake end here
+
+
+
+
+
+
+
+
+
+
+//========== code from Ruby start
+
+//get all posts
+app.get('/posts', (req,res)=>{
+	Post.find().then(result =>{
+		res.send(result);
+	})
+}); // get all products
+
+
 //add Post
 app.post('/addPost/', (req,res)=>{
 	const dbPost = new Post({

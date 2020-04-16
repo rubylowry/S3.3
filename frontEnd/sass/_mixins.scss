@@ -44,10 +44,9 @@ h3{
     color:$black!important;
 }
 
-<<<<<<< HEAD
 .btn-warning{
     @include buttonSkin('Fredoka One', none, $mainLightOrange);
-=======
+  }
 // jacob's code
 
 @mixin iconSkin ($b,$c,$h,$w){
@@ -82,5 +81,4 @@ h3{
   left: 50%;
   transform: translate(-50%);
   position: absolute;
->>>>>>> origin/jake-dev
 }
