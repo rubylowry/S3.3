@@ -201,11 +201,12 @@
     </div>
     <!--Jake's code PROFILE PAGE-->
     <div id="profilePageContainer" >
+      <div class="navBlock"></div>
       <!-- profile nav and button navigateions -->
-        <section class="jumbotron text-center " >
-          <div class="container">
+        <section class="text-center " >
+          <div class="jumbotron container mt-5">
                   <div class="container" id="profileNav">
-                    <div class="profileNavBtn">
+                    <div class="profileNavBtn mt-5">
                           <i class="fas fa-camera fa-3x" id="upLoadPhoto"></i>
                           <p class="profileNavText">My Uploads</p>
                     </div>
@@ -255,12 +256,13 @@
                       <img class="editImagePostImg" src="http://goo.gl/ijai22"/>
                   </div>
                   <div class="addPostDetails">
-                    <form action="" id="">
+                    <form id="addPostForm">
                       <label class="addpostFormText" for="">Image Name:</label><br>
-                      <input class="addPostFormInput"  type="text"  name="" value="" placeholder="enter post name"><br><br />
+                      <input id="addPostImageName" class="addPostFormInput"  type="text"  name="" value="" placeholder="enter post name"><br><br />
                       <label class="addpostFormText" for="">Discription:</label><br>
-                      <textarea class="addPostFormInput" rows="4" cols="50" name="" form="">Enter text here..
-                        </textarea>
+                      <textarea id="addPostDescription" class="addPostFormInput" rows="4" cols="50" name="" form="">Enter text here..</textarea><br />
+                      <label class="addpostFormText" for="">Image URL:</label><br>
+                      <input id="addPostImageUrl" class="addPostFormInput"  type="text"  name="" value="" placeholder="enter image url"><br><br />
                       <br><br>
                       <input class="btn btn-primary" type="submit" value="Post">
                     </form>

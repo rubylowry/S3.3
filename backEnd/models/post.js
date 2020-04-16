@@ -1,4 +1,6 @@
-//James's code
+
+const Comment = require('./comment.js');
+
 const mongoose = require('mongoose');
 const postSchema = new mongoose.Schema({
   _id : mongoose.Schema.Types.ObjectId,
@@ -7,7 +9,7 @@ const postSchema = new mongoose.Schema({
   description : String,
   imageUrl : String,
   date: String,
-  comments : Array,
+  comments : [],
   userId : {
     type : mongoose.Schema.Types.ObjectId,
     ref : 'User'

@@ -305,7 +305,7 @@ function renderCardHomePage(post){
   const viewButtonId = "btnView" + post._id;
     document.getElementById('communityPhotos').innerHTML += `<div class="col-md-4">
     <div class="card cardSkin mb-4">
-      <svg class="bd-placeholder-img card-img-top m-2" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>${post.title}</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+      <img src="${post.imageUrl}" class="bd-placeholder-img card-img-top m-2"/>
       <div class="card-body">
         <div><img class="avatarSkin d-inline" src="assets/avatar-natalia.jpg"><h2 class="d-inline ml-1">${post.username}</h2></div>
         <p class="card-text">${post.description}</p>
@@ -354,13 +354,11 @@ let modalBody = `<div class="modal" id="myModal" tabindex="-1" role="dialog">
               <h2>Comments</h2>
               <div id="commentsModalHome">Other users' comments</div>
             </div>
-            <form action="/action_page.php">
               <div class="form-group">
                 <label for="comment" class="font-weight-bold" >Add comment</label>
-                <textarea class="form-control" rows="2" id="comment" name="text"></textarea>
+                <textarea id="addCommentArea" class="form-control" rows="2" id="comment" name="text"></textarea>
               </div>
-              <button type="submit" class="btn btn-warning">Post</button>
-            </form>
+              <button class="btn btn-warning" onclick="addComment('${post._id}')">Post</button>
           </div>
         </div>
       </div>
@@ -373,6 +371,30 @@ let modalBody = `<div class="modal" id="myModal" tabindex="-1" role="dialog">
 
 $('#myModalContainer').html(modalBody);
 $('#myModal').modal();
+}
+
+function addComment(postId){
+
+  let post = communityPosts.filter(p => p._id == postId)[0];
+  let commentText = $("#addCommentArea").val();
+  let userName = sessionStorage.userName;
+  let comment = {"text": commentText, "username": userName};
+  post.comments.push(comment);
+    $.ajax({
+      url :`${url}/addComment`,
+      type :'POST',
+      data: {
+        postId: post._id,
+        commentText: commentText,
+        userName: userName
+       },
+      success : function(post){
+        console.log(post);
+      },
+      error: function(){
+
+      }
+      });
 }
 
 //not completed - requires styling by Natalia
@@ -426,6 +448,22 @@ $(document).ready(function(){
     $("#homePage").hide();
     $("#profilePageContainer").show();
   });
+
+  $('#addPostContainer').hide();
+  $('#addPhotoBtn').click(function(){
+    $('#addPostContainer').show();
+    $('#viewPostPhotoContainer').hide();
+  });
+  
+
+
+  //remove if not required
+  // $('#uploadPhoto').click(function(){
+  //   $('#addPostContainer').hide();
+  //   $('#viewPostPhotoContainer').show();
+  // });
+
+
   // stuff needed:
 
   // View User --  done
@@ -558,9 +596,40 @@ $(document).ready(function(){
   });
 });
 
+$('#addPostForm').submit(function(){
+  event.preventDefault();
+  let postName = $('#addPostImageName').val();
+  let postDescription = $('#addPostDescription').val();
+  let postImageUrl = $('#addPostImageUrl').val();
+  let userName = sessionStorage.userName;
+  if (postName == '' || postDescription == '' || userName == ''){
+    alert('Please enter all details');
+  } else {
+  $.ajax({
+    url :`${url}/addPost`,
+    type :'POST',
+    data: {
+      title : postName,
+      description : postDescription,
+      username : userName,
+      imageUrl: postImageUrl
+      },
+    success : function(post){
+      console.log(post);
+      $('#addPostImageName').val('');
+      $('#addPostDescription').val('');
+      $('#addPostImageUrl').val('');
+      alert("post added!")
+    },//success
+    error:function(){
+      console.log('error: cannot call api');
+    }//error
+  });//ajax
+}//else
+});//submit function for addProduct
+
 // Update Post
 $('#postUpdateBtn').click(function(){
-  console.log('button pressed');
   event.preventDefault();
   let postId = $('#updatePostId').val();
   let postUsername = $('#updatePostUsername').val();
@@ -574,9 +643,8 @@ $('#postUpdateBtn').click(function(){
     data:{
       _id: postId,
       username : postUsername,
-      userId : userId,
       description : postDescription,
-      imageURL: postImage
+      imageUrl: postImage
     },
     success : function(data){
       console.log(data);
