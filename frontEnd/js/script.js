@@ -521,7 +521,6 @@ $(document).ready(function(){
     dataType :'json',
     success : function(postsFromMongo){
       console.log(postsFromMongo);
-      }
     },//success
     error:function(){
       console.log('error: cannot call api');
