@@ -1,107 +1,65 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/5a8c51c16a.js" crossorigin="anonymous"></script>
-
-
-
-
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-
     <link rel="stylesheet" href="css/style.css">
     <title>Little Fox</title>
   </head>
-  <body>
-    <!-- Home page Natalia, Jake, Ruby-->
-    <header>
-
-      <!-- nav block filler -->
-      <div class="navbar shadow-sm ">
-
-
-        <div class="leftCornerDivNav">
-            <img src="assets/hidePlants.svg" id="hidePlants">
-            <img src="assets/lionFaceHide.svg" class="hideAndSeekAnimals" id="hideLion">
-            <img src="assets/sealFaceHide.svg" class="hideAndSeekAnimals" id="hideSeal">
-        </div>
-
-
-
-          <div class="centerDivNav">
-
-            <h1 class="littleFoxNav">Little Fox</h1>
-
-            <div class="colourCircleNav" id="orangeCircle"></div>
-            <div class="colourCircleNav" id="purpleCircle"></div>
-            <img src="assets/orangeFox.svg" class="foxFaceNav" id="orangeFox">
-            <img src="assets/purpleFox.svg" class="foxFaceNav" id="purpleFox">
-            <img src="assets/blueFox.svg" class="foxFaceNav" id="blueFox">
-            <img src="assets/yellowFox.svg" class="foxFaceNav" id="yellowFox">
-            <div class="colourCircleNav" id="blueCircle"></div>
-            <div class="colourCircleNav" id="yellowCircle"></div>
-
-          </div>
-
-
-
-
-        <div class="rightdivNav">
-          <span class="text-right">
-            <button id="logInHomePage" class="btn-login" >Log in</button>
-            <button id="signUpHomePage" class="btn btn-primary">Sign up</button>
-          </span>
-
-
-
-        </div>
-
-      </div>
-
-    </header>
-
-    <!-- div block sitting under the nav so content doesnt sit at top 0 / left 0. -->
-          <div class="navBlock"></div>
-    <!-- end of nav block -->
-
+<body>
+<!-- Home page Natalia, Jake, Ruby-->
+<header>
+  <!-- nav block filler, Jake's comment -->
+  <div class="navbar shadow-sm ">
+    <div class="leftCornerDivNav">
+      <img src="assets/hidePlants.svg" id="hidePlants">
+      <img src="assets/lionFaceHide.svg" class="hideAndSeekAnimals" id="hideLion">
+      <img src="assets/sealFaceHide.svg" class="hideAndSeekAnimals" id="hideSeal">
+    </div>
+    <div class="centerDivNav">
+      <h1 class="littleFoxNav">Little Fox</h1>
+      <div class="colourCircleNav" id="orangeCircle"></div>
+      <div class="colourCircleNav" id="purpleCircle"></div>
+      <img src="assets/orangeFox.svg" class="foxFaceNav" id="orangeFox">
+      <img src="assets/purpleFox.svg" class="foxFaceNav" id="purpleFox">
+      <img src="assets/blueFox.svg" class="foxFaceNav" id="blueFox">
+      <img src="assets/yellowFox.svg" class="foxFaceNav" id="yellowFox">
+      <div class="colourCircleNav" id="blueCircle"></div>
+      <div class="colourCircleNav" id="yellowCircle"></div>
+    </div>
+    <div class="rightdivNav">
+      <span class="text-right">
+        <button id="logInHomePage" class="btn-login">Log in</button>
+        <button id="signUpHomePage" class="btn btn-primary">Sign up</button>
+      </span>
+    </div>
+  </div>
+</header>
+<!--Jake's comment: div block sitting under the nav so content doesn't sit at top 0 / left 0. -->
+    <div class="navBlock"></div>
+<!-- end of nav block -->
     <main id="homePage" role="main">
-
-  <div class="landingHomePage" id="landingHomePage">
-
-
-      </div>
-
-    </header>
-
-
-
+    <div class="landingHomePage" id="landingHomePage"></div>
       <section class="jumbotron text-center">
         <div class="container" id="landingPage">
           <p class="lead text-muted homePageDiscription"> Hello adventurer and welcome.<em>Little Fox</em>&nbsp; is a community of adventures
             like yourself that go out exploring and upload and share photos of their adventure with the community.
             To find out more <em>click the sound icon</em>. If you already have started your adventure then proceed to <a class="paraLogIn" href="">Log in</a>.</p>
         </div>
-
         <div class="missionImages">
-
           <img src="assets/clickHere.svg" class="icons" id="clickHereImg">
           <img src="assets/vineImg.svg" id="vineImg">
-
           <div class="soundIcon">
             <img src="assets/soundIcon.svg" class="icons" id="missionOneSound">
             <img src="assets/soundIcon.svg" class="icons" id="missionTwoSound">
             <img src="assets/soundIcon.svg" class="icons" id="missionThreeSound">
           </div>
-
           <div class="hideAndSeekIcon">
             <img src="assets/eyeIcon.svg" class="icons" id="hideAndSeek">
           </div>
-
           <div id="hideAndSeekPopUp">
             <div class="messagePopUp">
               <p class="hideSeekExitMessage">X</p>
@@ -109,56 +67,37 @@
             </div>
             <img src="assets/hideAndSeekPopUpImg.svg" class="hideSeekPopUpImg">
           </div>
-
           <div class="missionOneSplash">
             <p class="missionOneSplashText">Next Mission</p>
           </div>
-
           <div class="missionTwoSplash">
             <p class="missionTwoSplashText">Next Mission</p>
           </div>
-
           <div class="missionThreeSplash">
             <p class="missionThreeSplashText">Start The <br /> Adventure</p>
           </div>
-
           <img src="assets/missionOneIllustration.svg" class="missionOneImg">
           <img src="assets/missionTwoIllustraion.svg" class="missionTwoImg">
           <img src="assets/missionThreeIllustration.svg" class="missionThreeImg">
-
-
         </div>
-
-      <div class="container">
-        <p>
-          <h3>Created for young explorers</h3>
-          <a href="#" class="homeParaStartAdventure">Start your adventure</a>
-        </p>
-        <div class="homePageArrowDownBtn"><a href="#" class="arrowBtn"><p>v<p><a></div>
-      </div>
+        <div class="container">
+          <p>
+            <h3>Created for young explorers</h3>
+            <a href="#" class="homeParaStartAdventure">Start your adventure</a>
+          </p>
+          <div class="homePageArrowDownBtn"><a href="#" class="arrowBtn"><p>v<p><a></div>
+        </div>
       </section>
-
-
-      <section class="jumbotron text-center" id="loginLandingPage">
+      <section id="loginLandingPage" class="jumbotron text-center">
         <div class="container" >
           <p class="lead text-muted homePageDiscription"> Kia Ora adventurer and welcome to <em>Little Fox</em>. <br /><br />
             It is now time to head out on adventures, take some photos and then share what you found with other adventurers.<br />
             We all can't wait to see what you discover. When your ready click on go to your profile to get started.<br /><br />
             Happy adventuring from the <em>Little Fox</em>.
         </div>
-
         <img src="assets/logedinImg.png" class="logedInImg">
-
-
-    <button type="button" id="goToProfileBtn" class="btn btn-primary">Go to your profile</button>
-  </section>
-
-
-
-
-  </div>
-
-
+        <button type="button" id="goToProfileBtn" class="btn btn-primary">Go to your profile</button>
+      </section>
       <div class="album py-1">
         <h1 class="text-center mb-5">Latest community photos</h1>
         <h2 class="text-center mb-5">Please login to upload images and participate in discussions</h2>
@@ -169,20 +108,15 @@
             Launch demo modal
           </button>
         </div>
-
+        <!--Modal Natalia-->
         <div id="myModalContainer"></div>
         <!--modal ENDS, Natalia-->
-          <div class="container">
-          <div id="communityPhotos" class="row">
-          </div>
+        <div class="container">
+          <div id="communityPhotos" class="row"></div>
         </div>
       </div>
-
-
     </main>
-
-
-    <!-- About page -->
+    <!--Ruby's code, About page -->
     <div id="aboutPage">
       <div class="navBlock"></div>
       <div class="container">
@@ -190,156 +124,102 @@
             <h2 class="aboutTitle">What We Do</h2>
             <img class="aboutPhoto" src="assets/aboutPageImg.svg" alt="about">
             <div class="row justify-content-center">
-                            <div class="aboutPageText">We want to inspire you to go outside and explore your city.
-                              What is out there? Can you find animals that other countries don't have?
-                              This is a space where you can see what animals are roaming the earth today.
-                              Leave feedback on your friends post and get creating yourself!
-                              <br><br>Sign yourself up to join the fun
-                            </div>
-                  <span class="text-center">
-                     <button type="button" id="aboutHomePage" class="btn btn-primary">Start the adventure</button>
-                  </span>
+              <div class="aboutPageText">We want to inspire you to go outside and explore your city.
+                What is out there? Can you find animals that other countries don't have?
+                This is a space where you can see what animals are roaming the earth today.
+                Leave feedback on your friends post and get creating yourself!
+                <br><br>Sign yourself up to join the fun
+              </div>
+              <span class="text-center">
+                  <button type="button" id="aboutHomePage" class="btn btn-primary">Start the adventure</button>
+              </span>
             </div>
           </div>
-
        </div>
     </div>
-
-
- <!--end of About page-->
-
-
-    <!-- Sign up page -->
+    <!--Ruby's code ENDS-->
+    <!--Jacob's code, Sign up page -->
     <div id="signUpPage">
       <div class="signUpPageText">
-        <p class="userNameText">Grab a parent or guardian to help <br />sign up and start the adventure.<br /> <br />
-        First thing what is you adventure name? <br />Enter a name but just be super sure to make sure that its longer then 6 letters. </p>
-
+        <p class="userNameText">Grab a parent or guardian to help <br />sign up and start the adventure.<br />
+          <p>Enter username which is 6 or longer then letters.</p>
+        </p>
         <p class="emailText">What is your parent or gardians email<br /> address? <br /><br />
           <a class="infoHover" href="#" id="signUpAbout"><em>For more information click here</em></a>
         </p>
-
         <p class="passwordText">Enter your secret code, just <br /> remember not to tell anyone. <br /><br />
           Let's make the secret code longer the 6 letters,<br /> so it's hard for other people to crack the code.
         </p>
-
         <div class="thankYouMessage">
-          <h1 class="littleFoxTym">Little Fox</h1>
-          <img src="assets/orangeFox.svg" class="modalFoxImg">
-          <p class="signUpModalText">Thanks for signing up, you are now ready to start your adventure.<br /> To continue click
-            proceed to login</p>
+          <p class="signUpModalText lead mt-5">Thanks for signing up, you are now ready to start your adventure.</p>
+          <p>To continue click proceed to login</p>
         </div>
-
       </div>
-
-
-
       <div id="errorMessage">
         <p id="signUpUserName">User name must be 6 characters or longer</p>
         <p id="signUpEmail">Invalid Email</p>
         <p id="signUpPassword">Invalid Password. Must be longer that 6 letters</p>
       </div>
-
-      <form class="signUpForm" method="get" id="signUpForm">
-
-
-              <div class="fieldName">
-                <i class="fas fa-user"></i>
-                <input type="text" id="username" placeholder="please enter an adventurer name" required />
-                <i class="fas fa-arrow-down"></i>
-              </div>
-
-              <div class="fieldEmail inactive">
-                <i class="fas fa-envelope"></i>
-                <input type="email" id="email" placeholder="enter parent or gardians email" required minlength="10" maxlength="40" />
-                <i class="fas fa-arrow-down"></i>
-              </div>
-
-              <div class="fieldPassword inactive">
-                <i class"fas fa-key"></i>
-                <input type="password" id="password" placeholder="enter a secret code" required minlength="6" maxlength="30" />
-                <i class="fas fa-arrow-down"></i>
-              </div>
-
-
-              <button type="submit" form="signUpForm" value="Submit" id="signUpSubmitBtn" class="btn btn-primary">
-                Continue to login
-              </button>
-
+      <form class="signUpForm" method="get" id="registerForm">
+        <div class="fieldName">
+          <i class="fas fa-user"></i>
+          <input type="text" id="regUserName" placeholder="please enter an adventurer username" required />
+          <i class="fas fa-arrow-down"></i>
+        </div>
+        <div class="fieldEmail inactive">
+          <i class="fas fa-envelope"></i>
+          <input type="email" id="regEmail" placeholder="enter parent or gardians email" required minlength="10" maxlength="40" />
+          <i class="fas fa-arrow-down"></i>
+        </div>
+        <div class="fieldPassword inactive">
+          <i class"fas fa-key"></i>
+          <input type="password" id="regPassword" placeholder="enter a secret code" required minlength="6" maxlength="30" />
+          <i class="fas fa-arrow-down"></i>
+        </div>
+        <button id="signUpSubmitBtn" type="submit" form="registerForm" value="Submit" class="btn btn-primary">
+          Submit
+        </button>
       </form>
-
-
-
       <img src="assets/flowerLogin.svg" class="flowerLogin">
-
     </div>
-
-
-
-
-
-    <!-- Login page -->
+    <!-- Jacob's code, Login page -->
+    
     <div id="loginPage">
-
-
       <div class="loginPageText">
         <p class="loginName">Please enter your username <br /> and password.</p>
       </div>
-
-
-              <div class="fieldNameLogin">
-                <i class="fas fa-user"></i>
-                <input type="text" placeholder="please enter your adventurer name" required />
-              </div>
-
-
-              <div class="fieldPasswordLogin">
-                <i class"fas fa-key"></i>
-                <input type="password" placeholder="enter your secret code" required minlength="6" maxlength="30" />
-              </div>
-
-              <button id="loginFormBtn" class="btn btn-primary">Login</button>
-
-
+      <div class="fieldNameLogin">
+        <i class="fas fa-user"></i>
+        <input type="text" placeholder="please enter your adventurer name" required />
+      </div>
+      <div class="fieldPasswordLogin">
+        <i class"fas fa-key"></i>
+        <input type="password" placeholder="enter your secret code" required minlength="6" maxlength="30" />
+      </div>
+      <button id="loginFormBtn" class="btn btn-primary">Login</button>
+      <!-- <button id="loginSubmitBtn" class="btn btn-primary">Login</button> -->
       <img src="assets/loginFlower.svg" class="loginFlower">
       <img src="assets/flowerLogin.svg" class="flowerLogin">
-
     </div>
-
-
-<div id="addPhotoPage">
-          <!-- add ruby's html/css -->
-</div>
-
-
-
-
-
-
-
+    <!--Ruby's code, addPhotoPage-->
+    <div id="addPhotoPage">
+    </div>
     <!-- Update photo form -->
     <!-- <div id="updatePhotoPage"> -->
-        <!-- add ruby's html/css -->
+    <!-- add ruby's html/css -->
     <!-- </div> -->
     <!-- Delete photo confirmation message -->
-
-
-<div>
     <footer class="text-muted" id="footer">
       <div class="container">
-
       <div class="toTopTextContainer">
         <p class="footerBackToTop">
           <a href="#">Back to top</a>
         </p>
       </div>
-
-
       <div class="littleFoxFooter">
         <h1 class="littleFoxNav">Little Fox</h1>
         <img src="assets/orangeFox.svg" class="footerFoxImg">
       </div>
-
       <div class="footerList">
         <ul style="list-style: none;">
           <li>For Parents</li>
@@ -347,70 +227,43 @@
           <li>Sign Up</li>
         <ul>
       </div>
-
         <!-- <p>Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
         <p>New to Bootstrap? <a href="https://getbootstrap.com/">Visit the homepage</a> or read our <a href="/docs/4.4/getting-started/introduction/">getting started guide</a>.</p> -->
       </div>
     </footer>
-</div>
-
-
-
-  <!-- svg used for mission clipping masks -->
-
-<!-- mission one next mission clipping mask -->
-  <svg height="0" width="0">
-    <defs>
-      <clipPath id="missionOneSplash">
-        <path d="M193.72,52.21c-2.89-8.92-14.13-12.44-23.23-14.68s-18.57-2.42-27.91-3.31c-2.8-.26-5.7-.63-8.05-2.18s-3.88-4.14-5.3-6.62c-3.26-5.7-6.71-11.54-12-15.47-5.08-3.8-11.45-5.48-17.74-6.26-15-1.86-30.34,1-44.21,6.92S29,25.52,18,35.9c-7.37,7-14.47,15.44-15.23,25.56C2,71.82,8.34,81.76,16.8,87.79s18.8,8.79,29,10.74c8.57,1.64,17.32,2.8,26,1.94s16.88-3.65,25.39-5.15,17.73-1.59,25.26,2.64c2.56,1.43,4.83,3.31,7.36,4.79,6.71,3.9,14.92,4.69,22.56,3.36a49.24,49.24,0,0,0,6.23-1.53S207.07,93.39,193.72,52.21Z"/>
-      </clipPath>
-    </defs>
-  </svg>
-
-  <!-- mission two next mission clipping mask -->
-  <svg height="0" width="0">
-    <defs>
-      <clipPath id="missionTwoSplash">
-        <path d="M73,156.3c4.53,4.74,9.41,9.29,15.2,12.37,12.82,6.82,28.47,4.77,42.51,1.08,8.22-2.16,16.45-4.9,23.33-9.9s12.27-12.58,12.88-21c.46-6.49-1.83-13.24.24-19.4,3.9-11.56,20.73-14.78,24.32-26.44,1.69-5.47-.19-11.6-3.74-16.09s-8.57-7.6-13.72-10.13a91.94,91.94,0,0,0-22.4-7.59c-9.66-1.94-19.86-2.4-28.63-6.89S107.23,37.38,110.8,28.19c.88-2.26,2.34-4.34,2.64-6.75.53-4.27-2.7-8-5.84-11C103.48,6.64,99,3,93.59,1.26c-7.24-2.36-15.14-1-22.54.82C61.5,4.44,52,7.63,43.87,13.21c-6,4.14-11.54,10.41-11.3,17.72.1,3.17,1.28,6.21,1.52,9.37.49,6.2-2.76,12.29-7.47,16.35S15.9,63,9.84,64.35c-2.24.51-4.59,1-6.37,2.41A9.93,9.93,0,0,0,.34,72.53,18.08,18.08,0,0,0,9,91.48c3.52,2,7.6,2.66,11.33,4.19S27.71,100,28.38,104c.82,4.93-3.21,9.52-3.13,14.52.08,4.34,3.34,8.11,7.22,10.07a22.71,22.71,0,0,0,4.92,1.75S60.25,143.05,73,156.3Z"/>
-      </clipPath>
-    </defs>
-  </svg>
-
-
-  <!-- misssion two next mission clipping mask -->
-
-  <svg height="0" width="0">
-    <defs>
-      <clipPath id="missionThreeSplash">
-        <path d="M18.94,125.15c5.55,6.59,16.93,10.55,18.74,19.49.51,2.53.07,5.19.59,7.71.95,4.55,4.85,7.88,8.87,10.2a44.53,44.53,0,0,0,23.74,5.9c12.85-.47,25.49-6.51,38.15-4.26,3.06.55,6.44,2,7.34,4.95.48,1.58.14,3.31.48,4.93.69,3.31,4,5.37,7.07,6.71,16.65,7.21,35.9,4.67,53.35-.3,4.79-1.36,9.91-3.18,12.57-7.38,2.27-3.59,2.21-8.25.93-12.29s-3.66-7.64-5.89-11.25a188.66,188.66,0,0,1-10-18.56,18.62,18.62,0,0,1-2.16-6.83c-.21-3.68,1.65-7.16,3.78-10.17,3.38-4.78,7.6-8.94,10.91-13.77s5.73-10.68,4.82-16.47C191,76.5,184.94,71,178.4,67.59S164.61,62.4,158.1,59a20.82,20.82,0,0,1-6.29-4.7c-3.3-3.9-4.07-9.28-5.1-14.29-1.78-8.65-4.82-17.26-10.5-24-6.8-8.08-16.93-12.88-27.32-14.8S87.79,0,77.32,1.44c-21.48,3-44,10.09-57.27,27.26C20.05,28.7-24.32,73.78,18.94,125.15Z"/>
-      </clipPath>
-    </defs>
-  </svg>
-
-
-  <!-- hide and seek pop up clipping mask -->
-
-  <svg height="0" width="0">
-    <defs>
-      <clipPath id="hideSeekPopUp">
-        <path d="M184.42,113.37c-4.54,15.18-3.79,31.24-12.33,45.1-4.92,8-14.43,12.88-23.46,17.36-4.29,2.13-8.66,4.29-13.48,5.13-5.75,1-11.67.06-17.38-1-18.82-3.41-38.36-7.74-57.08-3.46-6.28,1.44-12.28,3.82-18.63,5s-13.45.88-18.54-2.54c-3.08-2.07-5.13-5.08-6.95-8.08a103.18,103.18,0,0,1-13.4-72c2.28-12.37,6.86-24.53,6.89-37,0-13.57-5.07-28.17,2.6-40.09A15.13,15.13,0,0,1,18,16.52c3.42-1.86,7.66-2,11.64-1.79,12.76.71,26.11,4.48,37.93,0C72.31,13,76.33,10,80.93,8c5.53-2.41,11.69-3.34,17.76-4.19C118.83,1,141-.88,158,8.56c18.37,10.15,25.44,30.36,29,49.18C187,57.74,191.5,89.69,184.42,113.37Z" transform="translate(-1.5 -1.5)"/>
-      </clipPath>
-  </svg>
-
-
-
-  <!-- end of svg used for mission clipping masks -->
-
-
-
-
-
-
-
-
-
-
-
+    <!-- svg used for mission clipping masks -->
+    <!-- mission one next mission clipping mask -->
+    <svg height="0" width="0">
+      <defs>
+        <clipPath id="missionOneSplash">
+          <path d="M193.72,52.21c-2.89-8.92-14.13-12.44-23.23-14.68s-18.57-2.42-27.91-3.31c-2.8-.26-5.7-.63-8.05-2.18s-3.88-4.14-5.3-6.62c-3.26-5.7-6.71-11.54-12-15.47-5.08-3.8-11.45-5.48-17.74-6.26-15-1.86-30.34,1-44.21,6.92S29,25.52,18,35.9c-7.37,7-14.47,15.44-15.23,25.56C2,71.82,8.34,81.76,16.8,87.79s18.8,8.79,29,10.74c8.57,1.64,17.32,2.8,26,1.94s16.88-3.65,25.39-5.15,17.73-1.59,25.26,2.64c2.56,1.43,4.83,3.31,7.36,4.79,6.71,3.9,14.92,4.69,22.56,3.36a49.24,49.24,0,0,0,6.23-1.53S207.07,93.39,193.72,52.21Z"/>
+        </clipPath>
+      </defs>
+    </svg>
+    <!-- mission two next mission clipping mask -->
+    <svg height="0" width="0">
+      <defs>
+        <clipPath id="missionTwoSplash">
+          <path d="M73,156.3c4.53,4.74,9.41,9.29,15.2,12.37,12.82,6.82,28.47,4.77,42.51,1.08,8.22-2.16,16.45-4.9,23.33-9.9s12.27-12.58,12.88-21c.46-6.49-1.83-13.24.24-19.4,3.9-11.56,20.73-14.78,24.32-26.44,1.69-5.47-.19-11.6-3.74-16.09s-8.57-7.6-13.72-10.13a91.94,91.94,0,0,0-22.4-7.59c-9.66-1.94-19.86-2.4-28.63-6.89S107.23,37.38,110.8,28.19c.88-2.26,2.34-4.34,2.64-6.75.53-4.27-2.7-8-5.84-11C103.48,6.64,99,3,93.59,1.26c-7.24-2.36-15.14-1-22.54.82C61.5,4.44,52,7.63,43.87,13.21c-6,4.14-11.54,10.41-11.3,17.72.1,3.17,1.28,6.21,1.52,9.37.49,6.2-2.76,12.29-7.47,16.35S15.9,63,9.84,64.35c-2.24.51-4.59,1-6.37,2.41A9.93,9.93,0,0,0,.34,72.53,18.08,18.08,0,0,0,9,91.48c3.52,2,7.6,2.66,11.33,4.19S27.71,100,28.38,104c.82,4.93-3.21,9.52-3.13,14.52.08,4.34,3.34,8.11,7.22,10.07a22.71,22.71,0,0,0,4.92,1.75S60.25,143.05,73,156.3Z"/>
+        </clipPath>
+      </defs>
+    </svg>
+    <!-- misssion two next mission clipping mask -->
+    <svg height="0" width="0">
+      <defs>
+        <clipPath id="missionThreeSplash">
+          <path d="M18.94,125.15c5.55,6.59,16.93,10.55,18.74,19.49.51,2.53.07,5.19.59,7.71.95,4.55,4.85,7.88,8.87,10.2a44.53,44.53,0,0,0,23.74,5.9c12.85-.47,25.49-6.51,38.15-4.26,3.06.55,6.44,2,7.34,4.95.48,1.58.14,3.31.48,4.93.69,3.31,4,5.37,7.07,6.71,16.65,7.21,35.9,4.67,53.35-.3,4.79-1.36,9.91-3.18,12.57-7.38,2.27-3.59,2.21-8.25.93-12.29s-3.66-7.64-5.89-11.25a188.66,188.66,0,0,1-10-18.56,18.62,18.62,0,0,1-2.16-6.83c-.21-3.68,1.65-7.16,3.78-10.17,3.38-4.78,7.6-8.94,10.91-13.77s5.73-10.68,4.82-16.47C191,76.5,184.94,71,178.4,67.59S164.61,62.4,158.1,59a20.82,20.82,0,0,1-6.29-4.7c-3.3-3.9-4.07-9.28-5.1-14.29-1.78-8.65-4.82-17.26-10.5-24-6.8-8.08-16.93-12.88-27.32-14.8S87.79,0,77.32,1.44c-21.48,3-44,10.09-57.27,27.26C20.05,28.7-24.32,73.78,18.94,125.15Z"/>
+        </clipPath>
+      </defs>
+    </svg>
+    <!-- hide and seek pop up clipping mask -->
+    <svg height="0" width="0">
+      <defs>
+        <clipPath id="hideSeekPopUp">
+          <path d="M184.42,113.37c-4.54,15.18-3.79,31.24-12.33,45.1-4.92,8-14.43,12.88-23.46,17.36-4.29,2.13-8.66,4.29-13.48,5.13-5.75,1-11.67.06-17.38-1-18.82-3.41-38.36-7.74-57.08-3.46-6.28,1.44-12.28,3.82-18.63,5s-13.45.88-18.54-2.54c-3.08-2.07-5.13-5.08-6.95-8.08a103.18,103.18,0,0,1-13.4-72c2.28-12.37,6.86-24.53,6.89-37,0-13.57-5.07-28.17,2.6-40.09A15.13,15.13,0,0,1,18,16.52c3.42-1.86,7.66-2,11.64-1.79,12.76.71,26.11,4.48,37.93,0C72.31,13,76.33,10,80.93,8c5.53-2.41,11.69-3.34,17.76-4.19C118.83,1,141-.88,158,8.56c18.37,10.15,25.44,30.36,29,49.18C187,57.74,191.5,89.69,184.42,113.37Z" transform="translate(-1.5 -1.5)"/>
+        </clipPath>
+    </svg>
+    <!-- end of svg used for mission clipping masks -->
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
