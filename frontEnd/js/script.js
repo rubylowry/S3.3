@@ -420,7 +420,12 @@ $.ajax({
 
 $(document).ready(function(){
   // console.log("js is working");
+  $("#profilePageContainer").hide();
 
+  $("#goToProfileBtn").click(function(){
+    $("#homePage").hide();
+    $("#profilePageContainer").show();
+  });
   // stuff needed:
 
   // View User --  done
