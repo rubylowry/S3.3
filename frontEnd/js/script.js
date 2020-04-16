@@ -324,6 +324,8 @@ function renderCardHomePage(post){
 //            <svg class="bd-placeholder-img card-img-top m-2" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>${post.title}</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
 function openModalViewPostHomePage(postId){
   let post = communityPosts.filter(p => p._id == postId)[0];
+
+  let commentsList = post.comments ? "<ul>"  + post.comments.map(c => `<li><b>${c.userName}</b>: ${c.text}`).join() + "</ul>" : "";
   //we need to show modal with class modal
 let modalBody = `<div class="modal" id="myModal" tabindex="-1" role="dialog">
 <div class="modal-dialog modal-lg" role="document">
@@ -353,6 +355,7 @@ let modalBody = `<div class="modal" id="myModal" tabindex="-1" role="dialog">
             <div>
               <h2>Comments</h2>
               <div id="commentsModalHome">Other users' comments</div>
+              ${commentsList}
             </div>
               <div class="form-group">
                 <label for="comment" class="font-weight-bold" >Add comment</label>
