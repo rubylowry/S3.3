@@ -1,0 +1,76 @@
+//Jacob
+//use for styles with cliiping masks
+//and for content within the masked style
+
+
+.missionOneSplash{
+  display: none;
+  width: 200px;
+  height: 200px;
+  background-color: $white;
+  top:35%;
+  left: 60%;
+  position: absolute;
+  clip-path: url(#missionOneSplash);
+}
+
+.missionOneSplashText{
+  margin-top: 45px;
+  @include headline ('Fredoka One',1.5rem, $c:$mainLightOrange);
+}
+
+.missionOneSplashText:hover, .missionTwoSplashText:hover {
+  cursor: pointer;
+}
+
+
+.missionTwoSplash{
+  display: none;
+  width: 200px;
+  height: 200px;
+  background-color: $white;
+  top:35%;
+  left: 35%;
+  position: absolute;
+  clip-path: url(#missionTwoSplash);
+}
+
+.missionTwoSplashText{
+  margin-top: 70px;
+  @include headline ('Fredoka One',1.5rem, $c:$mainLightOrange);
+}
+
+
+.missionThreeSplash{
+  display: none;
+  width: 200px;
+  height: 200px;
+  background-color: $white;
+  top:35%;
+  left: 60%;
+  position: absolute;
+  clip-path: url(#missionThreeSplash);
+}
+
+.missionThreeSplashText{
+  margin-top: 60px;
+  @include headline ('Fredoka One',1.5rem, $c:#A2C76A);
+}
+
+.messagePopUp{
+  z-index: 20;
+  width: 200px;
+  height: 200px;
+  background-color: $white;
+  top:50%;
+  left: 10%;
+  position: absolute;
+  clip-path: url(#hideSeekPopUp);
+}
+
+.hideSeekPopUpImg{
+  height: 270px;
+  top:42%;
+  left: 8%;
+  position: absolute;
+}

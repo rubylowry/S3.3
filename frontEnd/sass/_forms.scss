@@ -1,0 +1,230 @@
+//code for sign up and log in forms
+
+  #signUpPage{
+    display: none !important;
+    height: 100vh;
+    display: flex;
+  	position: relative;
+  	transition: background 0.5s ease;
+    width: 100%;
+    background-color: $mainBackgroundLight;
+  }
+
+  .signUpPageText{
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -30%);
+    position: absolute;
+    text-align: center;
+    @include headline('Fredoka One', 1.5rem, $c:$mainLightOrange);
+  }
+
+  .emailText{
+    display: none;
+  }
+
+  .emailText em{
+    color: $mainLightBlue;
+  }
+
+  .emailText em:hover{
+    color: $black;
+  }
+
+  .passwordText{
+    display: none;
+  }
+
+
+
+
+    #errorMessage{
+    	position: absolute;
+    	top: 55%;
+    	left: 50%;
+    	transform: translate(-50%, -55%);
+    	height: 30px;
+    	width:400px;
+    	color: #333;
+    	text-align: center;
+    	display:none;
+    }
+
+    #signUpPassword{
+    	display: none;
+      @include headline('Fredoka One', 1rem, $c:tomato);
+    }
+
+    #signUpUserName{
+    	display: none;
+      @include headline('Fredoka One', 1rem, $c:tomato);
+    }
+
+    #signUpEmail{
+    	display: none;
+      @include headline('Fredoka One', 1rem, $c:tomato);
+    }
+
+
+    .signUpForm{
+        position:absolute;
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%,-60%);
+    }
+
+
+    .fieldName, .fieldEmail, .fieldPassword,
+    {
+      padding: 10px;
+      position:absolute;
+      top: 60%;
+      left: 50%;
+      transform: translate(-50%,-60%);
+      background: #FFF7ED;
+      height: 50px;
+      width: 400px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: 10px;
+      border: 2px solid $mainLightBlue;
+      transition: all 0.5s ease;
+    }
+
+
+
+    .fieldName i, .fieldEmail i, .fieldPassword i,
+    .fieldNameLogin i, .fieldPasswordLogin i{
+    padding: 20px;
+    }
+
+    .fa-arrow-down{
+      cursor: pointer;
+    }
+
+
+    .fieldName input, .fieldEmail input, .fieldPassword input,
+    .fieldNameLogin input, .fieldPasswordLogin input{
+    	background: none;
+    	border: none;
+    	outline: none;
+    	height: 100%;
+    	flex: 1;
+      width: 400px;
+    }
+
+
+    div.inactive{
+    	opacity:0;
+    	pointer-events: none;
+    	transform: translate(-50%, 50%);
+    }
+
+
+    div.active{
+    	opacity: 1;
+    	pointer-events: all;
+    	transform: translate(-50%, -50%);
+    }
+
+
+    .flowerLogin{
+      height: 300px;
+      position: absolute;
+      right: 10%;
+      bottom: 0%;
+
+    }
+
+    .loginFlower{
+      height: 300px;
+      position: absolute;
+      left: 10%;
+      bottom: 0%;
+
+    }
+
+    #signUpSubmitBtn{
+      position: absolute;
+      top: 60%;
+      left: 50%;
+      transform: translate(-50%,-70%);
+      display: none;
+    }
+
+    .thankYouMessage{
+      display: none;
+      width: 400px;
+      height: 500px;
+    }
+
+    .modalFoxImg{
+      margin-top: 40px;
+      margin-bottom: 40px;
+      height: 100px;
+    }
+
+
+    // end of sign up form
+
+
+
+
+
+
+    // start of login form
+
+
+    #loginPage{
+      display: none !important;
+      height: 100vh;
+      display: flex;
+    	position: relative;
+    	transition: background 0.5s ease;
+      width: 100%;
+      background-color: $mainBackgroundLight;
+    }
+
+    .fieldPasswordLogin, .fieldNameLogin {
+      padding: 10px;
+      background: #FFF7ED;
+      height: 50px;
+      width: 400px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: 10px;
+      border: 2px solid $mainLightBlue;
+    }
+
+    .fieldNameLogin{
+      position:absolute;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%,-40%);
+    }
+
+    .fieldPasswordLogin{
+      position:absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+    }
+
+    #loginFormBtn{
+      position:absolute;
+      top: 60%;
+      left: 50%;
+      transform: translate(-50%,-60%);
+    }
+
+
+    .loginPageText{
+      top: 30%;
+      left: 50%;
+      transform: translate(-50%, -30%);
+      position: absolute;
+      text-align: center;
+      @include headline('Fredoka One', 1.5rem, $c:$mainLightOrange);
+    }

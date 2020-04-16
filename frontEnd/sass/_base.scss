@@ -1,5 +1,12 @@
 //natalia
 //basic app styles
+
+// basic display none(hide) and display block(show) of main div elements
+
+// #homePage{
+//   display: none !important;
+// }
+
 .cardStructure{
     position: relative;
 }
@@ -9,6 +16,7 @@
         width: 50%;
       }
 }
+
 
 .card {
     border-radius: 20px;
@@ -26,7 +34,7 @@
             }
 
         }
-    
+
     }
 
 .closeModalStructure{
@@ -41,46 +49,186 @@
 
 }
 
-//end of styles for about page
 
-//start of styles for add photo page
+// icon css style
 
-.addPhoto {
-  
+.icons{
+  height: 20px;
+}
+
+.icons:hover{
+  cursor: pointer;
+}
+
+//homePage basic styles
+
+#loginLandingPage{
+  display: none;
+}
+
+// #landingHomePage{
+//   display: none;
+// }
+
+.homePageDiscription em{
+  font-family: 'Fredoka One';
+  color: $mainLightOrange;
+}
+
+.paraLogIn{
+  font-family: 'Fredoka One';
+  color: $mainLightBlue;
+}
+
+.homeParaStartAdventure{
+  color: #A2C76A;
+}
+
+.arrowBtn{
+  color: $mainLightBlue;
+  font-family: 'Fredoka One';
+}
+
+.hideSeekExitMessage{
+  top: 10%;
+  left: 70%;
+  position: absolute;
+  font-family: 'Fredoka One';
+}
+
+.hideSeekMessageText{
+  top: 30%;
+  left: 10%;
+  position: absolute;
+  color: $mainLightBlue;
+  font-family: 'Fredoka One';
+}
+
+.hideSeekExitMessage:hover{
+  cursor: pointer;
+  color: $mainLightOrange;
+}
+
+#vineImg{
+  right: 0%;
+  top: 55%;
+  position: absolute;
+  height: 200px;
 }
 
 
-//end of styles for add photo page
+#signUpHomePage{
+  margin-left: 30px;
+}
 
-/* Container needed to position the button. Adjust the width as needed */
-.container {
-    position: relative;
-    width: 50%;
-  }
-  
-  /* Make the image responsive */
-  .container img {
-    width: 100%;
-    height: auto;
-  }
-  
-  /* Style the button and place it in the middle of the container/image */
-  .container .btn {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    background-color: #555;
-    color: white;
-    font-size: 16px;
-    padding: 12px 24px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-  }
-  
-  .container .btn:hover {
-    background-color: black;
-  }
+.logedInImg{
+  height: 300px;
+  margin-top: 50px;
+  margin-bottom: 200px;
+}
 
+#goToProfileBtn{
+  position: absolute;
+  left: 50%;
+  top:80%;
+  transform: translate(-50%,-80%);
+}
+
+.foxFaceNav:hover{
+  cursor: pointer;
+}
+
+.missionThreeSplashText:hover{
+  cursor: pointer;
+}
+
+#footer{
+  background-color: #333;
+  height: 200px;
+  margin-top: 50px;
+  width: 100%;
+}
+
+.littleFoxFooter{
+  width: 200px;
+  height: 200px;
+  text-align: center;
+  float: left;
+  position: absolute;
+  left: 5%;
+  padding-top: 25px;
+}
+
+.footerList{
+  width: 200px;
+  height: 200px;
+  text-align: right;
+  float: left;
+  position: absolute;
+  right: 5%;
+  padding-top: 30px;
+}
+
+.footerList ul li{
+  font-size: 20px;
+  color: $white;
+  font-family: 'Fredoka One';
+  margin-bottom: 20px;
+}
+
+.footerFoxImg{
+  height: 100px;
+  position: absolute;
+  // top: 20%;
+  left: 20%;
+}
+
+.footerBackToTop{
+  position: absolute;
+  left: 50%;
+  font-family: 'Fredoka One';
+  font-size: 30px;
+  color: $mainLightBlue;
+  margin-top: 70px;
+}
+
+
+
+//end of homePage basic styles
+
+// about page stylesheet
+#aboutPage{
+  display: none !important;
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  position: relative;
+  transition: background 0.5s ease;
+  width: 100%;
+  background-color: $mainBackgroundLight;
+}
+
+.aboutTitle{
+  color: $mainLightOrange;
+  font-family: 'Fredoka One';
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%,-10%);
+}
+
+.aboutPhoto{
+  height: 300px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.aboutPageText{
+  color: $mainLightOrange;
+  font-family: 'Fredoka One';
+  font-size: 25px;
+  margin-bottom: 50px;
+}
+
+
+//end of aboutPage styles

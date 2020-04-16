@@ -2,52 +2,55 @@
   background-color: #faf2e8; }
 
 .navbar {
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  position: absolute;
+  position: fixed;
   height: 150px;
   width: 100%;
   box-shadow: none !important;
   display: flex;
   justify-content: space-between; }
 
+.navBlock {
+  height: 150px;
+  width: 100%; }
+
 @font-face {
   font-family: 'Fredoka One';
   src: url("../fonts/FredokaOne-Regular.woff2") format("woff2"), url("FredokaOne-Regular.woff") format("woff");
   font-weight: normal;
-
   font-style: normal; }
 
-.card {
-
-  font-style: normal;
-}
 .modal-content {
-  border: 3px solid #000000;
-}
+  border: 3px solid #000000; }
 
 .borderNone {
-  border: none !important;
-}
+  border: none !important; }
 
 .cardSkin {
-  border: 2px solid #6fc7e1;
-}
+  border: 2px solid #6fc7e1; }
 
 .avatarSkin {
-  border: 3px solid #6fc7e1;
-}
+  border: 3px solid #6fc7e1; }
 
 .closeModalSkin {
-
   border: 2px solid #6fc7e1;
-  background-color: #6fc7e1;
-}
+  background-color: #6fc7e1; }
 
 .form-control {
-  border: 1px solid #000000 !important;
-}
+  border: 1px solid #000000 !important; }
+
+.cardStructure {
+  position: relative; }
+
+.containerImage .container {
+  position: relative;
+  width: 50%; }
 
 .card {
   border-radius: 20px;
-
   width: 18em; }
   .card .card-img-top {
     width: 95%;
@@ -57,27 +60,150 @@
     width: 2.5em;
     height: 2.5em;
     border-radius: 50%; }
-  .card .card-body .avatarSkin {
-    border: 3px solid #6fc7e1; }
-
-  width: 18em;
-}
-.card .card-img-top {
-  width: 95%;
-  height: 16em;
-  border-radius: 20px;
-}
-.card .card-body img {
-  width: 2.5em;
-  height: 2.5em;
-  border-radius: 50%;
-}
 
 .closeModalStructure {
   border-radius: 10px;
   width: 1.5em;
-  height: 1.5em;
-}
+  height: 1.5em; }
+
+.icons {
+  height: 20px; }
+
+.icons:hover {
+  cursor: pointer; }
+
+#loginLandingPage {
+  display: none; }
+
+.homePageDiscription em {
+  font-family: 'Fredoka One';
+  color: #FFA883; }
+
+.paraLogIn {
+  font-family: 'Fredoka One';
+  color: #6fc7e1; }
+
+.homeParaStartAdventure {
+  color: #A2C76A; }
+
+.arrowBtn {
+  color: #6fc7e1;
+  font-family: 'Fredoka One'; }
+
+.hideSeekExitMessage {
+  top: 10%;
+  left: 70%;
+  position: absolute;
+  font-family: 'Fredoka One'; }
+
+.hideSeekMessageText {
+  top: 30%;
+  left: 10%;
+  position: absolute;
+  color: #6fc7e1;
+  font-family: 'Fredoka One'; }
+
+.hideSeekExitMessage:hover {
+  cursor: pointer;
+  color: #FFA883; }
+
+#vineImg {
+  right: 0%;
+  top: 55%;
+  position: absolute;
+  height: 200px; }
+
+#signUpHomePage {
+  margin-left: 30px; }
+
+.logedInImg {
+  height: 300px;
+  margin-top: 50px;
+  margin-bottom: 200px; }
+
+#goToProfileBtn {
+  position: absolute;
+  left: 50%;
+  top: 80%;
+  transform: translate(-50%, -80%); }
+
+.foxFaceNav:hover {
+  cursor: pointer; }
+
+.missionThreeSplashText:hover {
+  cursor: pointer; }
+
+#footer {
+  background-color: #333;
+  height: 200px;
+  margin-top: 50px;
+  width: 100%; }
+
+.littleFoxFooter {
+  width: 200px;
+  height: 200px;
+  text-align: center;
+  float: left;
+  position: absolute;
+  left: 5%;
+  padding-top: 25px; }
+
+.footerList {
+  width: 200px;
+  height: 200px;
+  text-align: right;
+  float: left;
+  position: absolute;
+  right: 5%;
+  padding-top: 30px; }
+
+.footerList ul li {
+  font-size: 20px;
+  color: #ffffff;
+  font-family: 'Fredoka One';
+  margin-bottom: 20px; }
+
+.footerFoxImg {
+  height: 100px;
+  position: absolute;
+  left: 20%; }
+
+.footerBackToTop {
+  position: absolute;
+  left: 50%;
+  font-family: 'Fredoka One';
+  font-size: 30px;
+  color: #6fc7e1;
+  margin-top: 70px; }
+
+#aboutPage {
+  display: none !important;
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  position: relative;
+  transition: background 0.5s ease;
+  width: 100%;
+  background-color: #faf2e8; }
+
+.aboutTitle {
+  color: #FFA883;
+  font-family: 'Fredoka One';
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -10%); }
+
+.aboutPhoto {
+  height: 300px;
+  margin-top: 50px;
+  margin-bottom: 50px; }
+
+.aboutPageText {
+  color: #FFA883;
+  font-family: 'Fredoka One';
+  font-size: 25px;
+  margin-bottom: 50px; }
 
 h1 {
   font-family: "Fredoka One" !important;
@@ -107,11 +233,50 @@ h3 {
   background-color: none !important;
   color: #6fc7e1 !important; }
 
+.btn-about {
+  font-size: 20px;
+  font-family: "Fredoka One" !important;
+  border: none !important;
+  background-color: #6fc7e1 !important; }
+
 .btnPrimaryBlackFont {
   font-family: "Fredoka One" !important;
   border: none !important;
   background-color: #6fc7e1 !important;
   color: #000000 !important; }
+
+.hideAndSeekIcon {
+  border-radius: 25px !important;
+  background-color: #6fc7e1 !important;
+  height: 50px !important;
+  width: 50px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 10%;
+  top: 75%;
+  position: absolute; }
+
+.soundIcon {
+  border-radius: 25px !important;
+  background-color: #FFA883 !important;
+  height: 40px !important;
+  width: 40px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 30%;
+  top: 40%;
+  position: absolute; }
+
+.homePageArrowDownBtn {
+  border-radius: 25px !important;
+  background-color: #ffffff !important;
+  height: 30px !important;
+  width: 30px !important;
+  left: 50%;
+  transform: translate(-50%);
+  position: absolute; }
 
 .leftCornerDivNav {
   position: relative;
@@ -184,22 +349,333 @@ h3 {
 #yellowFox {
   display: none; }
 
+#hideAndSeekPopUp {
+  display: none; }
+
+#missionTwoSound {
+  display: none; }
+
+#missionThreeSound {
+  display: none; }
+
+#clickHereImg {
+  height: 80px;
+  left: 25%;
+  position: absolute; }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  80% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+.missionOneText {
+  animation: fadeIn 25s ease; }
+
+.missionTwoText {
+  animation: fadeIn 25s ease; }
+
+.missionThreeText {
+  animation: fadeIn 25s ease; }
+
+.missionImages {
+  margin-top: 50px; }
+
+.missionOneImg {
+  height: 450px; }
+
+.missionTwoImg, .missionThreeImg {
+  display: none;
+  height: 450px; }
+
+@keyframes shake {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg); }
+  25% {
+    transform: translate(-50%, -50%) rotate(3deg); }
+  50% {
+    transform: translate(-50%, -50%) rotate(0deg); }
+  75% {
+    transform: translate(-50%, -50%) rotate(3deg); }
+  100% {
+    transform: translate(-50%, -50%) rotate(0deg); } }
+
+@keyframes shakeLogin {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg); }
+  25% {
+    transform: translate(-50%, -50%) rotate(3deg); }
+  50% {
+    transform: translate(-50%, -50%) rotate(0deg); }
+  75% {
+    transform: translate(-50%, -50%) rotate(3deg); }
+  100% {
+    transform: translate(-50%, -50%) rotate(0deg); } }
+
+.missionOneSplash {
+  display: none;
+  width: 200px;
+  height: 200px;
+  background-color: #ffffff;
+  top: 35%;
+  left: 60%;
+  position: absolute;
+  clip-path: url(#missionOneSplash); }
+
+.missionOneSplashText {
+  margin-top: 45px;
+  font-family: "Fredoka One" !important;
+  color: #FFA883 !important;
+  font-size: 1.5rem !important; }
+
+.missionOneSplashText:hover, .missionTwoSplashText:hover {
+  cursor: pointer; }
+
+.missionTwoSplash {
+  display: none;
+  width: 200px;
+  height: 200px;
+  background-color: #ffffff;
+  top: 35%;
+  left: 35%;
+  position: absolute;
+  clip-path: url(#missionTwoSplash); }
+
+.missionTwoSplashText {
+  margin-top: 70px;
+  font-family: "Fredoka One" !important;
+  color: #FFA883 !important;
+  font-size: 1.5rem !important; }
+
+.missionThreeSplash {
+  display: none;
+  width: 200px;
+  height: 200px;
+  background-color: #ffffff;
+  top: 35%;
+  left: 60%;
+  position: absolute;
+  clip-path: url(#missionThreeSplash); }
+
+.missionThreeSplashText {
+  margin-top: 60px;
+  font-family: "Fredoka One" !important;
+  color: #A2C76A !important;
+  font-size: 1.5rem !important; }
+
+.messagePopUp {
+  z-index: 20;
+  width: 200px;
+  height: 200px;
+  background-color: #ffffff;
+  top: 50%;
+  left: 10%;
+  position: absolute;
+  clip-path: url(#hideSeekPopUp); }
+
+.hideSeekPopUpImg {
+  height: 270px;
+  top: 42%;
+  left: 8%;
+  position: absolute; }
+
+#signUpPage {
+  display: none !important;
+  height: 100vh;
+  display: flex;
+  position: relative;
+  transition: background 0.5s ease;
+  width: 100%;
+  background-color: #faf2e8; }
+
+.signUpPageText {
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -30%);
+  position: absolute;
+  text-align: center;
+  font-family: "Fredoka One" !important;
+  color: #FFA883 !important;
+  font-size: 1.5rem !important; }
+
+.emailText {
+  display: none; }
+
+.emailText em {
+  color: #6fc7e1; }
+
+.emailText em:hover {
+  color: #000000; }
+
+.passwordText {
+  display: none; }
+
+#errorMessage {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -55%);
+  height: 30px;
+  width: 400px;
+  color: #333;
+  text-align: center;
+  display: none; }
+
+#signUpPassword {
+  display: none;
+  font-family: "Fredoka One" !important;
+  color: tomato !important;
+  font-size: 1rem !important; }
+
+#signUpUserName {
+  display: none;
+  font-family: "Fredoka One" !important;
+  color: tomato !important;
+  font-size: 1rem !important; }
+
+#signUpEmail {
+  display: none;
+  font-family: "Fredoka One" !important;
+  color: tomato !important;
+  font-size: 1rem !important; }
+
+.signUpForm {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -60%); }
+
+.fieldName, .fieldEmail, .fieldPassword {
+  padding: 10px;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -60%);
+  background: #FFF7ED;
+  height: 50px;
+  width: 400px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+  border: 2px solid #6fc7e1;
+  transition: all 0.5s ease; }
+
+.fieldName i, .fieldEmail i, .fieldPassword i,
+.fieldNameLogin i, .fieldPasswordLogin i {
+  padding: 20px; }
+
+.fa-arrow-down {
+  cursor: pointer; }
+
+.fieldName input, .fieldEmail input, .fieldPassword input,
+.fieldNameLogin input, .fieldPasswordLogin input {
+  background: none;
+  border: none;
+  outline: none;
+  height: 100%;
+  flex: 1;
+  width: 400px; }
+
+div.inactive {
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, 50%); }
+
+div.active {
+  opacity: 1;
+  pointer-events: all;
+  transform: translate(-50%, -50%); }
+
+.flowerLogin {
+  height: 300px;
+  position: absolute;
+  right: 10%;
+  bottom: 0%; }
+
+.loginFlower {
+  height: 300px;
+  position: absolute;
+  left: 10%;
+  bottom: 0%; }
+
+#signUpSubmitBtn {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -70%);
+  display: none; }
+
+.thankYouMessage {
+  display: none;
+  width: 400px;
+  height: 500px; }
+
+.modalFoxImg {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  height: 100px; }
+
+#loginPage {
+  display: none !important;
+  height: 100vh;
+  display: flex;
+  position: relative;
+  transition: background 0.5s ease;
+  width: 100%;
+  background-color: #faf2e8; }
+
+.fieldPasswordLogin, .fieldNameLogin {
+  padding: 10px;
+  background: #FFF7ED;
+  height: 50px;
+  width: 400px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+  border: 2px solid #6fc7e1; }
+
+.fieldNameLogin {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -40%); }
+
+.fieldPasswordLogin {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+
+#loginFormBtn {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -60%); }
+
+.loginPageText {
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -30%);
+  position: absolute;
+  text-align: center;
+  font-family: "Fredoka One" !important;
+  color: #FFA883 !important;
+  font-size: 1.5rem !important; }
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   text-decoration: none; }
 
-
 button {
   background: none;
   border: none; }
 
-.btn-warning {
-  font-family: "Fredoka One" !important;
-  border: none !important;
-  background-color: #FFA883 !important;
-}
-
-/*# sourceMappingURL=style.css.map */
-
+a, a:hover, a:focus, a:active {
+  text-decoration: none;
+  color: inherit; }

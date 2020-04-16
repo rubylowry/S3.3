@@ -112,6 +112,15 @@ app.post('/loginUser', (req, res) =>{
 // =========  code from Jake start
 // code from Jake end here
 
+
+
+
+
+
+
+
+
+
 //========== code from Ruby start
 
 //get all posts
