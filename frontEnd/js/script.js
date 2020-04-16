@@ -1,109 +1,97 @@
-//Javascript for navbar and main homePage animations
+$('#registerForm').submit(function(){
 
-//hide and seek animation
-$("#hidePlants").click(function(){
-  $("#hidePlants").hide();
-});
+  event.preventDefault();
 
-$("#hideLion").click(function(){
-  $("#hidePlants").show();
-  $("#hideSeal").show();
-  $("#hideLion").hide();
-});
+  let username = $('#regUserName').val();
+  let email = $('#regEmail').val();
+  let password = $('#regPassword').val();
 
-$("#hideSeal").click(function(){
-  $("#hidePlants").show();
-  $("#hideLion").show();
-  $("#hideSeal").hide();
-});
+  console.log(username,email, password);
+  if (username == '' || email == '' || password == ''){
+    alert('Please enter all details');
+  } else {
 
-// End of hide and seek animation
-//fox animation
-$("#orangeCircle").click(function(){
-  $("#orangeFox").show();
-  $("#purpleFox").hide();
-  $("#blueFox").hide();
-  $("#yellowFox").hide();
-});
+  $.ajax({
+    url :`${url}/registerUser`,
+    type :'POST',
+    data:{
+      username : username,
+      email : email,
+      password : password
+      },
 
-$("#purpleCircle").click(function(){
-  $("#purpleFox").show();
-  $("#orangeFox").hide();
-  $("#blueFox").hide();
-  $("#yellowFox").hide();
-});
+    success : function(user){
+      console.log(user);
+      if (!(user == 'username taken already. Please try another one')) {
+        alert('You successfully signed up');
+        $('#loginBtn').show();
+        $('#registerBtn').hide();
+        $('#registerForm').hide();
+      } else {
+        alert('username taken already. Please try another one');
+        $('#regUserName').val('');
+        $('#regEmail').val('');
+        $('#regPassword').val('');
 
-$("#blueCircle").click(function(){
-  $("#blueFox").show();
-  $("#orangeFox").hide();
-  $("#purpleFox").hide();
-  $("#yellowFox").hide();
-});
+      }
 
-$("#yellowCircle").click(function(){
-  $("#yellowFox").show();
-  $("#orangeFox").hide();
-  $("#purpleFox").hide();
-  $("#blueFox").hide();
-});
-
-//End of fox animation
+    },//success
+    error:function(){
+      console.log('error: cannot call api');
+    }//error
 
 
+  });//ajax
+
+}//else
+});//submit function for registerForm
 
 
-//End of Javascript for navbar and main homePage animations
-
-
-// start of mission sound animations
-
-
-      $("#missionOneSound").click(function(){
-        var audio = new Audio("assets/mission1Sound.mp3");
-          audio.play();
-        $(".missionOneSplash").show();
-        $(".missionOneSplash").addClass("missionOneText");
-      });
-
-
-      $(".missionOneSplashText").click(function(){
-        $(".missionTwoImg").show();
-        $("#missionTwoSound").show();
-        $(".missionOneSplash").hide();
-        $(".missionOneImg").hide();
-        $("#missionOneSound").hide();
-      });
-
-      $("#missionTwoSound").click(function(){
-        var audio = new Audio("assets/mission2Sound.mp3");
-          audio.play();
-
-          $(".missionTwoSplash").show();
-          $(".missionTwoSplash").addClass("missionTwoText");
-      });
-
-      $(".missionTwoSplashText").click(function(){
-        $(".missionThreeImg").show();
-        $("#missionThreeSound").show();
-        $(".missionTwoSplash").hide();
-        $(".missionTwoImg").hide();
-        $("#missionTwoSound").hide();
-        console.log("i am clicked");
-      });
-
-      $("#missionThreeSound").click(function(){
-        var audio = new Audio("assets/mission3Sound.mp3");
-        audio.play();
-
-        $(".missionThreeSplash").show();
-        $(".missionThreeSplash").addClass("missionThreeText");
-      });
-
-
-
-
-// end of misiion sound animations
-
+$('#loginForm').submit(function(){
+  event.preventDefault();
+  let username = $('#loginUserName').val();
+  let password = $('#loginPassword').val();
+  console.log(username, password);
+  if (username == '' || password == ''){
+    alert('Please enter all details');
+  } else {
+  $.ajax({
+    url :`${url}/loginUser`,
+    type :'POST',
+    data:{
+      username : username,
+      password : password
+      },
+    success : function(user){
+      console.log(user);
+      if (user == 'user not found. Please register'){
+      alert('user not found. Please enter correct data or register a new user');
+      } else if (user == 'not authorized'){
+        alert('Please try with correct details');
+        $('#username').val('');
+        $('#password').val('');
+      } else{
+         $('#loginPage').hide();
+         $('#logouthomePage').show();
+         // when shown after login/sign up forms colums of home-container display in one col
+         $('#homePage').show();
+         $('#landingPage').hide();
+         $('#loginLandingPage').show();
+        sessionStorage.setItem('userID', user['_id']);
+        sessionStorage.setItem('userName',user['username']);
+        sessionStorage.setItem('userEmail',user['email']);
+        console.log(sessionStorage);
+        $('#profileBtn').show();
+        $('#signUpHomePage').hide();
+        $('#logInHomePage').hide();
+      }
+    },//success
+    error:function(){
+      console.log('error: cannot call api');
+    }//error
+  });//ajax
+}//else
+});//submit function for login loginForm
 
 // start of form animation and form validation
 
@@ -160,12 +148,17 @@ $("#signUpData").click(function(){
 //end of login /sign up navigation
 
 $("#signUpSubmitBtn").click(function(){
-    var username = $("#username").val();
-    var useremail = $("#email").val();
-    var userpassword = $("#password").val();
-    console.log(username);
-    console.log(useremail);
-    console.log(userpassword);
+    $("#loginPage").attr('style',"display: block !important")
+    $("#signUpPage").attr('style',"display: none !important");
+    $("#aboutPage").attr('style',"display: none !important");
+    $("#homePage").hide();
+    $(".navBlock").hide();
+    // var username = $("#username").val();
+    // var useremail = $("#email").val();
+    // var userpassword = $("#password").val();
+    // console.log(username);
+    // console.log(useremail);
+    // console.log(userpassword);
 });
 
 
@@ -196,32 +189,29 @@ function animatedForm(){
 			}else{
 				parent.style.animation = "shake 0.6s ease";
 			}
-
-
 			parent.addEventListener('animationend', () =>{
 				parent.style.animation = "";
 			});
-
 		});
 	});
 }
 
-
-
 function validateUser(user){
-		const validateUserName = /^\w{6,30}$/;
-		if (validateUserName.test(user.value)){
-			success();
-			$('#errorMessage').hide();
-			$('#signUpUserName').hide();
-      $(".userNameText").hide();
-      $(".emailText").show();
-			return true;
-		}else {
+    const minUserNameLength = 6;
+    
+		if (user.value.length < minUserNameLength){
 			error();
 			$('#errorMessage').show();
-			$('#signUpUserName').show();
+      $('#signUpUserName').show();
+      return false;
 		}
+    
+    success();
+    $('#errorMessage').hide();
+    $('#signUpUserName').hide();
+    $(".userNameText").hide();
+    $(".emailText").show();
+    return true;
 }
 
 function validateEmail(email){
@@ -290,57 +280,56 @@ animatedForm();
 
 //Natalia's code
 
-function renderCardHomePage(){
-    document.getElementById('communityPhotos').innerHTML = `<div class="col-md-4">
+function urlReady(){
+  loadPostsHomePage();
+}
+communityPosts = [];
+function loadPostsHomePage(){
+  document.getElementById('communityPhotos').innerHTML='';
+  $.ajax({
+    url :`${url}/allPosts`,
+    type :'GET',
+    success : function(posts){
+      communityPosts = posts;
+      for(var i = 0; i< posts.length; i++){
+        renderCardHomePage(posts[i]);
+      }
+    },
+    error: function(){
+
+    }
+  });
+}
+
+function renderCardHomePage(post){
+  const viewButtonId = "btnView" + post._id;
+    document.getElementById('communityPhotos').innerHTML += `<div class="col-md-4">
     <div class="card cardSkin mb-4">
-      <svg class="bd-placeholder-img card-img-top m-2" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+      <svg class="bd-placeholder-img card-img-top m-2" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>${post.title}</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
       <div class="card-body">
-        <div><img class="avatarSkin d-inline" src="assets/avatar-natalia.jpg"><h2 class="d-inline ml-1">Username</h2></div>
-        <p class="card-text">This is a wider card with supporting text</p>
+        <div><img class="avatarSkin d-inline" src="assets/avatar-natalia.jpg"><h2 class="d-inline ml-1">${post.username}</h2></div>
+        <p class="card-text">${post.description}</p>
         <div class="text-right">
           <div>
-            <button type="button" class="btn btn-sm btnPrimaryBlackFont">View</button>
+            <button id="${viewButtonId}" class="btn btn-sm btnPrimaryBlackFont" onclick="openModalViewPostHomePage('${post._id}')">View</button>
           </div>
         </div>
       </div>
     </div>
-  </div>`
+  </div>`;
 }
 
-
-
-//not completed - requires styling by Natalia
-function renderCardProfilePage(){
-  document.getElementById('communityPhotosProfilePage').innerHTML = `
-
-  
-//   <div class="card cardSkin containerImg">
-//   <img src="card-img-top m-2" src="https://drive.google.com/uc?export=view&id=12rbthUs_tRTDY4dYBuj5mmxwrj5NaP4V" alt="Card image cap">
-//   <div class=containerButton><button class="btn btn-primary">Button</button><div>
-// </div>
-`
-  
-  // <div class="container">
-  // <div class="cardStructure">
-  // <img class="card-img-top m-2" src="https://drive.google.com/uc?export=view&id=12rbthUs_tRTDY4dYBuj5mmxwrj5NaP4V" alt="Card image cap">
-  //   <button href="#" class="btn btn-primary buttonOverlay">View post</button>
-  // </div>
-  // </div>
-  
-}
-
-renderCardHomePage();
-// renderCardProfilePage();
 
 //modal home page
-
-function openModalViewPost(){
+//            <svg class="bd-placeholder-img card-img-top m-2" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>${post.title}</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+function openModalViewPostHomePage(postId){
+  let post = communityPosts.filter(p => p._id == postId)[0];
   //we need to show modal with class modal
-return `<div class="modal" id="myModal" tabindex="-1" role="dialog">
+let modalBody = `<div class="modal" id="myModal" tabindex="-1" role="dialog">
 <div class="modal-dialog modal-lg" role="document">
   <div class="modal-content">
     <div class="modal-header">
-      <h5 class="modal-title">Modal title</h5>
+      <h5 class="modal-title">${post.title}</h5>
       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
         <div class="closeModalSkin closeModalStructure" aria-hidden="true">&times;</div>
       </button>
@@ -350,10 +339,10 @@ return `<div class="modal" id="myModal" tabindex="-1" role="dialog">
       <div class="row">
         <div class="col-md-4 mr-4">
           <div class="card borderNone mb-4">
-            <svg class="bd-placeholder-img card-img-top m-2" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+            <img src="${post.imageUrl}" class="bd-placeholder-img card-img-top m-2" />
             <div class="card-body">
-              <div><img class="avatarSkin d-inline" src="assets/avatar-natalia.jpg"><h2 class="d-inline ml-1">Username</h2></div>
-              <p class="card-text">This is a wider card with supporting text</p>
+              <div><img class="avatarSkin d-inline" src="assets/avatar-natalia.jpg"><h2 class="d-inline ml-1">${post.username}</h2></div>
+              <p class="card-text">${post.description}</p>
               <div class="text-right">
               </div>
             </div>
@@ -380,14 +369,29 @@ return `<div class="modal" id="myModal" tabindex="-1" role="dialog">
     </div>
   </div>
 </div>
-</div>`
+</div>`;
+
+$('#myModalContainer').html(modalBody);
+$('#myModal').modal();
 }
 
-$('#btnViewHomeTest').click(function(){
-  $('#myModalContainer').html(openModalViewPost());
-  $('#myModal').modal();
-});
-
+//not completed - requires styling by Natalia
+function renderCardProfilePage(){
+  document.getElementById('communityPhotosProfilePage').innerHTML = `
+  
+//   <div class="card cardSkin containerImg">
+//   <img src="card-img-top m-2" src="https://drive.google.com/uc?export=view&id=12rbthUs_tRTDY4dYBuj5mmxwrj5NaP4V" alt="Card image cap">
+//   <div class=containerButton><button class="btn btn-primary">Button</button><div>
+// </div>
+`
+  // <div class="container">
+  // <div class="cardStructure">
+  // <img class="card-img-top m-2" src="https://drive.google.com/uc?export=view&id=12rbthUs_tRTDY4dYBuj5mmxwrj5NaP4V" alt="Card image cap">
+  //   <button href="#" class="btn btn-primary buttonOverlay">View post</button>
+  // </div>
+  // </div>
+  
+}
 //Natalia's code ENDS
 
 
@@ -406,6 +410,7 @@ $.ajax({
   success : function(configData){
     // console.log(configData);
     url = `${configData.SERVER_URL}:${configData.SERVER_PORT}`;
+    urlReady();
     // console.log(url);
   },//success
   error:function(){
@@ -431,10 +436,7 @@ $(document).ready(function(){
   // Add Post -- done
   // Delete Post -- done
   // Update Post -- done
-
-
-
-
+  $('#logouthomePage').hide();
   if (sessionStorage['userName']) {
     console.log('You are logged in');
     showUserName(sessionStorage.userName);
@@ -611,8 +613,6 @@ function showUserName(name){
 
 //James code ENDS
 
-<<<<<<< Updated upstream
-=======
 //Javascript for navbar and main homePage animations
 
 //hide and seek animation
@@ -706,9 +706,3 @@ $("#missionThreeSound").click(function(){
   $(".missionThreeSplash").show();
   $(".missionThreeSplash").addClass("missionThreeText");
 });
-
-
-
-
-// end of misiion sound animations
->>>>>>> Stashed changes

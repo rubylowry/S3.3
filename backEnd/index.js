@@ -49,7 +49,7 @@ app.post('/registerUser', (req,res)=>{
         username : req.body.username,
         email : req.body.email,
         password :hash,
-        avatar : req.body.avatar
+        // avatar : req.body.avatar
       });
       user.save().then(result =>{
         res.send(result);
@@ -84,7 +84,6 @@ app.post('/loginUser', (req, res) =>{
 //Natalia's code ENDS
 
 //Ruby's code START
-=======
 // ========= code from Natalia end here
 
 
@@ -104,18 +103,10 @@ app.post('/addPost/', (req,res)=>{
 	const dbPost = new Post({
     _id : new mongoose.Types.ObjectId,
     username: req.body.username,
-		title : req.body.title,
-		description : req.body.description,
-<<<<<<< Updated upstream
-    image : req.body.image,
-    user_id: req.body.userId
-=======
     imageUrl : req.body.imageUrl,
     date : String,
-    comments : Array,
-    user_id: req.body.userId,
->>>>>>> Stashed changes
-    });
+    comments : Array
+  });
     //save to database and notify the user accordingly
     dbPost.save().then(result =>{
     res.send(result);
@@ -235,6 +226,4 @@ app.patch('/updatePost/:id',(req,res)=>{
 });
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
-//James's code ENDS
-//keep this always at the bottom so that you can see the errors reported
-app.listen(port, () => console.log(`Mongodb app listening on port ${port}!`))
+
