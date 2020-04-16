@@ -64,9 +64,9 @@ $('#loginForm').submit(function(){
       },
     success : function(user){
       console.log(user);
-      if (user == 'user not found. Please register'){
+      if (user == 'User not found. Please register'){
       alert('user not found. Please enter correct data or register a new user');
-      } else if (user == 'not authorized'){
+      } else if (user == 'Not Authorized'){
         alert('Please try with correct details');
         $('#username').val('');
         $('#password').val('');
