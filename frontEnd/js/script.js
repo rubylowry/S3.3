@@ -323,7 +323,7 @@ function renderCardProfilePage(){
 }
 
 renderCardHomePage();
-renderCardProfilePage();
+// renderCardProfilePage();
 
 //modal home page
 
