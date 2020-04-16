@@ -145,6 +145,27 @@
 
     }
 
+    #signUpSubmitBtn{
+      position: absolute;
+      top: 60%;
+      left: 50%;
+      transform: translate(-50%,-70%);
+      display: none;
+    }
+
+    .thankYouMessage{
+      display: none;
+      width: 400px;
+      height: 500px;
+    }
+
+    .modalFoxImg{
+      margin-top: 40px;
+      margin-bottom: 40px;
+      height: 100px;
+    }
+
+
     // end of sign up form
 
 

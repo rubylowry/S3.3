@@ -21,42 +21,36 @@
   font-family: 'Fredoka One';
   src: url("../fonts/FredokaOne-Regular.woff2") format("woff2"), url("FredokaOne-Regular.woff") format("woff");
   font-weight: normal;
-
   font-style: normal; }
 
-.card {
-
-  font-style: normal;
-}
 .modal-content {
-  border: 3px solid #000000;
-}
+  border: 3px solid #000000; }
 
 .borderNone {
-  border: none !important;
-}
+  border: none !important; }
 
 .cardSkin {
-  border: 2px solid #6fc7e1;
-}
+  border: 2px solid #6fc7e1; }
 
 .avatarSkin {
-  border: 3px solid #6fc7e1;
-}
+  border: 3px solid #6fc7e1; }
 
 .closeModalSkin {
-
   border: 2px solid #6fc7e1;
-  background-color: #6fc7e1;
-}
+  background-color: #6fc7e1; }
 
 .form-control {
-  border: 1px solid #000000 !important;
-}
+  border: 1px solid #000000 !important; }
+
+.cardStructure {
+  position: relative; }
+
+.containerImage .container {
+  position: relative;
+  width: 50%; }
 
 .card {
   border-radius: 20px;
-
   width: 18em; }
   .card .card-img-top {
     width: 95%;
@@ -66,14 +60,48 @@
     width: 2.5em;
     height: 2.5em;
     border-radius: 50%; }
-  .card .card-body .avatarSkin {
-    border: 3px solid #6fc7e1; }
+
+.closeModalStructure {
+  border-radius: 10px;
+  width: 1.5em;
+  height: 1.5em; }
+
+/* Container needed to position the button. Adjust the width as needed */
+.container {
+  position: relative;
+  width: 50%; }
+
+/* Make the image responsive */
+.container img {
+  width: 100%;
+  height: auto; }
+
+/* Style the button and place it in the middle of the container/image */
+.container .btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: #555;
+  color: white;
+  font-size: 16px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px; }
+
+.container .btn:hover {
+  background-color: black; }
 
 .icons {
   height: 20px; }
 
 .icons:hover {
   cursor: pointer; }
+
+#loginLandingPage {
+  display: none; }
 
 .homePageDiscription em {
   font-family: 'Fredoka One';
@@ -115,24 +143,95 @@
 
 #signUpHomePage {
   margin-left: 30px; }
-  width: 18em;
-}
-.card .card-img-top {
-  width: 95%;
-  height: 16em;
-  border-radius: 20px;
-}
-.card .card-body img {
-  width: 2.5em;
-  height: 2.5em;
-  border-radius: 50%;
-}
 
-.closeModalStructure {
-  border-radius: 10px;
-  width: 1.5em;
-  height: 1.5em;
-}
+.logedInImg {
+  height: 300px;
+  margin-top: 50px;
+  margin-bottom: 200px; }
+
+#goToProfileBtn {
+  position: absolute;
+  left: 50%;
+  top: 80%;
+  transform: translate(-50%, -80%); }
+
+.foxFaceNav:hover {
+  cursor: pointer; }
+
+.missionThreeSplashText:hover {
+  cursor: pointer; }
+
+#footer {
+  background-color: #333;
+  height: 200px;
+  margin-top: 50px;
+  width: 100%; }
+
+.littleFoxFooter {
+  width: 200px;
+  height: 200px;
+  text-align: center;
+  float: left;
+  position: absolute;
+  left: 5%;
+  padding-top: 25px; }
+
+.footerList {
+  width: 200px;
+  height: 200px;
+  text-align: right;
+  float: left;
+  position: absolute;
+  right: 5%;
+  padding-top: 30px; }
+
+.footerList ul li {
+  font-size: 20px;
+  color: #ffffff;
+  font-family: 'Fredoka One';
+  margin-bottom: 20px; }
+
+.footerFoxImg {
+  height: 100px;
+  position: absolute;
+  left: 20%; }
+
+.footerBackToTop {
+  position: absolute;
+  left: 50%;
+  font-family: 'Fredoka One';
+  font-size: 30px;
+  color: #6fc7e1;
+  margin-top: 70px; }
+
+#aboutPage {
+  display: none !important;
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  position: relative;
+  transition: background 0.5s ease;
+  width: 100%;
+  background-color: #faf2e8; }
+
+.aboutTitle {
+  color: #FFA883;
+  font-family: 'Fredoka One';
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -10%); }
+
+.aboutPhoto {
+  height: 300px;
+  margin-top: 50px;
+  margin-bottom: 50px; }
+
+.aboutPageText {
+  color: #FFA883;
+  font-family: 'Fredoka One';
+  font-size: 25px;
+  margin-bottom: 50px; }
 
 h1 {
   font-family: "Fredoka One" !important;
@@ -162,11 +261,22 @@ h3 {
   background-color: none !important;
   color: #6fc7e1 !important; }
 
+.btn-about {
+  font-size: 20px;
+  font-family: "Fredoka One" !important;
+  border: none !important;
+  background-color: #6fc7e1 !important; }
+
 .btnPrimaryBlackFont {
   font-family: "Fredoka One" !important;
   border: none !important;
   background-color: #6fc7e1 !important;
   color: #000000 !important; }
+
+.btn-warning {
+  font-family: "Fredoka One" !important;
+  border: none !important;
+  background-color: #FFA883 !important; }
 
 .hideAndSeekIcon {
   border-radius: 25px !important;
@@ -524,6 +634,23 @@ div.active {
   left: 10%;
   bottom: 0%; }
 
+#signUpSubmitBtn {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -70%);
+  display: none; }
+
+.thankYouMessage {
+  display: none;
+  width: 400px;
+  height: 500px; }
+
+.modalFoxImg {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  height: 100px; }
+
 #loginPage {
   display: none !important;
   height: 100vh;
@@ -578,18 +705,9 @@ div.active {
   box-sizing: border-box;
   text-decoration: none; }
 
-
 button {
   background: none;
   border: none; }
-
-.btn-warning {
-  font-family: "Fredoka One" !important;
-  border: none !important;
-  background-color: #FFA883 !important;
-}
-
-/*# sourceMappingURL=style.css.map */
 
 a, a:hover, a:focus, a:active {
   text-decoration: none;
