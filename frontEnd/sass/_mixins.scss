@@ -55,6 +55,11 @@ h3{
   height:$h!important;
   width:$w!important;
 }
+.profileNavBtn{
+  @include iconSkin(10px, $mainLightBlue,70px,70px);
+  text-align: center;
+}
+
 
 .hideAndSeekIcon{
   @include iconSkin(25px, $mainLightBlue,50px,50px);

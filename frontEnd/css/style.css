@@ -1,5 +1,6 @@
 .navbar, .jumbotron {
-  background-color: #faf2e8; }
+  background-color: #faf2e8;
+}
 
 .navbar {
   z-index: 1000;
@@ -11,70 +12,90 @@
   width: 100%;
   box-shadow: none !important;
   display: flex;
-  justify-content: space-between; }
+  justify-content: space-between;
+}
 
 .navBlock {
   height: 150px;
-  width: 100%; }
+  width: 100%;
+}
 
 @font-face {
-  font-family: 'Fredoka One';
+  font-family: "Fredoka One";
   src: url("../fonts/FredokaOne-Regular.woff2") format("woff2"), url("FredokaOne-Regular.woff") format("woff");
   font-weight: normal;
-  font-style: normal; }
-
+  font-style: normal;
+}
 .modal-content {
-  border: 3px solid #000000; }
+  border: 3px solid #000000;
+}
 
 .borderNone {
-  border: none !important; }
+  border: none !important;
+}
 
 .cardSkin {
-  border: 2px solid #6fc7e1; }
+  border: 2px solid #6fc7e1;
+}
 
 .avatarSkin {
-  border: 3px solid #6fc7e1; }
+  border: 3px solid #6fc7e1;
+}
 
 .closeModalSkin {
   border: 2px solid #6fc7e1;
-  background-color: #6fc7e1; }
+  background-color: #6fc7e1;
+}
 
 .form-control {
-  border: 1px solid #000000 !important; }
+  border: 1px solid #000000 !important;
+}
+
+.signUpModalText {
+  margin: 0 auto;
+}
 
 .cardStructure {
-  position: relative; }
+  position: relative;
+}
 
 .containerImage .container {
   position: relative;
-  width: 50%; }
+  width: 50%;
+}
 
 .card {
   border-radius: 20px;
-  width: 18em; }
-  .card .card-img-top {
-    width: 95%;
-    height: 16em;
-    border-radius: 20px; }
-  .card .card-body img {
-    width: 2.5em;
-    height: 2.5em;
-    border-radius: 50%; }
+  width: 18em;
+}
+.card .card-img-top {
+  width: 95%;
+  height: 16em;
+  border-radius: 20px;
+}
+.card .card-body img {
+  width: 2.5em;
+  height: 2.5em;
+  border-radius: 50%;
+}
 
 .closeModalStructure {
   border-radius: 10px;
   width: 1.5em;
-  height: 1.5em; }
+  height: 1.5em;
+}
 
 /* Container needed to position the button. Adjust the width as needed */
 .container {
   position: relative;
-  width: 50%; }
+  width: 50%;
+}
 
 /* Make the image responsive */
 .container img {
   width: 100%;
-  height: auto; }
+  height: auto;
+}
 
 /* Style the button and place it in the middle of the container/image */
 .container .btn {
@@ -89,83 +110,102 @@
   padding: 12px 24px;
   border: none;
   cursor: pointer;
-  border-radius: 5px; }
+  border-radius: 5px;
+}
 
 .container .btn:hover {
-  background-color: black; }
+  background-color: black;
+}
 
 .icons {
-  height: 20px; }
+  height: 20px;
+}
 
 .icons:hover {
-  cursor: pointer; }
+  cursor: pointer;
+}
 
 #loginLandingPage {
-  display: none; }
+  display: none;
+}
 
 .homePageDiscription em {
-  font-family: 'Fredoka One';
-  color: #FFA883; }
+  font-family: "Fredoka One";
+  color: #FFA883;
+}
 
 .paraLogIn {
-  font-family: 'Fredoka One';
-  color: #6fc7e1; }
+  font-family: "Fredoka One";
+  color: #6fc7e1;
+}
 
 .homeParaStartAdventure {
-  color: #A2C76A; }
+  color: #A2C76A;
+}
 
 .arrowBtn {
   color: #6fc7e1;
-  font-family: 'Fredoka One'; }
+  font-family: "Fredoka One";
+}
 
 .hideSeekExitMessage {
   top: 10%;
   left: 70%;
   position: absolute;
-  font-family: 'Fredoka One'; }
+  font-family: "Fredoka One";
+}
 
 .hideSeekMessageText {
   top: 30%;
   left: 10%;
   position: absolute;
   color: #6fc7e1;
-  font-family: 'Fredoka One'; }
+  font-family: "Fredoka One";
+}
 
 .hideSeekExitMessage:hover {
   cursor: pointer;
-  color: #FFA883; }
+  color: #FFA883;
+}
 
 #vineImg {
   right: 0%;
   top: 55%;
   position: absolute;
-  height: 200px; }
+  height: 200px;
+}
 
 #signUpHomePage {
-  margin-left: 30px; }
+  margin-left: 30px;
+}
 
 .logedInImg {
   height: 300px;
   margin-top: 50px;
-  margin-bottom: 200px; }
+  margin-bottom: 200px;
+}
 
 #goToProfileBtn {
   position: absolute;
   left: 50%;
   top: 80%;
-  transform: translate(-50%, -80%); }
+  transform: translate(-50%, -80%);
+}
 
 .foxFaceNav:hover {
-  cursor: pointer; }
+  cursor: pointer;
+}
 
 .missionThreeSplashText:hover {
-  cursor: pointer; }
+  cursor: pointer;
+}
 
 #footer {
   background-color: #333;
   height: 200px;
   margin-top: 50px;
-  width: 100%; }
+  width: 100%;
+}
 
 .littleFoxFooter {
   width: 200px;
@@ -174,7 +214,8 @@
   float: left;
   position: absolute;
   left: 5%;
-  padding-top: 25px; }
+  padding-top: 25px;
+}
 
 .footerList {
   width: 200px;
@@ -183,26 +224,30 @@
   float: left;
   position: absolute;
   right: 5%;
-  padding-top: 30px; }
+  padding-top: 30px;
+}
 
 .footerList ul li {
   font-size: 20px;
   color: #ffffff;
-  font-family: 'Fredoka One';
-  margin-bottom: 20px; }
+  font-family: "Fredoka One";
+  margin-bottom: 20px;
+}
 
 .footerFoxImg {
   height: 100px;
   position: absolute;
-  left: 20%; }
+  left: 20%;
+}
 
 .footerBackToTop {
   position: absolute;
   left: 50%;
-  font-family: 'Fredoka One';
+  font-family: "Fredoka One";
   font-size: 30px;
   color: #6fc7e1;
-  margin-top: 70px; }
+  margin-top: 70px;
+}
 
 #aboutPage {
   display: none !important;
@@ -212,71 +257,91 @@
   position: relative;
   transition: background 0.5s ease;
   width: 100%;
-  background-color: #faf2e8; }
+  background-color: #faf2e8;
+}
 
 .aboutTitle {
   color: #FFA883;
-  font-family: 'Fredoka One';
+  font-family: "Fredoka One";
   position: absolute;
   top: 10%;
   left: 50%;
-  transform: translate(-50%, -10%); }
+  transform: translate(-50%, -10%);
+}
 
 .aboutPhoto {
   height: 300px;
   margin-top: 50px;
-  margin-bottom: 50px; }
+  margin-bottom: 50px;
+}
 
 .aboutPageText {
   color: #FFA883;
-  font-family: 'Fredoka One';
+  font-family: "Fredoka One";
   font-size: 25px;
-  margin-bottom: 50px; }
+  margin-bottom: 50px;
+}
 
 h1 {
   font-family: "Fredoka One" !important;
   color: #FFA883 !important;
-  font-size: 2em !important; }
+  font-size: 2em !important;
+}
 
 h2 {
   font-family: "Fredoka One" !important;
   color: #000000 !important;
-  font-size: 1em !important; }
+  font-size: 1em !important;
+}
 
 h3 {
   font-family: "Fredoka One" !important;
   color: #FFA883 !important;
-  font-size: 1em !important; }
+  font-size: 1em !important;
+}
 
 .btn-primary {
   font-size: 20px;
   font-family: "Fredoka One" !important;
   border: none !important;
-  background-color: #6fc7e1 !important; }
+  background-color: #6fc7e1 !important;
+}
 
 .btn-login {
   font-size: 20px;
   font-family: "Fredoka One" !important;
   border: none !important;
   background-color: none !important;
-  color: #6fc7e1 !important; }
+  color: #6fc7e1 !important;
+}
 
 .btn-about {
   font-size: 20px;
   font-family: "Fredoka One" !important;
   border: none !important;
-  background-color: #6fc7e1 !important; }
+  background-color: #6fc7e1 !important;
+}
 
 .btnPrimaryBlackFont {
   font-family: "Fredoka One" !important;
   border: none !important;
   background-color: #6fc7e1 !important;
-  color: #000000 !important; }
+  color: #000000 !important;
+}
 
 .btn-warning {
   font-family: "Fredoka One" !important;
   border: none !important;
-  background-color: #FFA883 !important; }
+  background-color: #FFA883 !important;
+}
+
+.profileNavBtn {
+  border-radius: 10px !important;
+  background-color: #6fc7e1 !important;
+  height: 70px !important;
+  width: 70px !important;
+  text-align: center;
+}
 
 .hideAndSeekIcon {
   border-radius: 25px !important;
@@ -288,7 +353,8 @@ h3 {
   justify-content: center;
   left: 10%;
   top: 75%;
-  position: absolute; }
+  position: absolute;
+}
 
 .soundIcon {
   border-radius: 25px !important;
@@ -300,7 +366,8 @@ h3 {
   justify-content: center;
   left: 30%;
   top: 40%;
-  position: absolute; }
+  position: absolute;
+}
 
 .homePageArrowDownBtn {
   border-radius: 25px !important;
@@ -309,45 +376,55 @@ h3 {
   width: 30px !important;
   left: 50%;
   transform: translate(-50%);
-  position: absolute; }
+  position: absolute;
+}
 
 .leftCornerDivNav {
   position: relative;
   height: 150px;
   width: 200px;
-  z-index: 100; }
+  z-index: 100;
+}
 
 #hidePlants {
   top: 0;
   left: 0;
   position: absolute;
-  z-index: 3; }
+  z-index: 3;
+}
 
 #hidePlants {
-  cursor: pointer; }
+  cursor: pointer;
+}
 
 #hideSeal {
-  display: none; }
+  display: none;
+}
 
 .hideAndSeekAnimals {
   margin-top: 20px;
   margin-left: 50px;
   height: 100px;
-  z-index: 1; }
+  z-index: 1;
+}
 
 .hideAndSeekAnimals:hover {
-  cursor: pointer; }
+  cursor: pointer;
+}
 
 .centerDivNav {
-  text-align: center; }
+  text-align: center;
+}
 
 .littleFoxNav {
-  margin-bottom: 20px; }
+  margin-bottom: 20px;
+}
 
 .foxFaceNav {
   margin: 0 10px;
   float: left;
-  height: 80px; }
+  height: 80px;
+}
 
 .colourCircleNav {
   margin: 0 10px;
@@ -356,97 +433,129 @@ h3 {
   height: 20px;
   width: 20px;
   border-radius: 25px;
-  background-color: #333; }
+  background-color: #333;
+}
 
 .colourCircleNav:hover {
-  cursor: pointer; }
+  cursor: pointer;
+}
 
 #orangeCircle {
-  background-color: #ff7B4a; }
+  background-color: #ff7B4a;
+}
 
 #purpleCircle {
-  background-color: #ff99fa; }
+  background-color: #ff99fa;
+}
 
 #blueCircle {
-  background-color: #36ffff; }
+  background-color: #36ffff;
+}
 
 #yellowCircle {
-  background-color: #ffff39; }
+  background-color: #ffff39;
+}
 
 #purpleFox {
-  display: none; }
+  display: none;
+}
 
 #blueFox {
-  display: none; }
+  display: none;
+}
 
 #yellowFox {
-  display: none; }
+  display: none;
+}
 
 #hideAndSeekPopUp {
-  display: none; }
+  display: none;
+}
 
 #missionTwoSound {
-  display: none; }
+  display: none;
+}
 
 #missionThreeSound {
-  display: none; }
+  display: none;
+}
 
 #clickHereImg {
   height: 80px;
   left: 25%;
-  position: absolute; }
+  position: absolute;
+}
 
 @keyframes fadeIn {
   0% {
-    opacity: 0; }
+    opacity: 0;
+  }
   80% {
-    opacity: 0; }
+    opacity: 0;
+  }
   100% {
-    opacity: 1; } }
-
+    opacity: 1;
+  }
+}
 .missionOneText {
-  animation: fadeIn 25s ease; }
+  animation: fadeIn 25s ease;
+}
 
 .missionTwoText {
-  animation: fadeIn 25s ease; }
+  animation: fadeIn 25s ease;
+}
 
 .missionThreeText {
-  animation: fadeIn 25s ease; }
+  animation: fadeIn 25s ease;
+}
 
 .missionImages {
-  margin-top: 50px; }
+  margin-top: 50px;
+}
 
 .missionOneImg {
-  height: 450px; }
+  height: 450px;
+}
 
 .missionTwoImg, .missionThreeImg {
   display: none;
-  height: 450px; }
+  height: 450px;
+}
 
 @keyframes shake {
   0% {
-    transform: translate(-50%, -50%) rotate(0deg); }
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
   25% {
-    transform: translate(-50%, -50%) rotate(3deg); }
+    transform: translate(-50%, -50%) rotate(3deg);
+  }
   50% {
-    transform: translate(-50%, -50%) rotate(0deg); }
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
   75% {
-    transform: translate(-50%, -50%) rotate(3deg); }
+    transform: translate(-50%, -50%) rotate(3deg);
+  }
   100% {
-    transform: translate(-50%, -50%) rotate(0deg); } }
-
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+}
 @keyframes shakeLogin {
   0% {
-    transform: translate(-50%, -50%) rotate(0deg); }
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
   25% {
-    transform: translate(-50%, -50%) rotate(3deg); }
+    transform: translate(-50%, -50%) rotate(3deg);
+  }
   50% {
-    transform: translate(-50%, -50%) rotate(0deg); }
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
   75% {
-    transform: translate(-50%, -50%) rotate(3deg); }
+    transform: translate(-50%, -50%) rotate(3deg);
+  }
   100% {
-    transform: translate(-50%, -50%) rotate(0deg); } }
-
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+}
 .missionOneSplash {
   display: none;
   width: 200px;
@@ -455,16 +564,19 @@ h3 {
   top: 35%;
   left: 60%;
   position: absolute;
-  clip-path: url(#missionOneSplash); }
+  clip-path: url(#missionOneSplash);
+}
 
 .missionOneSplashText {
   margin-top: 45px;
   font-family: "Fredoka One" !important;
   color: #FFA883 !important;
-  font-size: 1.5rem !important; }
+  font-size: 1.5rem !important;
+}
 
 .missionOneSplashText:hover, .missionTwoSplashText:hover {
-  cursor: pointer; }
+  cursor: pointer;
+}
 
 .missionTwoSplash {
   display: none;
@@ -474,13 +586,15 @@ h3 {
   top: 35%;
   left: 35%;
   position: absolute;
-  clip-path: url(#missionTwoSplash); }
+  clip-path: url(#missionTwoSplash);
+}
 
 .missionTwoSplashText {
   margin-top: 70px;
   font-family: "Fredoka One" !important;
   color: #FFA883 !important;
-  font-size: 1.5rem !important; }
+  font-size: 1.5rem !important;
+}
 
 .missionThreeSplash {
   display: none;
@@ -490,13 +604,15 @@ h3 {
   top: 35%;
   left: 60%;
   position: absolute;
-  clip-path: url(#missionThreeSplash); }
+  clip-path: url(#missionThreeSplash);
+}
 
 .missionThreeSplashText {
   margin-top: 60px;
   font-family: "Fredoka One" !important;
   color: #A2C76A !important;
-  font-size: 1.5rem !important; }
+  font-size: 1.5rem !important;
+}
 
 .messagePopUp {
   z-index: 20;
@@ -506,13 +622,15 @@ h3 {
   top: 50%;
   left: 10%;
   position: absolute;
-  clip-path: url(#hideSeekPopUp); }
+  clip-path: url(#hideSeekPopUp);
+}
 
 .hideSeekPopUpImg {
   height: 270px;
   top: 42%;
   left: 8%;
-  position: absolute; }
+  position: absolute;
+}
 
 #signUpPage {
   display: none !important;
@@ -521,7 +639,8 @@ h3 {
   position: relative;
   transition: background 0.5s ease;
   width: 100%;
-  background-color: #faf2e8; }
+  background-color: #faf2e8;
+}
 
 .signUpPageText {
   top: 30%;
@@ -531,19 +650,24 @@ h3 {
   text-align: center;
   font-family: "Fredoka One" !important;
   color: #FFA883 !important;
-  font-size: 1.5rem !important; }
+  font-size: 1.5rem !important;
+}
 
 .emailText {
-  display: none; }
+  display: none;
+}
 
 .emailText em {
-  color: #6fc7e1; }
+  color: #6fc7e1;
+}
 
 .emailText em:hover {
-  color: #000000; }
+  color: #000000;
+}
 
 .passwordText {
-  display: none; }
+  display: none;
+}
 
 #errorMessage {
   position: absolute;
@@ -554,31 +678,36 @@ h3 {
   width: 400px;
   color: #333;
   text-align: center;
-  display: none; }
+  display: none;
+}
 
 #signUpPassword {
   display: none;
   font-family: "Fredoka One" !important;
   color: tomato !important;
-  font-size: 1rem !important; }
+  font-size: 1rem !important;
+}
 
 #signUpUserName {
   display: none;
   font-family: "Fredoka One" !important;
   color: tomato !important;
-  font-size: 1rem !important; }
+  font-size: 1rem !important;
+}
 
 #signUpEmail {
   display: none;
   font-family: "Fredoka One" !important;
   color: tomato !important;
-  font-size: 1rem !important; }
+  font-size: 1rem !important;
+}
 
 .signUpForm {
   position: absolute;
   top: 60%;
   left: 50%;
-  transform: translate(-50%, -60%); }
+  transform: translate(-50%, -60%);
+}
 
 .fieldName, .fieldEmail, .fieldPassword {
   padding: 10px;
@@ -594,14 +723,17 @@ h3 {
   align-items: center;
   border-radius: 10px;
   border: 2px solid #6fc7e1;
-  transition: all 0.5s ease; }
+  transition: all 0.5s ease;
+}
 
 .fieldName i, .fieldEmail i, .fieldPassword i,
 .fieldNameLogin i, .fieldPasswordLogin i {
-  padding: 20px; }
+  padding: 20px;
+}
 
 .fa-arrow-down {
-  cursor: pointer; }
+  cursor: pointer;
+}
 
 .fieldName input, .fieldEmail input, .fieldPassword input,
 .fieldNameLogin input, .fieldPasswordLogin input {
@@ -610,46 +742,54 @@ h3 {
   outline: none;
   height: 100%;
   flex: 1;
-  width: 400px; }
+  width: 400px;
+}
 
 div.inactive {
   opacity: 0;
   pointer-events: none;
-  transform: translate(-50%, 50%); }
+  transform: translate(-50%, 50%);
+}
 
 div.active {
   opacity: 1;
   pointer-events: all;
-  transform: translate(-50%, -50%); }
+  transform: translate(-50%, -50%);
+}
 
 .flowerLogin {
   height: 300px;
   position: absolute;
   right: 10%;
-  bottom: 0%; }
+  bottom: 0%;
+}
 
 .loginFlower {
   height: 300px;
   position: absolute;
   left: 10%;
-  bottom: 0%; }
+  bottom: 0%;
+}
 
 #signUpSubmitBtn {
   position: absolute;
   top: 60%;
   left: 50%;
   transform: translate(-50%, -70%);
-  display: none; }
+  display: none;
+}
 
 .thankYouMessage {
   display: none;
   width: 400px;
-  height: 500px; }
+  height: 500px;
+}
 
 .modalFoxImg {
   margin-top: 40px;
   margin-bottom: 40px;
-  height: 100px; }
+  height: 100px;
+}
 
 #loginPage {
   display: none !important;
@@ -658,7 +798,8 @@ div.active {
   position: relative;
   transition: background 0.5s ease;
   width: 100%;
-  background-color: #faf2e8; }
+  background-color: #faf2e8;
+}
 
 .fieldPasswordLogin, .fieldNameLogin {
   padding: 10px;
@@ -669,25 +810,29 @@ div.active {
   justify-content: space-between;
   align-items: center;
   border-radius: 10px;
-  border: 2px solid #6fc7e1; }
+  border: 2px solid #6fc7e1;
+}
 
 .fieldNameLogin {
   position: absolute;
   top: 40%;
   left: 50%;
-  transform: translate(-50%, -40%); }
+  transform: translate(-50%, -40%);
+}
 
 .fieldPasswordLogin {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); }
+  transform: translate(-50%, -50%);
+}
 
 #loginFormBtn {
   position: absolute;
   top: 60%;
   left: 50%;
-  transform: translate(-50%, -60%); }
+  transform: translate(-50%, -60%);
+}
 
 .loginPageText {
   top: 30%;
@@ -697,18 +842,126 @@ div.active {
   text-align: center;
   font-family: "Fredoka One" !important;
   color: #FFA883 !important;
-  font-size: 1.5rem !important; }
+  font-size: 1.5rem !important;
+}
+
+#profileNav {
+  width: 1000px;
+  height: 100px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.profileNavBtn {
+  padding-top: 1%;
+}
+
+.profileNavIcon {
+  height: 100px;
+  width: 20px;
+}
+
+.profileNavIcon:hover {
+  cursor: pointer;
+}
+
+.profileNavText {
+  margin-top: 20px;
+  font-family: "Fredoka One";
+  color: #FFA883;
+}
+
+#viewPostPhotoContainer {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  background-color: #faf2e8;
+}
+
+.photoContainer {
+  float: left;
+  width: 400px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+}
+
+.viewPostBtn {
+  margin-top: 20px;
+  width: 200px;
+}
+
+.viewImagePostImg {
+  height: 300px;
+  width: 300px;
+  border-radius: 20px;
+}
+
+#addPostContainer {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  background-color: #faf2e8;
+}
+
+.addPostPhoto {
+  float: left;
+  width: 600px;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.addPostDetails {
+  float: left;
+  width: 600px;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.editImagePostImg {
+  width: 450px;
+  height: 450px;
+  border-radius: 20px;
+}
+
+.addpostFormText {
+  color: #FFA883;
+  font-family: "Fredoka One";
+  font-size: 25px;
+}
+
+.addPostFormInput {
+  border: 2px solid #FFA883;
+  border-radius: 10px;
+  padding: 5px;
+}
 
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  text-decoration: none; }
+  text-decoration: none;
+}
 
 button {
   background: none;
-  border: none; }
+  border: none;
+}
 
 a, a:hover, a:focus, a:active {
   text-decoration: none;
-  color: inherit; }
+  color: inherit;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -7,6 +7,7 @@ const postSchema = new mongoose.Schema({
   description : String,
   imageUrl : String,
   date: String,
+  comments : Array,
   userId : {
     type : mongoose.Schema.Types.ObjectId,
     ref : 'User'

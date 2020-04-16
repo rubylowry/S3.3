@@ -521,7 +521,6 @@ $(document).ready(function(){
     dataType :'json',
     success : function(postsFromMongo){
       console.log(postsFromMongo);
-      }
     },//success
     error:function(){
       console.log('error: cannot call api');
@@ -612,3 +611,104 @@ function showUserName(name){
 
 //James code ENDS
 
+<<<<<<< Updated upstream
+=======
+//Javascript for navbar and main homePage animations
+
+//hide and seek animation
+$("#hidePlants").click(function(){
+  $("#hidePlants").hide();
+});
+
+$("#hideLion").click(function(){
+  $("#hidePlants").show();
+  $("#hideSeal").show();
+  $("#hideLion").hide();
+});
+
+$("#hideSeal").click(function(){
+  $("#hidePlants").show();
+  $("#hideLion").show();
+  $("#hideSeal").hide();
+});
+
+// End of hide and seek animation
+//fox animation
+$("#orangeCircle").click(function(){
+  $("#orangeFox").show();
+  $("#purpleFox").hide();
+  $("#blueFox").hide();
+  $("#yellowFox").hide();
+});
+
+$("#purpleCircle").click(function(){
+  $("#purpleFox").show();
+  $("#orangeFox").hide();
+  $("#blueFox").hide();
+  $("#yellowFox").hide();
+});
+
+$("#blueCircle").click(function(){
+  $("#blueFox").show();
+  $("#orangeFox").hide();
+  $("#purpleFox").hide();
+  $("#yellowFox").hide();
+});
+
+$("#yellowCircle").click(function(){
+  $("#yellowFox").show();
+  $("#orangeFox").hide();
+  $("#purpleFox").hide();
+  $("#blueFox").hide();
+});
+
+//End of fox animation
+//End of Javascript for navbar and main homePage animations
+// start of mission sound animations
+
+$("#missionOneSound").click(function(){
+  var audio = new Audio("assets/mission1Sound.mp3");
+    audio.play();
+  $(".missionOneSplash").show();
+  $(".missionOneSplash").addClass("missionOneText");
+});
+
+
+$(".missionOneSplashText").click(function(){
+  $(".missionTwoImg").show();
+  $("#missionTwoSound").show();
+  $(".missionOneSplash").hide();
+  $(".missionOneImg").hide();
+  $("#missionOneSound").hide();
+});
+
+$("#missionTwoSound").click(function(){
+  var audio = new Audio("assets/mission2Sound.mp3");
+    audio.play();
+
+    $(".missionTwoSplash").show();
+    $(".missionTwoSplash").addClass("missionTwoText");
+});
+
+$(".missionTwoSplashText").click(function(){
+  $(".missionThreeImg").show();
+  $("#missionThreeSound").show();
+  $(".missionTwoSplash").hide();
+  $(".missionTwoImg").hide();
+  $("#missionTwoSound").hide();
+  console.log("i am clicked");
+});
+
+$("#missionThreeSound").click(function(){
+  var audio = new Audio("assets/mission3Sound.mp3");
+  audio.play();
+
+  $(".missionThreeSplash").show();
+  $(".missionThreeSplash").addClass("missionThreeText");
+});
+
+
+
+
+// end of misiion sound animations
+>>>>>>> Stashed changes
