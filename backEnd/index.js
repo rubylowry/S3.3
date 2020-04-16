@@ -83,7 +83,6 @@ app.post('/loginUser', (req, res) =>{
 });
 //Natalia's code ENDS
 
-
 //Ruby's code START
 // ========= code from Natalia end here
 
@@ -91,39 +90,45 @@ app.post('/loginUser', (req, res) =>{
 // =========  code from Jake start
 // code from Jake end here
 
-
-
-
-
-
-
-
-
-
-//========== code from Ruby start
-
+//Ruby's code start
 //get all posts
-app.get('/posts', (req,res)=>{
-	Post.find().then(result =>{
-		res.send(result);
-	})
-}); // get all products
-
+app.get('/allPosts', (req,res)=>{
+  Post.find().then(result =>{
+    res.send(result);
+  })
+});
 
 //add Post
 app.post('/addPost/', (req,res)=>{
 	const dbPost = new Post({
-		_id : new mongoose.Types.ObjectId,
-		title : req.body.title,
-		description : req.body.description,
+    _id : new mongoose.Types.ObjectId,
+    username: req.body.username,
     imageUrl : req.body.imageUrl,
-    user_id: req.body.userId,
-    username: req.body.username
-    });
+    description: req.body.description,
+    date : String,
+    comments : Array
+  });
     //save to database and notify the user accordingly
     dbPost.save().then(result =>{
     res.send(result);
     }).catch(err => res.send(err));
+});
+
+
+app.post('/addComment/', (req,res)=>{
+  Post.findOne({_id:req.body.postId}, (err,post)=>{
+    if (post){
+      const comment = new Comment({
+        _id : new mongoose.Types.ObjectId,
+        userName: req.body.userName,
+        text: req.body.commentText
+      });
+      post.comments.push(comment);
+      post.save();
+    } else {
+      res.send('post not found');
+    }
+  }).catch(err => res.send(err)); //refers to mogodb id
 });
 
 // ADD a Post
@@ -149,19 +154,6 @@ app.post('/addPost/', (req,res)=>{
 //   })
 // });
 
-//get all posts
-app.get('/allPosts', (req,res)=>{
-  Post.find().then(result =>{
-    res.send(result);
-  })
-});
-
-// View all Posts James
-// app.get('/allPosts', (req,res) =>{
-//   Post.find().then(result =>{
-//     res.send(result);
-//   }).catch(err => res.send(err));
-// });
 
 //Ruby's code ENDS
 
@@ -188,7 +180,7 @@ app.delete('/deleteUser/:id',(req,res)=>{
   }).catch(err => res.send(err)); //refers to mogodb id
 });
 
-//Login User
+// Login User
 // app.post('/loginUser', (req, res) =>{
 //   User.findOne({username:req.body.username},(err, userResult) =>{
 //     if (userResult) {

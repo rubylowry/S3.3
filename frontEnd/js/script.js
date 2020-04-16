@@ -46,6 +46,9 @@ $('#registerForm').submit(function(){
 }//else
 });//submit function for registerForm
 
+function isLoggedIn(){
+  return sessionStorage['userName'] !== undefined;
+}
 
 $('#loginForm').submit(function(){
   event.preventDefault();
@@ -64,26 +67,19 @@ $('#loginForm').submit(function(){
       },
     success : function(user){
       console.log(user);
-      if (user == 'user not found. Please register'){
+      if (user == 'User not found. Please register'){
       alert('user not found. Please enter correct data or register a new user');
-      } else if (user == 'not authorized'){
+      } else if (user == 'Not Authorized'){
         alert('Please try with correct details');
         $('#username').val('');
         $('#password').val('');
       } else{
-         $('#loginPage').hide();
-         $('#logouthomePage').show();
          // when shown after login/sign up forms colums of home-container display in one col
-         $('#homePage').show();
-         $('#landingPage').hide();
-         $('#loginLandingPage').show();
+
         sessionStorage.setItem('userID', user['_id']);
         sessionStorage.setItem('userName',user['username']);
         sessionStorage.setItem('userEmail',user['email']);
-        console.log(sessionStorage);
-        $('#profileBtn').show();
-        $('#signUpHomePage').hide();
-        $('#logInHomePage').hide();
+        toggleLogin();
       }
     },//success
     error:function(){
@@ -304,8 +300,8 @@ function loadPostsHomePage(){
 function renderCardHomePage(post){
   const viewButtonId = "btnView" + post._id;
     document.getElementById('communityPhotos').innerHTML += `<div class="col-md-4">
-    <div class="card cardSkin mb-4">
-      <svg class="bd-placeholder-img card-img-top m-2" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>${post.title}</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+    <div class="card cardSkin m-5">
+      <img src="${post.imageUrl}" class="bd-placeholder-img card-img-top m-2"/>
       <div class="card-body">
         <div><img class="avatarSkin d-inline" src="assets/avatar-natalia.jpg"><h2 class="d-inline ml-1">${post.username}</h2></div>
         <p class="card-text">${post.description}</p>
@@ -324,6 +320,8 @@ function renderCardHomePage(post){
 //            <svg class="bd-placeholder-img card-img-top m-2" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>${post.title}</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
 function openModalViewPostHomePage(postId){
   let post = communityPosts.filter(p => p._id == postId)[0];
+
+  let commentsList = post.comments ? "<ul>"  + post.comments.map(c => `<li><b>${c.userName}</b>: ${c.text}`).join() + "</ul>" : "";
   //we need to show modal with class modal
 let modalBody = `<div class="modal" id="myModal" tabindex="-1" role="dialog">
 <div class="modal-dialog modal-lg" role="document">
@@ -353,14 +351,13 @@ let modalBody = `<div class="modal" id="myModal" tabindex="-1" role="dialog">
             <div>
               <h2>Comments</h2>
               <div id="commentsModalHome">Other users' comments</div>
+              ${commentsList}
             </div>
-            <form action="/action_page.php">
               <div class="form-group">
                 <label for="comment" class="font-weight-bold" >Add comment</label>
-                <textarea class="form-control" rows="2" id="comment" name="text"></textarea>
+                <textarea id="addCommentArea" class="form-control" rows="2" id="comment" name="text"></textarea>
               </div>
-              <button type="submit" class="btn btn-warning">Post</button>
-            </form>
+              <button class="btn btn-warning" onclick="addComment('${post._id}')">Post</button>
           </div>
         </div>
       </div>
@@ -373,6 +370,30 @@ let modalBody = `<div class="modal" id="myModal" tabindex="-1" role="dialog">
 
 $('#myModalContainer').html(modalBody);
 $('#myModal').modal();
+}
+
+function addComment(postId){
+
+  let post = communityPosts.filter(p => p._id == postId)[0];
+  let commentText = $("#addCommentArea").val();
+  let userName = sessionStorage.userName;
+  let comment = {"text": commentText, "username": userName};
+  post.comments.push(comment);
+    $.ajax({
+      url :`${url}/addComment`,
+      type :'POST',
+      data: {
+        postId: post._id,
+        commentText: commentText,
+        userName: userName
+       },
+      success : function(post){
+        console.log(post);
+      },
+      error: function(){
+
+      }
+      });
 }
 
 //not completed - requires styling by Natalia
@@ -418,8 +439,54 @@ $.ajax({
   }//error
 });//ajax
 
+function toggleLogin(){
+  if (isLoggedIn()) {
+    $('#homePage').show();
+    $("#logInHomePage").hide();
+    $('#loginPage').hide();
+    $("#signUpHomePage").hide();
+    $('#logouthomePage').show();
+    $('#userName').show();
+    showUserName(sessionStorage.userName);
+    $('#landingPage').hide();
+    $('#loginLandingPage').show();
+    $(".album").hide();
+  } else {
+    $('#homePage').show();
+    $('#landingPage').show();
+    $(".album").show();
+    $('#loginLandingPage').hide();
+    $("#logInHomePage").show();
+    $("#signUpHomePage").show();
+    $("#profilePageContainer").hide();
+    $('#logouthomePage').hide();
+    $('#userName').hide();
+  }
+}
+
 $(document).ready(function(){
   // console.log("js is working");
+  
+  $("#profilePageContainer").hide();
+  $('#homePage').show();
+  toggleLogin();
+  $("#goToProfileBtn").click(function(){
+    $("#homePage").hide();
+    $("#profilePageContainer").show();
+  });
+
+  $('#addPostContainer').hide();
+  $('#addPhotoBtn').click(function(){
+    $('#addPostContainer').show();
+    $('#viewPostPhotoContainer').hide();
+  });
+  
+  //remove if not required
+  // $('#uploadPhoto').click(function(){
+  //   $('#addPostContainer').hide();
+  //   $('#viewPostPhotoContainer').show();
+  // });
+
 
   // stuff needed:
 
@@ -436,18 +503,13 @@ $(document).ready(function(){
   // Add Post -- done
   // Delete Post -- done
   // Update Post -- done
-  $('#logouthomePage').hide();
-  if (sessionStorage['userName']) {
-    console.log('You are logged in');
-    showUserName(sessionStorage.userName);
-  } else {
-    console.log('Please login');
-  }
+
+
 
   //logout button
-  $('#logoutBtn').click(function(){
+  $('#logouthomePage').click(function(){
     sessionStorage.clear();
-    // console.log(sessionStorage);
+    toggleLogin();
   });
 
   //View User JS and login
@@ -553,9 +615,40 @@ $(document).ready(function(){
   });
 });
 
+$('#addPostForm').submit(function(){
+  event.preventDefault();
+  let postName = $('#addPostImageName').val();
+  let postDescription = $('#addPostDescription').val();
+  let postImageUrl = $('#addPostImageUrl').val();
+  let userName = sessionStorage.userName;
+  if (postName == '' || postDescription == '' || userName == ''){
+    alert('Please enter all details');
+  } else {
+  $.ajax({
+    url :`${url}/addPost`,
+    type :'POST',
+    data: {
+      title : postName,
+      description : postDescription,
+      username : userName,
+      imageUrl: postImageUrl
+      },
+    success : function(post){
+      console.log(post);
+      $('#addPostImageName').val('');
+      $('#addPostDescription').val('');
+      $('#addPostImageUrl').val('');
+      alert("post added!")
+    },//success
+    error:function(){
+      console.log('error: cannot call api');
+    }//error
+  });//ajax
+}//else
+});//submit function for addProduct
+
 // Update Post
 $('#postUpdateBtn').click(function(){
-  console.log('button pressed');
   event.preventDefault();
   let postId = $('#updatePostId').val();
   let postUsername = $('#updatePostUsername').val();
@@ -569,9 +662,8 @@ $('#postUpdateBtn').click(function(){
     data:{
       _id: postId,
       username : postUsername,
-      userId : userId,
       description : postDescription,
-      imageURL: postImage
+      imageUrl: postImage
     },
     success : function(data){
       console.log(data);
@@ -666,48 +758,43 @@ $("#yellowCircle").click(function(){
 //End of Javascript for navbar and main homePage animations
 // start of mission sound animations
 
-      $("#missionOneSound").click(function(){
-        var audio = new Audio("assets/mission1Sound.mp3");
-          audio.play();
-        $(".missionOneSplash").show();
-        $(".missionOneSplash").addClass("missionOneText");
-      });
+$("#missionOneSound").click(function(){
+  var audio = new Audio("assets/mission1Sound.mp3");
+    audio.play();
+  $(".missionOneSplash").show();
+  $(".missionOneSplash").addClass("missionOneText");
+});
 
 
-      $(".missionOneSplashText").click(function(){
-        $(".missionTwoImg").show();
-        $("#missionTwoSound").show();
-        $(".missionOneSplash").hide();
-        $(".missionOneImg").hide();
-        $("#missionOneSound").hide();
-      });
+$(".missionOneSplashText").click(function(){
+  $(".missionTwoImg").show();
+  $("#missionTwoSound").show();
+  $(".missionOneSplash").hide();
+  $(".missionOneImg").hide();
+  $("#missionOneSound").hide();
+});
 
-      $("#missionTwoSound").click(function(){
-        var audio = new Audio("assets/mission2Sound.mp3");
-          audio.play();
+$("#missionTwoSound").click(function(){
+  var audio = new Audio("assets/mission2Sound.mp3");
+    audio.play();
 
-          $(".missionTwoSplash").show();
-          $(".missionTwoSplash").addClass("missionTwoText");
-      });
+    $(".missionTwoSplash").show();
+    $(".missionTwoSplash").addClass("missionTwoText");
+});
 
-      $(".missionTwoSplashText").click(function(){
-        $(".missionThreeImg").show();
-        $("#missionThreeSound").show();
-        $(".missionTwoSplash").hide();
-        $(".missionTwoImg").hide();
-        $("#missionTwoSound").hide();
-        console.log("i am clicked");
-      });
+$(".missionTwoSplashText").click(function(){
+  $(".missionThreeImg").show();
+  $("#missionThreeSound").show();
+  $(".missionTwoSplash").hide();
+  $(".missionTwoImg").hide();
+  $("#missionTwoSound").hide();
+  console.log("i am clicked");
+});
 
-      $("#missionThreeSound").click(function(){
-        var audio = new Audio("assets/mission3Sound.mp3");
-        audio.play();
+$("#missionThreeSound").click(function(){
+  var audio = new Audio("assets/mission3Sound.mp3");
+  audio.play();
 
-        $(".missionThreeSplash").show();
-        $(".missionThreeSplash").addClass("missionThreeText");
-      });
-
-
-
-
-// end of misiion sound animations
+  $(".missionThreeSplash").show();
+  $(".missionThreeSplash").addClass("missionThreeText");
+});
