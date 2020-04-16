@@ -1,4 +1,4 @@
-//Natalia's code
+//James code
 const mongoose = require('mongoose');
 const userSchema = new mongoose.Schema({
   _id : mongoose.Schema.Types.ObjectId,
@@ -8,4 +8,4 @@ const userSchema = new mongoose.Schema({
   avatar : String
 });
 module.exports = mongoose.model('User', userSchema);
-//Natalia's code ends
+//James's code ends
