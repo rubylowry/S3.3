@@ -300,7 +300,7 @@ function loadPostsHomePage(){
 function renderCardHomePage(post){
   const viewButtonId = "btnView" + post._id;
     document.getElementById('communityPhotos').innerHTML += `<div class="col-md-4">
-    <div class="card cardSkin mb-4">
+    <div class="card cardSkin m-5">
       <img src="${post.imageUrl}" class="bd-placeholder-img card-img-top m-2"/>
       <div class="card-body">
         <div><img class="avatarSkin d-inline" src="assets/avatar-natalia.jpg"><h2 class="d-inline ml-1">${post.username}</h2></div>

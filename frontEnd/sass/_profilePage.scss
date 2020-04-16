@@ -1,0 +1,25 @@
+#profileNav {
+    width: 1000px;
+    height: 100px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+  .profileNavBtn {
+    display: inline-block;  
+  }
+  .profileNavIcon {
+    height: 100px;
+    width: 20px;
+  }
+  .profileNavIcon:hover {
+    cursor: pointer;
+  }
+  .profileNavText {
+    margin-top: 20px;
+    font-family: 'Fredoka One';
+    color: $mainLightOrange;
+  }
+  // end of proilfe nav css

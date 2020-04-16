@@ -35,9 +35,6 @@
     display: none;
   }
 
-
-
-
     #errorMessage{
     	position: absolute;
     	top: 55%;
@@ -74,8 +71,7 @@
     }
 
 
-    .fieldName, .fieldEmail, .fieldPassword,
-    {
+    .fieldName, .fieldEmail, .fieldPassword {
       padding: 10px;
       position:absolute;
       top: 60%;

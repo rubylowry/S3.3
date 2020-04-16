@@ -9,12 +9,21 @@ $mainLightOrange: #FFA883;
 $white: #ffffff;
 $black: #000000;
 
+body {
+    background-color: $mainBackgroundLight;
+}
 
+@font-face {
+    font-family: 'Fredoka One';
+    src: url('../fonts/FredokaOne-Regular.woff2') format('woff2'),
+        url('FredokaOne-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 .navbar, .jumbotron {
     background-color: $mainBackgroundLight;
 
 }
-
 .navbar{
   z-index: 1000;
   top: 0;
@@ -27,21 +36,13 @@ $black: #000000;
   display: flex;
   justify-content: space-between ;
 }
-
 .navBlock{
   height:150px;
   width: 100%;
 }
-
-@font-face {
-    font-family: 'Fredoka One';
-    src: url('../fonts/FredokaOne-Regular.woff2') format('woff2'),
-        url('FredokaOne-Regular.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+.hello{
+   font-family: 'Fredoka One'; 
 }
-
-
 .modal-content{
     border:3px solid $black;
 }

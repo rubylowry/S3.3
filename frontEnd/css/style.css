@@ -1,3 +1,13 @@
+body {
+  background-color: #faf2e8;
+}
+
+@font-face {
+  font-family: "Fredoka One";
+  src: url("../fonts/FredokaOne-Regular.woff2") format("woff2"), url("FredokaOne-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
 .navbar, .jumbotron {
   background-color: #faf2e8;
 }
@@ -20,12 +30,10 @@
   width: 100%;
 }
 
-@font-face {
+.hello {
   font-family: "Fredoka One";
-  src: url("../fonts/FredokaOne-Regular.woff2") format("woff2"), url("FredokaOne-Regular.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
 }
+
 .modal-content {
   border: 3px solid #000000;
 }
@@ -88,7 +96,6 @@
 /* Container needed to position the button. Adjust the width as needed */
 .container {
   position: relative;
-  width: 50%;
 }
 
 /* Make the image responsive */
@@ -97,32 +104,21 @@
   height: auto;
 }
 
-/* Style the button and place it in the middle of the container/image */
-.container .btn {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  background-color: #555;
-  color: white;
-  font-size: 16px;
-  padding: 12px 24px;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
-}
-
-.container .btn:hover {
-  background-color: black;
-}
-
 .icons {
   height: 20px;
 }
 
 .icons:hover {
   cursor: pointer;
+}
+
+.containerMenu {
+  width: 100%;
+}
+
+.border {
+  border-radius: 20px !important;
+  border: 2px solid black !important;
 }
 
 #loginLandingPage {
@@ -180,9 +176,8 @@
 }
 
 .logedInImg {
-  height: 300px;
-  margin-top: 50px;
-  margin-bottom: 200px;
+  height: 150px;
+  margin-top: 1em;
 }
 
 #goToProfileBtn {
@@ -208,13 +203,16 @@
 }
 
 .littleFoxFooter {
-  width: 200px;
+  width: 180px;
   height: 200px;
   text-align: center;
   float: left;
   position: absolute;
   left: 5%;
   padding-top: 25px;
+}
+.littleFoxFooter img {
+  width: 100px;
 }
 
 .footerList {
@@ -364,7 +362,7 @@ h3 {
   display: flex;
   align-items: center;
   justify-content: center;
-  left: 30%;
+  left: 20%;
   top: 40%;
   position: absolute;
 }
@@ -856,7 +854,7 @@ div.active {
 }
 
 .profileNavBtn {
-  padding-top: 1%;
+  display: inline-block;
 }
 
 .profileNavIcon {
@@ -872,79 +870,6 @@ div.active {
   margin-top: 20px;
   font-family: "Fredoka One";
   color: #FFA883;
-}
-
-#viewPostPhotoContainer {
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  position: relative;
-  width: 100%;
-  background-color: #faf2e8;
-}
-
-.photoContainer {
-  float: left;
-  width: 400px;
-  height: 400px;
-  display: flex;
-  justify-content: center;
-}
-
-.viewPostBtn {
-  margin-top: 20px;
-  width: 200px;
-}
-
-.viewImagePostImg {
-  height: 300px;
-  width: 300px;
-  border-radius: 20px;
-}
-
-#addPostContainer {
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  position: relative;
-  width: 100%;
-  background-color: #faf2e8;
-}
-
-.addPostPhoto {
-  float: left;
-  width: 600px;
-  height: 500px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.addPostDetails {
-  float: left;
-  width: 600px;
-  height: 500px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.editImagePostImg {
-  width: 450px;
-  height: 450px;
-  border-radius: 20px;
-}
-
-.addpostFormText {
-  color: #FFA883;
-  font-family: "Fredoka One";
-  font-size: 25px;
-}
-
-.addPostFormInput {
-  border: 2px solid #FFA883;
-  border-radius: 10px;
-  padding: 5px;
 }
 
 * {

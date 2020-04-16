@@ -1,12 +1,3 @@
-//natalia
-//basic app styles
-
-// basic display none(hide) and display block(show) of main div elements
-
-// #homePage{
-//   display: none !important;
-// }
-
 .signUpModalText{
   margin: 0 auto;
 }
@@ -19,12 +10,10 @@
         width: 50%;
       }
 }
-
-
-
 .card {
     border-radius: 20px;
     width:18em;
+    
         .card-img-top{
             width:95%;
             height:16em;
@@ -47,23 +36,6 @@
     height:1.5em;
 }
 
-//start of styles for about page
-
-.aboutPhoto{
-
-}
-
-
-//end of styles for about page
-
-//start of styles for add photo page
-
-.addPhoto {
-
-}
-
-
-//end of styles for add photo page
 
 /* Container needed to position the button. Adjust the width as needed */
 .container {
@@ -76,26 +48,6 @@
     height: auto;
   }
 
-  /* Style the button and place it in the middle of the container/image */
-  .container .btn {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    background-color: #555;
-    color: white;
-    font-size: 16px;
-    padding: 12px 24px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-  }
-
-  .container .btn:hover {
-    background-color: black;
-  }
-
 // icon css style
 
 .icons{
@@ -104,6 +56,13 @@
 
 .icons:hover{
   cursor: pointer;
+}
+.containerMenu{
+  width:100%;
+}
+.border{
+  border-radius: 20px!important;
+  border:2px solid black!important;
 }
 
 //homePage basic styles
@@ -168,9 +127,8 @@
 }
 
 .logedInImg{
-  height: 300px;
-  margin-top: 50px;
-  margin-bottom: 200px;
+  height: 150px;
+  margin-top: 1em;
 }
 
 #goToProfileBtn{

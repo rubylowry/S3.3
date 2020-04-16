@@ -13,7 +13,7 @@
 <!-- Home page Natalia, Jake, Ruby-->
 <header>
   <!-- nav block filler, Jake's comment -->
-  <div class="navbar shadow-sm ">
+  <div class="navbar shadow-sm">
     <div class="leftCornerDivNav">
       <img src="assets/hidePlants.svg" id="hidePlants">
       <img src="assets/lionFaceHide.svg" class="hideAndSeekAnimals" id="hideLion">
@@ -32,10 +32,10 @@
     </div>
     <div class="rightdivNav">
       <span class="text-right">
-        <button id="logInHomePage" class="btn-login">Log in</button>
-        <button id="signUpHomePage" class="btn btn-primary">Sign up</button>
+        <h2 class="d-inline mr-3"><span id="userName"></span></h2>
+        <button id="logInHomePage" class="btn-login ">Log in</button>
+        <button id="signUpHomePage" class="btn btn-primary ">Sign up</button>
         <button id="logouthomePage" class="btn btn-primary">Log out</button>
-        <span id="userName"></span>
       </span>
     </div>
   </div>
@@ -47,9 +47,9 @@
     <div class="landingHomePage" id="landingHomePage"></div>
       <section class="jumbotron text-center" id="landingPage">
         <div class="container">
-          <p class="lead text-muted homePageDiscription"> Hello adventurer and welcome.<em>Little Fox</em>&nbsp; is a community of adventures
+          <p class="lead text-muted homePageDiscription"> Hello adventurer!<em>Little Fox</em>&nbsp; is a community of adventures
             like yourself that go out exploring and upload and share photos of their adventure with the community.
-            To find out more <em>click the sound icon</em>. If you already have started your adventure then proceed to <a class="paraLogIn" href="">Log in</a>.</p>
+            To find out more <em>click the sound icon</em>
         </div>
         <div class="missionImages">
           <img src="assets/clickHere.svg" class="icons" id="clickHereImg">
@@ -84,17 +84,18 @@
         </div>
         <div class="container">
           <p>
-            <h3>Created for young explorers</h3>
-            <a href="#" class="homeParaStartAdventure">Start your adventure</a>
+            <h3 class="mb-2">Created for young explorers</h3>
+            <btn class="homeParaStartAdventure">Start your adventure</btn>
           </p>
           <div class="homePageArrowDownBtn"><a href="#" class="arrowBtn"><p>v<p><a></div>
         </div>
       </section>
       <section id="loginLandingPage" class="jumbotron text-center">
-        <div class="container" >
-          <p class="lead text-muted homePageDiscription"> Kia Ora adventurer and welcome to <em>Little Fox</em>. <br /><br />
-            It is now time to head out on adventures, take some photos and then share what you found with other adventurers.<br />
-            We all can't wait to see what you discover. When your ready click on go to your profile to get started.<br /><br />
+        
+        <div class="container text-center mt-2" >
+          <p class="lead text-muted homePageDiscription"> Kia Ora adventurer!<br/>
+            It is now time to take some photos and then share what you found with other adventurers.<br />
+            When your ready click on go to your profile to get started.<br />
             Happy adventuring from the <em>Little Fox</em>.
         </div>
         <img src="assets/logedinImg.png" class="logedInImg">
@@ -107,7 +108,7 @@
         <!--Modal Natalia-->
         <div id="myModalContainer"></div>
         <!--modal ENDS, Natalia-->
-        <div class="container">
+        <div class="container w-100">
           <div id="communityPhotos" class="row"></div>
         </div>
       </div>
@@ -201,28 +202,28 @@
     </div>
     <!--Jake's code PROFILE PAGE-->
     <div id="profilePageContainer" >
-      <div class="navBlock"></div>
-      <!-- profile nav and button navigateions -->
-        <section class="text-center " >
-          <div class="jumbotron container mt-5">
+        <section class="text-center" >
+          <div class="containerMenu">
+                <div class="jumbotron border">  
                   <div class="container" id="profileNav">
-                    <div class="profileNavBtn mt-5">
+                    <div class="profileNavBtn">
                           <i class="fas fa-camera fa-3x" id="upLoadPhoto"></i>
                           <p class="profileNavText">My Uploads</p>
                     </div>
-                  <div class="profileNavBtn">
-                      <i class="fas fa-ribbon fa-3x"></i>
-                      <p class="profileNavText">My Badges</p>
-                  </div>
-                  <div class="profileNavBtn">
-                    <i class="fas fa-pencil-alt fa-3x"></i>
-                    <p class="profileNavText">Edit Profile</p>
-                  </div>
-                  <div class="profileNavBtn">
-                      <i id="addPhotoBtn" class="fas fa-plus fa-3x"></i>
-                      <p class="profileNavText" id="addPhotoBtn">Add Photo</p>
-                  </div>
+                    <div class="profileNavBtn">
+                        <i class="fas fa-ribbon fa-3x"></i>
+                        <p class="profileNavText">My Badges</p>
+                    </div>
+                    <div class="profileNavBtn">
+                      <i class="fas fa-pencil-alt fa-3x"></i>
+                      <p class="profileNavText">Edit Profile</p>
+                    </div>
+                    <div class="profileNavBtn">
+                        <i id="addPhotoBtn" class="fas fa-plus fa-3x"></i>
+                        <p class="profileNavText" id="addPhotoBtn">Add Photo</p>
+                    </div>
                 </div>
+              </div>
           </section>
       <!-- end of profile nav and button navigations -->
       <!-- start of landing photos page profile(viewpostImg) -->
