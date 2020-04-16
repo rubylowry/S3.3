@@ -306,6 +306,9 @@ function renderCardHomePage(){
     </div>
   </div>`
 }
+
+
+
 //not completed - requires styling by Natalia
 function renderCardProfilePage(){
   document.getElementById('communityPhotosProfilePage').innerHTML = `<div class="card cardSkin containerImg">
