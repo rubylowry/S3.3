@@ -116,8 +116,9 @@ app.post('/addPost/', (req,res)=>{
 		_id : new mongoose.Types.ObjectId,
 		title : req.body.title,
 		description : req.body.description,
-    image : req.body.image,
-    user_id: req.body.userId
+    imageUrl : req.body.imageUrl,
+    user_id: req.body.userId,
+    username: req.body.username
     });
     //save to database and notify the user accordingly
     dbPost.save().then(result =>{
