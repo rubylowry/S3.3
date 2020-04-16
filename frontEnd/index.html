@@ -34,6 +34,7 @@
       <span class="text-right">
         <button id="logInHomePage" class="btn-login">Log in</button>
         <button id="signUpHomePage" class="btn btn-primary">Sign up</button>
+        <button id="logouthomePage" class="btn btn-primary">Log out</button>
       </span>
     </div>
   </div>
@@ -185,21 +186,23 @@
     <!-- Jacob's code, Login page -->
     
     <div id="loginPage">
+      <form id="loginForm">
       <div class="loginPageText">
         <p class="loginName">Please enter your username <br /> and password.</p>
       </div>
       <div class="fieldNameLogin">
         <i class="fas fa-user"></i>
-        <input type="text" placeholder="please enter your adventurer name" required />
+        <input type="text" id="loginUserName" placeholder="please enter your adventurer name" required />
       </div>
       <div class="fieldPasswordLogin">
         <i class"fas fa-key"></i>
-        <input type="password" placeholder="enter your secret code" required minlength="6" maxlength="30" />
+        <input type="password" id="loginPassword" placeholder="enter your secret code" required minlength="6" maxlength="30" />
       </div>
       <button id="loginFormBtn" class="btn btn-primary">Login</button>
       <!-- <button id="loginSubmitBtn" class="btn btn-primary">Login</button> -->
       <img src="assets/loginFlower.svg" class="loginFlower">
       <img src="assets/flowerLogin.svg" class="flowerLogin">
+    </form>
     </div>
     <!--Ruby's code, addPhotoPage-->
     <div id="addPhotoPage">

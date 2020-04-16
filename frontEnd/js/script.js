@@ -47,6 +47,50 @@ $('#registerForm').submit(function(){
 });//submit function for registerForm
 
 
+$('#loginForm').submit(function(){
+  event.preventDefault();
+  let username = $('#loginUserName').val();
+  let password = $('#loginPassword').val();
+  console.log(username, password);
+  if (username == '' || password == ''){
+    alert('Please enter all details');
+  } else {
+  $.ajax({
+    url :`${url}/loginUser`,
+    type :'POST',
+    data:{
+      username : username,
+      password : password
+      },
+    success : function(user){
+      console.log(user);
+      if (user == 'user not found. Please register'){
+      alert('user not found. Please enter correct data or register a new user');
+      } else if (user == 'not authorized'){
+        alert('Please try with correct details');
+        $('#username').val('');
+        $('#password').val('');
+      } else{
+         $('#loginPage').hide();
+         $('#logouthomePage').show();
+         // when shown after login/sign up forms colums of home-container display in one col
+         $('#homePage').show();
+        sessionStorage.setItem('userID', user['_id']);
+        sessionStorage.setItem('userName',user['username']);
+        sessionStorage.setItem('userEmail',user['email']);
+        console.log(sessionStorage);
+        $('#profileBtn').show();
+        $('#signUpHomePage').hide();
+        $('#logInHomePage').hide();
+      }
+    },//success
+    error:function(){
+      console.log('error: cannot call api');
+    }//error
+  });//ajax
+}//else
+});//submit function for login loginForm
+
 // start of form animation and form validation
 
 //testing login / sign up navigation
@@ -373,7 +417,7 @@ $(document).ready(function(){
   // Add Post -- done
   // Delete Post -- done
   // Update Post -- done
-
+  $('#logouthomePage').hide();
   if (sessionStorage['userName']) {
     console.log('You are logged in');
     showUserName(sessionStorage.userName);
