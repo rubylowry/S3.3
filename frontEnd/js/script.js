@@ -46,6 +46,9 @@ $('#registerForm').submit(function(){
 }//else
 });//submit function for registerForm
 
+function isLoggedIn(){
+  return sessionStorage['userName'] !== undefined;
+}
 
 $('#loginForm').submit(function(){
   event.preventDefault();
@@ -71,19 +74,12 @@ $('#loginForm').submit(function(){
         $('#username').val('');
         $('#password').val('');
       } else{
-         $('#loginPage').hide();
-         $('#logouthomePage').show();
          // when shown after login/sign up forms colums of home-container display in one col
-         $('#homePage').show();
-         $('#landingPage').hide();
-         $('#loginLandingPage').show();
+
         sessionStorage.setItem('userID', user['_id']);
         sessionStorage.setItem('userName',user['username']);
         sessionStorage.setItem('userEmail',user['email']);
-        console.log(sessionStorage);
-        $('#profileBtn').show();
-        $('#signUpHomePage').hide();
-        $('#logInHomePage').hide();
+        toggleLogin();
       }
     },//success
     error:function(){
@@ -443,10 +439,37 @@ $.ajax({
   }//error
 });//ajax
 
+function toggleLogin(){
+  if (isLoggedIn()) {
+    $('#homePage').show();
+    $("#logInHomePage").hide();
+    $('#loginPage').hide();
+    $("#signUpHomePage").hide();
+    $('#logouthomePage').show();
+    $('#userName').show();
+    showUserName(sessionStorage.userName);
+    $('#landingPage').hide();
+    $('#loginLandingPage').show();
+    $(".album").hide();
+  } else {
+    $('#homePage').show();
+    $('#landingPage').show();
+    $(".album").show();
+    $('#loginLandingPage').hide();
+    $("#logInHomePage").show();
+    $("#signUpHomePage").show();
+    $("#profilePageContainer").hide();
+    $('#logouthomePage').hide();
+    $('#userName').hide();
+  }
+}
+
 $(document).ready(function(){
   // console.log("js is working");
+  
   $("#profilePageContainer").hide();
-
+  $('#homePage').show();
+  toggleLogin();
   $("#goToProfileBtn").click(function(){
     $("#homePage").hide();
     $("#profilePageContainer").show();
@@ -458,8 +481,6 @@ $(document).ready(function(){
     $('#viewPostPhotoContainer').hide();
   });
   
-
-
   //remove if not required
   // $('#uploadPhoto').click(function(){
   //   $('#addPostContainer').hide();
@@ -482,18 +503,13 @@ $(document).ready(function(){
   // Add Post -- done
   // Delete Post -- done
   // Update Post -- done
-  $('#logouthomePage').hide();
-  if (sessionStorage['userName']) {
-    console.log('You are logged in');
-    showUserName(sessionStorage.userName);
-  } else {
-    console.log('Please login');
-  }
+
+
 
   //logout button
-  $('#logoutBtn').click(function(){
+  $('#logouthomePage').click(function(){
     sessionStorage.clear();
-    // console.log(sessionStorage);
+    toggleLogin();
   });
 
   //View User JS and login
