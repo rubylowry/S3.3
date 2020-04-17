@@ -316,8 +316,7 @@ function renderCardHomePage(post, containerId){
 }
 
 function renderCardProfilePage(post){
-  $("#viewPostPhotoContainer").innerHTML="";
-  const viewButtonId = "btnView_profile_" + post._id;
+
     document.getElementById('viewPostPhotoContainer').innerHTML += `<div class="col-md-4">
     <div class="card cardSkin m-5">
       <img src="${post.imageUrl}" class="bd-placeholder-img card-img-top m-2"/>
@@ -326,7 +325,8 @@ function renderCardProfilePage(post){
         <p class="card-text">${post.description}</p>
         <div class="text-right">
           <div>
-            <button id="${viewButtonId}" class="btn btn-sm btnPrimaryBlackFont" onclick="openModalViewPostProfilePage('${post._id}')">View</button>
+          <button class="btn btn-sm btnPrimaryBlackFont" onclick="deletePost('${post._id}')">Delete</button>
+          <button class="btn btn-sm btnPrimaryBlackFont" onclick="openModalViewPostProfilePage('${post._id}')">View</button>
           </div>
         </div>
       </div>
@@ -689,6 +689,7 @@ function refreshMyUploads(){
     type :'GET',
     success : function(posts){
       myPosts = posts;
+      $("#viewPostPhotoContainer").html("");
       for(var i = 0; i < posts.length; i++){
         renderCardProfilePage(posts[i]);
       }
@@ -729,10 +730,10 @@ $('#postUpdateBtn').click(function(){
 
 // Delete post
 
-$('#postDeleteBtn').on('click',function(){
-  // event.preventDefault();
-  let postId = $('#deletePostId').val();
-  console.log(postId);
+function deletePost(postId){
+  if(!window.confirm("Are you sure you want to delete this post?")){
+    return;
+  }
     $.ajax({
     url :`${url}/deletePost/${postId}`,
     type :'DELETE',
@@ -740,6 +741,7 @@ $('#postDeleteBtn').on('click',function(){
       console.log(data);
       if (data=='deleted'){
         alert('deleted');
+        refreshMyUploads();
       } else {
         alert('Error while deleting post');
       }
@@ -748,7 +750,7 @@ $('#postDeleteBtn').on('click',function(){
       console.log('error: cannot call api');
     }//error
   });//ajax
-});
+}
 
 
 function showUserName(name){
