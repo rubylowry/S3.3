@@ -49,6 +49,9 @@ body {
 .borderNone{
     border:none!important;
 }
+.border{
+    border: 3px solid $mainLightBlue!important;
+}
 .cardSkin{
     border:2px solid $mainLightBlue;
 }

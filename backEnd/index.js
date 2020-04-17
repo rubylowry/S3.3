@@ -102,6 +102,7 @@ app.get('/allPosts', (req,res)=>{
 app.post('/addPost/', (req,res)=>{
 	const dbPost = new Post({
     _id : new mongoose.Types.ObjectId,
+    userId: req.body.userId,
     username: req.body.username,
     imageUrl : req.body.imageUrl,
     description: req.body.description,
@@ -131,38 +132,10 @@ app.post('/addComment/', (req,res)=>{
   }).catch(err => res.send(err)); //refers to mogodb id
 });
 
-// ADD a Post
-
-//ask Alex shell we check for the same post?
-// app.post('/addPost', (req,res) =>{
-//   Post.findOne({image:req.body.title},(err,postResult)=>{
-//     if (postResult){
-//       res.send('Post already added');
-//     } else{
-//       const post = new Post({
-//         _id : new mongoose.Types.ObjectId,
-//         username : req.body.username,
-//         userId : req.body.userId,
-//         description: req.body.description,
-//         imageUrl : req.body.image,
-//         date : req.body.title
-//       });
-//       post.save().then(result =>{
-//         res.send(result);
-//       }).catch(err => res.send(err));
-//     }
-//   })
-// });
-
-
-//Ruby's code ENDS
-
-//James's code START
-//view User
-app.get('/user/:id', (req,res) =>{
-  const idParam = req.params.id;
-  User.findOne({_id:idParam}).then(userResult =>{
-      res.send(userResult);
+app.get('/myposts/:userid', (req,res) =>{
+  const usernameParam = req.params.userid;
+  Post.find({userId:usernameParam}).then(posts =>{
+      res.send(posts);
   }).catch(err => res.send(err)); //refers to mogodb id
 });
 
@@ -180,23 +153,6 @@ app.delete('/deleteUser/:id',(req,res)=>{
   }).catch(err => res.send(err)); //refers to mogodb id
 });
 
-// Login User
-// app.post('/loginUser', (req, res) =>{
-//   User.findOne({username:req.body.username},(err, userResult) =>{
-//     if (userResult) {
-//       if (bcryptjs.compareSync(req.body.password, userResult.password)){
-//         res.send(userResult);
-//       } else {
-//         res.send('Not Authorized');
-//       }
-//     } else if (req.body.username === "") {
-//       res.send('Please fill in all areas');
-//     } else {
-//       res.send('User not found. Please register');
-//     }
-//   });
-// });
-
 // View a specific Post
 app.get('/posts/:id', (req,res) =>{
   const idParam = req.params.id;
@@ -204,8 +160,6 @@ app.get('/posts/:id', (req,res) =>{
       res.send(postResult);
   }).catch(err => res.send(err)); //refers to mogodb id
 });
-
-
 
 // DELETE POST JAMES
 app.delete('/deletePost/:id',(req,res)=>{

@@ -91,7 +91,6 @@
         </div>
       </section>
       <section id="loginLandingPage" class="jumbotron text-center">
-        
         <div class="container text-center mt-5" >
           <p class="lead text-muted homePageDiscription"> Kia Ora adventurer!<br/>
             It is now time to take some photos and then share what you found with other adventurers.<br />
@@ -101,13 +100,11 @@
         <button type="button" id="goToProfileBtn" class="btn btn-primary">Go to your profile</button>
         <img src="assets/logedinImg.png" class="logedInImg">
       </section>
-      <div class="album py-1">
+      <div class="album py-5 bg-light">
         <h1 class="text-center mb-5">Latest community photos</h1>
         <h2 class="text-center mb-5">Please login to upload images and participate in discussions</h2>
         <!--modal home page Natalia-->
-        <!--Modal Natalia-->
-        <div id="myModalContainer"></div>
-        <!--modal ENDS, Natalia-->
+
         <div class="container w-100">
           <div id="communityPhotos" class="row"></div>
         </div>
@@ -227,48 +224,28 @@
           </section>
       <!-- end of profile nav and button navigations -->
       <!-- start of landing photos page profile(viewpostImg) -->
-      <div id="viewPostPhotoContainer">
-              <section class="jumbotron text-center " >
-                    <div class="photoContainer">
-                        <div class="photoCardSize" style="width: 18rem;">
-                               <img class="viewImagePostImg" src="http://goo.gl/ijai22" />
-                                <a href="#" class="btn btn-primary viewPostBtn">View Post</a>
-                          </div>
-                    </div>
-                    <div class="photoContainer">
-                        <div class="photoCardSize" style="width: 18rem;">
-                               <img class="viewImagePostImg" src="http://goo.gl/ijai22" />
-                                <a href="#" class="btn btn-primary viewPostBtn">View Post</a>
-                          </div>
-                    </div>
-                    <div class="photoContainer">
-                        <div class="photoCardSize" style="width: 18rem;">
-                               <img class="viewImagePostImg" src="http://goo.gl/ijai22" />
-                                <a href="#" class="btn btn-primary viewPostBtn">View Post</a>
-                          </div>
-                    </div>
-              </section>
-      </div>
+      <h1 class="text-center">My uploads</h1>
+      <div id="viewPostPhotoContainer"></div>
       <!-- end of start of landing photos page profile(viewpostImg) -->
       <!-- start of ad post container -->
         <div id="addPostContainer">
-                <section class="jumbotron text-center " >
-                  <div class="addPostPhoto">
-                      <img class="editImagePostImg" src="http://goo.gl/ijai22"/>
-                  </div>
-                  <div class="addPostDetails">
-                    <form id="addPostForm">
-                      <label class="addpostFormText" for="">Image Name:</label><br>
-                      <input id="addPostImageName" class="addPostFormInput"  type="text"  name="" value="" placeholder="enter post name"><br><br />
-                      <label class="addpostFormText" for="">Discription:</label><br>
-                      <textarea id="addPostDescription" class="addPostFormInput" rows="4" cols="50" name="" form="">Enter text here..</textarea><br />
-                      <label class="addpostFormText" for="">Image URL:</label><br>
-                      <input id="addPostImageUrl" class="addPostFormInput"  type="text"  name="" value="" placeholder="enter image url"><br><br />
-                      <br><br>
-                      <input class="btn btn-primary" type="submit" value="Post">
-                    </form>
-                  </div>
-                </section>
+          <section class="jumbotron text-center " >
+            <div class="addPostPhoto">
+                <img class="editImagePostImg" src="http://goo.gl/ijai22"/>
+            </div>
+            <div class="addPostDetails">
+              <form id="addPostForm">
+                <label class="addpostFormText" for="">Image Name:</label><br>
+                <input id="addPostImageName" class="addPostFormInput"  type="text"  name="" value="" placeholder="enter post name"><br><br />
+                <label class="addpostFormText" for="">Discription:</label><br>
+                <textarea id="addPostDescription" class="addPostFormInput" rows="4" cols="50" name="" form="">Enter text here..</textarea><br />
+                <label class="addpostFormText" for="">Image URL:</label><br>
+                <input id="addPostImageUrl" class="addPostFormInput"  type="text"  name="" value="" placeholder="enter image url"><br><br />
+                <br><br>
+                <input class="btn btn-primary" type="submit" value="Post">
+              </form>
+            </div>
+          </section>
         </div>
       <!-- end of add post container -->
   </div>
@@ -308,10 +285,10 @@
     </div>
   </footer>
 </div>
+<!--Modal Natalia-->
+<div id="myModalContainer"></div>
+<!--modal ENDS, Natalia-->
 <!-- end of footer -->
-
-
-
   <!-- svg used for mission clipping masks -->
 
 <!-- mission one next mission clipping mask -->

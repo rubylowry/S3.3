@@ -76,7 +76,7 @@ $('#loginForm').submit(function(){
       } else{
          // when shown after login/sign up forms colums of home-container display in one col
 
-        sessionStorage.setItem('userID', user['_id']);
+        sessionStorage.setItem('userId', user['_id']);
         sessionStorage.setItem('userName',user['username']);
         sessionStorage.setItem('userEmail',user['email']);
         toggleLogin();
@@ -288,7 +288,7 @@ function loadPostsHomePage(){
     success : function(posts){
       communityPosts = posts;
       for(var i = 0; i< posts.length; i++){
-        renderCardHomePage(posts[i]);
+        renderCardHomePage(posts[i], 'communityPhotos');
       }
     },
     error: function(){
@@ -297,9 +297,9 @@ function loadPostsHomePage(){
   });
 }
 
-function renderCardHomePage(post){
+function renderCardHomePage(post, containerId){
   const viewButtonId = "btnView" + post._id;
-    document.getElementById('communityPhotos').innerHTML += `<div class="col-md-4">
+    document.getElementById(containerId).innerHTML += `<div class="col-md-4">
     <div class="card cardSkin m-5">
       <img src="${post.imageUrl}" class="bd-placeholder-img card-img-top m-2"/>
       <div class="card-body">
@@ -315,11 +315,26 @@ function renderCardHomePage(post){
   </div>`;
 }
 
+function renderCardProfilePage(post){
 
-//modal home page
-//            <svg class="bd-placeholder-img card-img-top m-2" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>${post.title}</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-function openModalViewPostHomePage(postId){
-  let post = communityPosts.filter(p => p._id == postId)[0];
+    document.getElementById('viewPostPhotoContainer').innerHTML += `<div class="col-md-4">
+    <div class="card cardSkin m-5">
+      <img src="${post.imageUrl}" class="bd-placeholder-img card-img-top m-2"/>
+      <div class="card-body">
+        <div><img class="avatarSkin d-inline"><h2 class="d-inline ml-1">${post.username}</h2></div>
+        <p class="card-text">${post.description}</p>
+        <div class="text-right">
+          <div>
+          <button class="btn btn-sm btnPrimaryBlackFont" onclick="deletePost('${post._id}')">Delete</button>
+          <button class="btn btn-sm btnPrimaryBlackFont" onclick="openModalViewPostProfilePage('${post._id}')">View</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>`;
+}
+function openModalViewPostProfilePage(postId){
+  let post = myPosts.filter(p => p._id == postId)[0];
 
   let commentsList = post.comments ? "<ul>"  + post.comments.map(c => `<li><b>${c.userName}</b>: ${c.text}`).join() + "</ul>" : "";
   //we need to show modal with class modal
@@ -370,6 +385,64 @@ let modalBody = `<div class="modal" id="myModal" tabindex="-1" role="dialog">
 
 $('#myModalContainer').html(modalBody);
 $('#myModal').modal();
+
+}
+
+
+//modal home page
+function openModalViewPostHomePage(postId){
+  let post = communityPosts.filter(p => p._id == postId)[0];
+  let addCommentForm = isLoggedIn() ? `<div class="form-group">
+  <label for="comment" class="font-weight-bold" >Add comment</label>
+  <textarea id="addCommentArea" class="form-control" rows="2" id="comment" name="text"></textarea>
+</div>
+<button class="btn btn-warning" onclick="addComment('${post._id}')">Post</button>`: 'To add comment, please log in';
+
+  let commentsList = post.comments ? "<ul>"  + post.comments.map(c => `<li><b>${c.userName}</b>: ${c.text}`).join() + "</ul>" : "";
+  //we need to show modal with class modal
+let modalBody = `<div class="modal" id="myModal" tabindex="-1" role="dialog">
+<div class="modal-dialog modal-lg" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title">${post.title}</h5>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <div class="closeModalSkin closeModalStructure" aria-hidden="true">&times;</div>
+      </button>
+    </div>
+    <div class="modal-body">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-4 mr-4">
+          <div class="card borderNone mb-4">
+            <img src="${post.imageUrl}" class="bd-placeholder-img card-img-top m-2" />
+            <div class="card-body">
+              <div><img class="avatarSkin d-inline" src="assets/avatar-natalia.jpg"><h2 class="d-inline ml-1">${post.username}</h2></div>
+              <p class="card-text">${post.description}</p>
+              <div class="text-right">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 ml-4">
+          <div class="container">
+            <div>
+              <h2>Comments</h2>
+              <div id="commentsModalHome">Other users' comments</div>
+              ${commentsList}
+            </div>
+             ${addCommentForm}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    </div>
+  </div>
+</div>
+</div>`;
+
+$('#myModalContainer').html(modalBody);
+$('#myModal').modal();
 }
 
 function addComment(postId){
@@ -396,25 +469,8 @@ function addComment(postId){
       });
 }
 
-//not completed - requires styling by Natalia
-function renderCardProfilePage(){
-  document.getElementById('communityPhotosProfilePage').innerHTML = `
-  
-//   <div class="card cardSkin containerImg">
-//   <img src="card-img-top m-2" src="https://drive.google.com/uc?export=view&id=12rbthUs_tRTDY4dYBuj5mmxwrj5NaP4V" alt="Card image cap">
-//   <div class=containerButton><button class="btn btn-primary">Button</button><div>
-// </div>
-`
-  // <div class="container">
-  // <div class="cardStructure">
-  // <img class="card-img-top m-2" src="https://drive.google.com/uc?export=view&id=12rbthUs_tRTDY4dYBuj5mmxwrj5NaP4V" alt="Card image cap">
-  //   <button href="#" class="btn btn-primary buttonOverlay">View post</button>
-  // </div>
-  // </div>
-  
-}
-//Natalia's code ENDS
 
+//Natalia's code ENDS
 
 //James code
 console.log(sessionStorage);
@@ -451,6 +507,7 @@ function toggleLogin(){
     $('#landingPage').hide();
     $('#loginLandingPage').show();
     $(".album").hide();
+    refreshMyUploads();
   } else {
     $('#homePage').show();
     $('#landingPage').show();
@@ -496,7 +553,7 @@ $(document).ready(function(){
   // Update User - don't need / im an idiot and don't know how to do it
 
   // Login User -- done
-  // Logout User -- done
+  // Logout User -- 
 
   // View All Posts --
   // View A Specific Post --
@@ -591,28 +648,6 @@ $(document).ready(function(){
     }//error
   });//ajax
 
-  // Add Post
-  $('#postAddBtn').click(function(){
-    let username = sessionStorage.userName;
-    let description = $('#description').val();
-    let imageURL= $('#imageurl').val();
-    $.ajax({
-      url :`${url}/addPost`,
-      type :'POST',
-      data:{
-        username :username,
-        description : description,
-        imageURL: image,
-        userId : sessionStorage.getPost('userId')
-      },
-      success : function(loginData){
-        console.log(loginData);
-      },//success
-      error:function(){
-        console.log('error: cannot call api');
-      }//error
-    });//ajax
-  });
 });
 
 $('#addPostForm').submit(function(){
@@ -631,14 +666,15 @@ $('#addPostForm').submit(function(){
       title : postName,
       description : postDescription,
       username : userName,
-      imageUrl: postImageUrl
+      imageUrl: postImageUrl,
+      userId: sessionStorage['userId']
       },
     success : function(post){
       console.log(post);
       $('#addPostImageName').val('');
       $('#addPostDescription').val('');
       $('#addPostImageUrl').val('');
-      alert("post added!")
+      refreshMyUploads();
     },//success
     error:function(){
       console.log('error: cannot call api');
@@ -646,6 +682,23 @@ $('#addPostForm').submit(function(){
   });//ajax
 }//else
 });//submit function for addProduct
+posts = [];
+function refreshMyUploads(){
+  $.ajax({
+    url :`${url}/myposts/${sessionStorage['userId']}`,
+    type :'GET',
+    success : function(posts){
+      myPosts = posts;
+      $("#viewPostPhotoContainer").html("");
+      for(var i = 0; i < posts.length; i++){
+        renderCardProfilePage(posts[i]);
+      }
+    },//success
+    error:function(){
+      console.log('error: calling the server');
+    }//error
+  });//ajax
+}
 
 // Update Post
 $('#postUpdateBtn').click(function(){
@@ -677,10 +730,10 @@ $('#postUpdateBtn').click(function(){
 
 // Delete post
 
-$('#postDeleteBtn').on('click',function(){
-  // event.preventDefault();
-  let postId = $('#deletePostId').val();
-  console.log(postId);
+function deletePost(postId){
+  if(!window.confirm("Are you sure you want to delete this post?")){
+    return;
+  }
     $.ajax({
     url :`${url}/deletePost/${postId}`,
     type :'DELETE',
@@ -688,6 +741,7 @@ $('#postDeleteBtn').on('click',function(){
       console.log(data);
       if (data=='deleted'){
         alert('deleted');
+        refreshMyUploads();
       } else {
         alert('Error while deleting post');
       }
@@ -696,7 +750,7 @@ $('#postDeleteBtn').on('click',function(){
       console.log('error: cannot call api');
     }//error
   });//ajax
-});
+}
 
 
 function showUserName(name){
