@@ -42,6 +42,10 @@ body {
   border: none !important;
 }
 
+.border {
+  border: 3px solid #6fc7e1 !important;
+}
+
 .cardSkin {
   border: 2px solid #6fc7e1;
 }
