@@ -1,11 +1,7 @@
-
 //Jacob
 // css elements for objects used in animations
 // example onclick hide and shadow ect..
 //For keyframe css
-
-
-
 
 //Navbar id/class elements for animations
 .leftCornerDivNav{
@@ -118,10 +114,9 @@
 
 #clickHereImg{
   height: 80px;
-  left: 25%;
+  left: 13%;
   position: absolute;
 }
-
 
 // keyframes animation for next mission fade in
 
@@ -156,12 +151,12 @@
 }
 
 .missionOneImg{
-  height: 450px;
+  height: 370px;
 }
 
 .missionTwoImg, .missionThreeImg{
   display: none;
-  height: 450px;
+  height: 370px;
 }
 
 // End of landing page animations
