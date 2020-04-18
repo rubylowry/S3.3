@@ -264,6 +264,7 @@ $("#hideAndSeek").click(function(){
 //Natalia's code
 function urlReady(){
   loadPostsHomePage();
+  toggleLogin();
 }
 communityPosts = [];
 function loadPostsHomePage(){
@@ -311,6 +312,7 @@ function renderCardProfilePage(post){
         <p class="card-text">${post.description}</p>
         <div class="text-right">
           <div>
+          <button class="btn btn-sm btnPrimaryBlackFont" onclick="editPost('${post._id}')">Edit</button>
           <button class="btn btn-sm btnPrimaryBlackFont" onclick="deletePost('${post._id}')">Delete</button>
           <button class="btn btn-sm btnPrimaryBlackFont" onclick="openModalViewPostProfilePage('${post._id}')">View</button>
           </div>
@@ -319,6 +321,66 @@ function renderCardProfilePage(post){
     </div>
   </div>`;
 }
+
+function editPost(postId){
+  let post = myPosts.filter(p => p._id == postId)[0];
+
+   let modalBody = `<div class="modal" id="myModal" tabindex="-1" role="dialog">
+   <div class="modal-dialog modal-lg" role="document">
+     <div class="modal-content">
+       <div class="modal-header">
+         <h5 class="modal-title">${post.description}</h5>
+         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+           <div class="closeModalSkin closeModalStructure" aria-hidden="true">&times;</div>
+         </button>
+       </div>
+       <div class="modal-body">
+          <div class="form-group">
+          <label for="editPostImageUrl">Image Url</label>
+          <input class="form-control" type="text" id="editPostImageUrl" value="${post.imageUrl}"/>
+          </div>
+          <div class="form-group">
+          <label for="editPostDescription">Image Url</label>
+          <input class="form-control" type="text" id="editPostDescription" value="${post.description}"/>
+          </div>
+          <div>
+          <button class="btn btn-primary" onclick="savePost('${post._id}')">Save</button>
+          <button class="btn btn-warning" onclick="cancelSavePost()">Cancel</button>
+          </div>
+      </div>
+    </div>
+   </div>`;
+
+  $('#myModalContainer').html(modalBody);
+  $('#myModal').modal();
+}
+
+function savePost(postId){
+  let post = myPosts.filter(p => p._id == postId)[0];
+
+  let description = $('#editPostDescription').val();
+  let imageUrl = $('#editPostImageUrl').val();
+  $.ajax({
+    url :`${url}/posts/${postId}`,
+    type :'PATCH',
+    data: {
+      postId: post._id,
+      description: description,
+      imageUrl: imageUrl
+     },
+    success : function(post){
+      alert("Post saved!");
+    },
+    error: function(){
+      alert("Error saving post!");
+    }
+    });
+}
+
+function cancelSavePost(){
+  $('#myModal').modal('hide');
+}
+
 function openModalViewPostProfilePage(postId){
   let post = myPosts.filter(p => p._id == postId)[0];
 
@@ -516,14 +578,14 @@ $(document).ready(function(){
   
   $("#profilePageContainer").hide();
   $('#homePage').show();
-  toggleLogin();
+
   $("#goToProfileBtn").click(function(){
     $("#homePage").hide();
     $("#profilePageContainer").show();
   });
 
   $('#addPostContainer').hide();
-  
+
   $('#addPhotoBtn').click(function(){
     navigateProfilePage("addPostContainer");
   });
