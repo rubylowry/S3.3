@@ -99,7 +99,7 @@
         <button type="button" id="goToProfileBtn" class="btn btn-primary">Go to your profile</button>
         <img src="assets/logedinImg.png" class="logedInImg">
       </section>
-      <div class="album py-5 bg-light">
+      <div id="album" class="album py-5 bg-light">
         <h1 class="text-center mb-5">Latest community photos</h1>
         <h2 class="text-center mb-5">Please login to upload images and participate in discussions</h2>
         <!--modal home page Natalia-->
@@ -200,15 +200,15 @@
     <div id="profilePageContainer" >
         <section class="text-center" >
           <div class="containerMenu">
-                <div class="jumbotron border">  
+                <div class="jumbotron border mt-5">  
                   <div class="container" id="profileNav">
                     <div class="profileNavBtn">
-                          <i class="fas fa-camera fa-3x" id="upLoadPhoto"></i>
+                          <i class="fas fa-camera fa-3x" id="myUploadsBtn"></i>
                           <p class="profileNavText">My Uploads</p>
                     </div>
                     <div class="profileNavBtn">
-                        <i class="fas fa-ribbon fa-3x"></i>
-                        <p class="profileNavText">My Badges</p>
+                        <i id="seeAllPostsBtn" class="fas fa-image fa-3x"></i>
+                        <p class="profileNavText">See all posts</p>
                     </div>
                     <div class="profileNavBtn">
                       <i class="fas fa-pencil-alt fa-3x"></i>
@@ -223,11 +223,14 @@
           </section>
       <!-- end of profile nav and button navigations -->
       <!-- start of landing photos page profile(viewpostImg) -->
-      <h1 class="text-center">My uploads</h1>
-      <div id="viewPostPhotoContainer"></div>
+      <div class="profileSection" id="communityPostsProfilePage"></div>
+      <div class="profileSection" id="myUploads">
+        <!-- <h1 class="text-center">My uploads</h1> -->
+        <div id="viewPostPhotoContainer"></div>
+      </div>
       <!-- end of start of landing photos page profile(viewpostImg) -->
       <!-- start of ad post container -->
-        <div id="addPostContainer">
+        <div class="profileSection" id="addPostContainer">
           <section class="jumbotron text-center " >
             <div class="addPostPhoto">
                 <img class="editImagePostImg" src="http://goo.gl/ijai22"/>

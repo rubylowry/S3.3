@@ -275,6 +275,7 @@ function loadPostsHomePage(){
       communityPosts = posts;
       for(var i = 0; i< posts.length; i++){
         renderCardHomePage(posts[i], 'communityPhotos');
+        renderCardHomePage(posts[i], 'communityPostsProfilePage');
       }
     },
     error: function(){
@@ -284,7 +285,7 @@ function loadPostsHomePage(){
 }
 
 function renderCardHomePage(post, containerId){
-  const viewButtonId = "btnView" + post._id;
+
     document.getElementById(containerId).innerHTML += `<div class="col-md-4">
     <div class="card cardSkin m-5">
       <img src="${post.imageUrl}" class="bd-placeholder-img card-img-top m-2"/>
@@ -293,7 +294,7 @@ function renderCardHomePage(post, containerId){
         <p class="card-text">${post.description}</p>
         <div class="text-right">
           <div>
-            <button id="${viewButtonId}" class="btn btn-sm btnPrimaryBlackFont" onclick="openModalViewPostHomePage('${post._id}')">View</button>
+            <button class="btn btn-sm btnPrimaryBlackFont" onclick="openModalViewPostHomePage('${post._id}')">View</button>
           </div>
         </div>
       </div>
@@ -302,7 +303,6 @@ function renderCardHomePage(post, containerId){
 }
 
 function renderCardProfilePage(post){
-
     document.getElementById('viewPostPhotoContainer').innerHTML += `<div class="col-md-4">
     <div class="card cardSkin m-5">
       <img src="${post.imageUrl}" class="bd-placeholder-img card-img-top m-2"/>
@@ -506,6 +506,11 @@ function toggleLogin(){
   }
 }
 
+function navigateProfilePage(sectionId){
+  $(".profileSection").hide();
+  $("#"+sectionId).show();
+}
+
 $(document).ready(function(){
   // console.log("js is working");
   
@@ -518,36 +523,19 @@ $(document).ready(function(){
   });
 
   $('#addPostContainer').hide();
+  
   $('#addPhotoBtn').click(function(){
-    $('#addPostContainer').show();
-    $('#viewPostPhotoContainer').hide();
+    navigateProfilePage("addPostContainer");
+  });
+
+  $('#seeAllPostsBtn').click(function(){
+    navigateProfilePage("communityPostsProfilePage");
+  });
+
+  $('#myUploadsBtn').click(function(){
+    navigateProfilePage("myUploads");
   });
   
-  //remove if not required
-  // $('#uploadPhoto').click(function(){
-  //   $('#addPostContainer').hide();
-  //   $('#viewPostPhotoContainer').show();
-  // });
-
-
-  // stuff needed:
-
-  // View User --  done
-  // Add User -- done
-  // Delete User -- im an idiot and don't know how to do it
-  // Update User - don't need / im an idiot and don't know how to do it
-
-  // Login User -- done
-  // Logout User -- 
-
-  // View All Posts --
-  // View A Specific Post --
-  // Add Post -- done
-  // Delete Post -- done
-  // Update Post -- done
-
-
-
   //logout button
   $('#logouthomePage').click(function(){
     sessionStorage.clear();
