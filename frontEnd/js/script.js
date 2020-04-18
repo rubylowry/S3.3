@@ -1,7 +1,5 @@
 $('#registerForm').submit(function(){
-
   event.preventDefault();
-
   let username = $('#regUserName').val();
   let email = $('#regEmail').val();
   let password = $('#regPassword').val();
@@ -89,8 +87,8 @@ $('#loginForm').submit(function(){
 }//else
 });//submit function for login loginForm
 
-// start of form animation and form validation
-
+// Jacob
+//start of form animation and form validation
 //testing login / sign up navigation
 $("#signUpHomePage").click(function(){
   $("#signUpPage").attr('style',"display: block !important");
@@ -105,7 +103,6 @@ $("#signUpAbout").click(function(){
   $("#loginPage").attr('style',"display: none !important");
   $("#homePage").hide();
   $(".navBlock").hide();
-
 });
 
 $("#logInHomePage").click(function(){
@@ -149,31 +146,17 @@ $("#signUpSubmitBtn").click(function(){
     $("#aboutPage").attr('style',"display: none !important");
     $("#homePage").hide();
     $(".navBlock").hide();
-    // var username = $("#username").val();
-    // var useremail = $("#email").val();
-    // var userpassword = $("#password").val();
-    // console.log(username);
-    // console.log(useremail);
-    // console.log(userpassword);
 });
 
-
-
-
 function animatedForm(){
-
 	const arrows = document.querySelectorAll(".fa-arrow-down");
-
 	arrows.forEach(arrow =>{
-
 		arrow.addEventListener("click",() => {
-
 			const input = arrow.previousElementSibling;
 			const parent = arrow.parentElement;
 			const nextForm = parent.nextElementSibling;
 			console.log(input);
 			console.log(parent);
-
 			// validation checking sign up
 			if(input.type === "text" && validateUser(input)){
 				nextSlide(parent, nextForm);
@@ -194,7 +177,6 @@ function animatedForm(){
 
 function validateUser(user){
     const minUserNameLength = 6;
-    
 		if (user.value.length < minUserNameLength){
 			error();
 			$('#errorMessage').show();
@@ -251,7 +233,6 @@ function nextSlide(parent, nextForm){
 
 
 function error(){
-
   $("#signUpPage").css("backgroundColor","#ffffff");
   $(".fieldName").css("border","2px solid tomato");
   $(".fieldName").css("backgroundColor","#ffffff");
@@ -259,7 +240,6 @@ function error(){
   $(".fieldEmail").css("backgroundColor","#ffffff");
   $(".fieldPassword").css("border","2px solid tomato");
   $(".fieldPassword").css("backgroundColor","#ffffff");
-
 }
 
 function success(){
@@ -268,14 +248,20 @@ function success(){
 
 animatedForm();
 
-
 //end of form animation and and form validation
+//End of Javascript for navbar and main homePage animations
+//End of Javascript for navbar and main homePage animations
+$(".hideSeekExitMessage").click(function(){
+  $("#hideAndSeekPopUp").hide();
+});
 
-//End of Javascript for navbar and main homePage animations
-//End of Javascript for navbar and main homePage animations
+$("#hideAndSeek").click(function(){
+  $("#hideAndSeekPopUp").toggle();
+});
+
+//Jacob's code ENDS
 
 //Natalia's code
-
 function urlReady(){
   loadPostsHomePage();
 }
@@ -365,7 +351,7 @@ let modalBody = `<div class="modal" id="myModal" tabindex="-1" role="dialog">
           <div class="container">
             <div>
               <h2>Comments</h2>
-              <div id="commentsModalHome">Other users' comments</div>
+              
               ${commentsList}
             </div>
               <div class="form-group">
@@ -427,7 +413,6 @@ let modalBody = `<div class="modal" id="myModal" tabindex="-1" role="dialog">
           <div class="container">
             <div>
               <h2>Comments</h2>
-              <div id="commentsModalHome">Other users' comments</div>
               ${commentsList}
             </div>
              ${addCommentForm}
