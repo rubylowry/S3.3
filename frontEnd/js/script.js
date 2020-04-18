@@ -329,7 +329,7 @@ function editPost(postId){
    <div class="modal-dialog modal-lg" role="document">
      <div class="modal-content">
        <div class="modal-header">
-         <h5 class="modal-title">${post.description}</h5>
+         <h5 class="modal-title">Edit Post</h5>
          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
            <div class="closeModalSkin closeModalStructure" aria-hidden="true">&times;</div>
          </button>
@@ -340,7 +340,7 @@ function editPost(postId){
           <input class="form-control" type="text" id="editPostImageUrl" value="${post.imageUrl}"/>
           </div>
           <div class="form-group">
-          <label for="editPostDescription">Image Url</label>
+          <label for="editPostDescription">Description</label>
           <input class="form-control" type="text" id="editPostDescription" value="${post.description}"/>
           </div>
           <div>
