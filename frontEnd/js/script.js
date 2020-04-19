@@ -102,7 +102,7 @@ $("#signUpAbout").click(function(){
   $("#aboutPage").attr('style',"display: block !important");
   $("#loginPage").attr('style',"display: none !important");
   $("#homePage").hide();
-  $(".navBlock").hide();
+  // $(".navBlock").hide();
 });
 
 $("#logInHomePage").click(function(){
@@ -110,7 +110,7 @@ $("#logInHomePage").click(function(){
   $("#signUpPage").attr('style',"display: none !important");
   $("#aboutPage").attr('style',"display: none !important");
   $("#homePage").hide();
-  $(".navBlock").hide();
+  // $(".navBlock").hide();
 });
 
 $("#aboutHomePage").click(function(){
@@ -120,7 +120,7 @@ $("#aboutHomePage").click(function(){
 });
 
 $(".foxFaceNav").click(function(){
-  $(".navBlock").show();
+  // $(".navBlock").show();
   $("#homePage").show();
   $("#loginPage").attr('style',"display: none !important");
   $("#signUpPage").attr('style',"display: none !important");
@@ -128,7 +128,7 @@ $(".foxFaceNav").click(function(){
 });
 
 $(".missionThreeSplashText").click(function(){
-  $(".navBlock").hide();
+  // $(".navBlock").hide();
   $("#homePage").hide();
   $("#signUpPage").attr('style',"display: block !important");
 });
@@ -145,7 +145,7 @@ $("#signUpSubmitBtn").click(function(){
     $("#signUpPage").attr('style',"display: none !important");
     $("#aboutPage").attr('style',"display: none !important");
     $("#homePage").hide();
-    $(".navBlock").hide();
+    // $(".navBlock").hide();
 });
 
 function animatedForm(){
@@ -286,7 +286,6 @@ function loadPostsHomePage(){
 }
 
 function renderCardHomePage(post, containerId){
-
     document.getElementById(containerId).innerHTML += `<div class="col-md-4">
     <div class="card cardSkin m-5">
       <img src="${post.imageUrl}" class="bd-placeholder-img card-img-top m-2"/>
