@@ -99,7 +99,7 @@
         <button type="button" id="goToProfileBtn" class="btn btn-primary">Go to your profile</button>
         <img src="assets/logedinImg.png" class="logedInImg">
       </section>
-      <div class="album py-5 bg-light">
+      <div id="album" class="album py-5 bg-light">
         <h1 class="text-center mb-5">Latest community photos</h1>
         <h2 class="text-center mb-5">Please login to upload images and participate in discussions</h2>
         <!--modal home page Natalia-->
@@ -198,21 +198,17 @@
     </div>
     <!--Jake's code PROFILE PAGE-->
     <div id="profilePageContainer" >
-        <section class="text-center" >
+        <section class="text-center container">
           <div class="containerMenu">
-                <div class="jumbotron border">  
+                <div class="jumbotron border mt-5">  
                   <div class="container" id="profileNav">
                     <div class="profileNavBtn">
-                          <i class="fas fa-camera fa-3x" id="upLoadPhoto"></i>
+                          <i class="fas fa-camera fa-3x" id="myUploadsBtn"></i>
                           <p class="profileNavText">My Uploads</p>
                     </div>
                     <div class="profileNavBtn">
-                        <i class="fas fa-ribbon fa-3x"></i>
-                        <p class="profileNavText">My Badges</p>
-                    </div>
-                    <div class="profileNavBtn">
-                      <i class="fas fa-pencil-alt fa-3x"></i>
-                      <p class="profileNavText">Edit Profile</p>
+                        <i id="seeAllPostsBtn" class="fas fa-image fa-3x"></i>
+                        <p class="profileNavText">See all posts</p>
                     </div>
                     <div class="profileNavBtn">
                         <i id="addPhotoBtn" class="fas fa-plus fa-3x"></i>
@@ -223,21 +219,26 @@
           </section>
       <!-- end of profile nav and button navigations -->
       <!-- start of landing photos page profile(viewpostImg) -->
-      <h1 class="text-center">My uploads</h1>
-      <div id="viewPostPhotoContainer"></div>
+      <div class="container profileSection" id="communityPostsProfilePage">
+        <h1 class="text-center">All posts</h1>
+        <div class="row" id="communityPostsProfilePagePhotoContainer">
+        </div>
+      </div>
+      <div class="container profileSection" id="myUploads">
+        <h1 class="text-center">My uploads</h1>
+        <div class="row" id="viewPostPhotoContainer"></div>
+      </div>
       <!-- end of start of landing photos page profile(viewpostImg) -->
       <!-- start of ad post container -->
-        <div id="addPostContainer">
-          <section class="jumbotron text-center " >
-            <div class="addPostPhoto">
-                <img class="editImagePostImg" src="http://goo.gl/ijai22"/>
-            </div>
+        <div class="profileSection" id="addPostContainer">
+          <section class="text-center" >
+           <h1 class="text-center">Add Photo</h1>
             <div class="addPostDetails">
               <form id="addPostForm">
                 <label class="addpostFormText" for="">Image Name:</label><br>
                 <input id="addPostImageName" class="addPostFormInput"  type="text"  name="" value="" placeholder="enter post name"><br><br />
                 <label class="addpostFormText" for="">Discription:</label><br>
-                <textarea id="addPostDescription" class="addPostFormInput" rows="4" cols="50" name="" form="">Enter text here..</textarea><br />
+                <textarea id="addPostDescription" class="addPostFormInput" rows="4" cols="50" name="" form="" placeholder="Enter text here.."></textarea><br />
                 <label class="addpostFormText" for="">Image URL:</label><br>
                 <input id="addPostImageUrl" class="addPostFormInput"  type="text"  name="" value="" placeholder="enter image url"><br><br />
                 <br><br>

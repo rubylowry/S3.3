@@ -102,7 +102,7 @@ $("#signUpAbout").click(function(){
   $("#aboutPage").attr('style',"display: block !important");
   $("#loginPage").attr('style',"display: none !important");
   $("#homePage").hide();
-  $(".navBlock").hide();
+  // $(".navBlock").hide();
 });
 
 $("#logInHomePage").click(function(){
@@ -110,7 +110,7 @@ $("#logInHomePage").click(function(){
   $("#signUpPage").attr('style',"display: none !important");
   $("#aboutPage").attr('style',"display: none !important");
   $("#homePage").hide();
-  $(".navBlock").hide();
+  // $(".navBlock").hide();
 });
 
 $("#aboutHomePage").click(function(){
@@ -120,7 +120,7 @@ $("#aboutHomePage").click(function(){
 });
 
 $(".foxFaceNav").click(function(){
-  $(".navBlock").show();
+  // $(".navBlock").show();
   $("#homePage").show();
   $("#loginPage").attr('style',"display: none !important");
   $("#signUpPage").attr('style',"display: none !important");
@@ -128,7 +128,7 @@ $(".foxFaceNav").click(function(){
 });
 
 $(".missionThreeSplashText").click(function(){
-  $(".navBlock").hide();
+  // $(".navBlock").hide();
   $("#homePage").hide();
   $("#signUpPage").attr('style',"display: block !important");
 });
@@ -145,7 +145,7 @@ $("#signUpSubmitBtn").click(function(){
     $("#signUpPage").attr('style',"display: none !important");
     $("#aboutPage").attr('style',"display: none !important");
     $("#homePage").hide();
-    $(".navBlock").hide();
+    // $(".navBlock").hide();
 });
 
 function animatedForm(){
@@ -264,6 +264,7 @@ $("#hideAndSeek").click(function(){
 //Natalia's code
 function urlReady(){
   loadPostsHomePage();
+  toggleLogin();
 }
 communityPosts = [];
 function loadPostsHomePage(){
@@ -275,6 +276,7 @@ function loadPostsHomePage(){
       communityPosts = posts;
       for(var i = 0; i< posts.length; i++){
         renderCardHomePage(posts[i], 'communityPhotos');
+        renderCardHomePage(posts[i], 'communityPostsProfilePagePhotoContainer');
       }
     },
     error: function(){
@@ -284,7 +286,6 @@ function loadPostsHomePage(){
 }
 
 function renderCardHomePage(post, containerId){
-  const viewButtonId = "btnView" + post._id;
     document.getElementById(containerId).innerHTML += `<div class="col-md-4">
     <div class="card cardSkin m-5">
       <img src="${post.imageUrl}" class="bd-placeholder-img card-img-top m-2"/>
@@ -293,7 +294,7 @@ function renderCardHomePage(post, containerId){
         <p class="card-text">${post.description}</p>
         <div class="text-right">
           <div>
-            <button id="${viewButtonId}" class="btn btn-sm btnPrimaryBlackFont" onclick="openModalViewPostHomePage('${post._id}')">View</button>
+            <button class="btn btn-sm btnPrimaryBlackFont" onclick="openModalViewPostHomePage('${post._id}')">View</button>
           </div>
         </div>
       </div>
@@ -302,7 +303,6 @@ function renderCardHomePage(post, containerId){
 }
 
 function renderCardProfilePage(post){
-
     document.getElementById('viewPostPhotoContainer').innerHTML += `<div class="col-md-4">
     <div class="card cardSkin m-5">
       <img src="${post.imageUrl}" class="bd-placeholder-img card-img-top m-2"/>
@@ -311,6 +311,7 @@ function renderCardProfilePage(post){
         <p class="card-text">${post.description}</p>
         <div class="text-right">
           <div>
+          <button class="btn btn-sm btnPrimaryBlackFont" onclick="editPost('${post._id}')">Edit</button>
           <button class="btn btn-sm btnPrimaryBlackFont" onclick="deletePost('${post._id}')">Delete</button>
           <button class="btn btn-sm btnPrimaryBlackFont" onclick="openModalViewPostProfilePage('${post._id}')">View</button>
           </div>
@@ -319,6 +320,66 @@ function renderCardProfilePage(post){
     </div>
   </div>`;
 }
+
+function editPost(postId){
+  let post = myPosts.filter(p => p._id == postId)[0];
+
+   let modalBody = `<div class="modal" id="myModal" tabindex="-1" role="dialog">
+   <div class="modal-dialog modal-lg" role="document">
+     <div class="modal-content">
+       <div class="modal-header">
+         <h5 class="modal-title">Edit Post</h5>
+         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+           <div class="closeModalSkin closeModalStructure" aria-hidden="true">&times;</div>
+         </button>
+       </div>
+       <div class="modal-body">
+          <div class="form-group">
+          <label for="editPostImageUrl">Image Url</label>
+          <input class="form-control" type="text" id="editPostImageUrl" value="${post.imageUrl}"/>
+          </div>
+          <div class="form-group">
+          <label for="editPostDescription">Description</label>
+          <input class="form-control" type="text" id="editPostDescription" value="${post.description}"/>
+          </div>
+          <div>
+          <button class="btn btn-primary" onclick="savePost('${post._id}')">Save</button>
+          <button class="btn btn-warning" onclick="cancelSavePost()">Cancel</button>
+          </div>
+      </div>
+    </div>
+   </div>`;
+
+  $('#myModalContainer').html(modalBody);
+  $('#myModal').modal();
+}
+
+function savePost(postId){
+  let post = myPosts.filter(p => p._id == postId)[0];
+
+  let description = $('#editPostDescription').val();
+  let imageUrl = $('#editPostImageUrl').val();
+  $.ajax({
+    url :`${url}/posts/${postId}`,
+    type :'PATCH',
+    data: {
+      postId: post._id,
+      description: description,
+      imageUrl: imageUrl
+     },
+    success : function(post){
+      alert("Post saved!");
+    },
+    error: function(){
+      alert("Error saving post!");
+    }
+    });
+}
+
+function cancelSavePost(){
+  $('#myModal').modal('hide');
+}
+
 function openModalViewPostProfilePage(postId){
   let post = myPosts.filter(p => p._id == postId)[0];
 
@@ -506,48 +567,37 @@ function toggleLogin(){
   }
 }
 
+function navigateProfilePage(sectionId){
+  $(".profileSection").hide();
+  $("#"+sectionId).show();
+}
+
 $(document).ready(function(){
   // console.log("js is working");
   
   $("#profilePageContainer").hide();
   $('#homePage').show();
-  toggleLogin();
+
   $("#goToProfileBtn").click(function(){
     $("#homePage").hide();
     $("#profilePageContainer").show();
+    navigateProfilePage("myUploads");
   });
 
   $('#addPostContainer').hide();
+
   $('#addPhotoBtn').click(function(){
-    $('#addPostContainer').show();
-    $('#viewPostPhotoContainer').hide();
+    navigateProfilePage("addPostContainer");
+  });
+
+  $('#seeAllPostsBtn').click(function(){
+    navigateProfilePage("communityPostsProfilePage");
+  });
+
+  $('#myUploadsBtn').click(function(){
+    navigateProfilePage("myUploads");
   });
   
-  //remove if not required
-  // $('#uploadPhoto').click(function(){
-  //   $('#addPostContainer').hide();
-  //   $('#viewPostPhotoContainer').show();
-  // });
-
-
-  // stuff needed:
-
-  // View User --  done
-  // Add User -- done
-  // Delete User -- im an idiot and don't know how to do it
-  // Update User - don't need / im an idiot and don't know how to do it
-
-  // Login User -- done
-  // Logout User -- 
-
-  // View All Posts --
-  // View A Specific Post --
-  // Add Post -- done
-  // Delete Post -- done
-  // Update Post -- done
-
-
-
   //logout button
   $('#logouthomePage').click(function(){
     sessionStorage.clear();

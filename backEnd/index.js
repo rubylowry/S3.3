@@ -176,22 +176,17 @@ app.delete('/deletePost/:id',(req,res)=>{
 });
 
 // UPDATE POST
-app.patch('/updatePost/:id',(req,res)=>{
+app.patch('/posts/:id',(req,res)=>{
   const idParam = req.params.id;
   Post.findById(idParam,(err,post)=>{
     if(!post){
       res.send('post not found');
       return;
     }
-    const updatedPost ={
-      _id:idParam,
-      username : req.body.username,
-      userId : req.body.userId,
-      description: req.body.description,
-      imageUrl : req.body.image,
-      date : req.body.title
-    };
-    Post.updateOne({_id:idParam}, updatedPost).then(result=>{
+   post.description = req.body.description;
+   post.imageUrl = req.body.imageUrl;
+   
+   post.save().then(result=>{
       res.send(result);
     }).catch(err=> res.send(err));
   }).catch(err=>res.send('Error'));
