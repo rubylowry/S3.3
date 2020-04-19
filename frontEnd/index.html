@@ -233,18 +233,20 @@
         <div class="profileSection" id="addPostContainer">
           <section class="text-center" >
            <h1 class="text-center">Add Photo</h1>
+           <div class="container w-50">
             <div class="addPostDetails">
               <form id="addPostForm">
-                <label class="addpostFormText" for="">Image Name:</label><br>
-                <input id="addPostImageName" class="addPostFormInput"  type="text"  name="" value="" placeholder="enter post name"><br><br />
-                <label class="addpostFormText" for="">Discription:</label><br>
-                <textarea id="addPostDescription" class="addPostFormInput" rows="4" cols="50" name="" form="" placeholder="Enter text here.."></textarea><br />
-                <label class="addpostFormText" for="">Image URL:</label><br>
-                <input id="addPostImageUrl" class="addPostFormInput"  type="text"  name="" value="" placeholder="enter image url"><br><br />
+                <label class="addpostFormText" for="addPostImageName">Image Name:</label><br>
+                <input id="addPostImageName" class="form-control addPostFormInput"  type="text"  name="" value="" placeholder="enter post name"><br><br />
+                <label class="addpostFormText" for="">Description:</label><br>
+                <textarea id="addPostDescription" class="addPostFormInput w-100" rows="4" cols="50" name="" form="" placeholder="Enter text here.."></textarea><br />
+                <label class="addpostFormText" for="addPostImageUrl">Image URL:</label><br>
+                <input id="addPostImageUrl" class="form-control addPostFormInput"  type="text"  name="" value="" placeholder="enter image url"><br><br />
                 <br><br>
                 <input class="btn btn-primary" type="submit" value="Post">
               </form>
             </div>
+          </div>
           </section>
         </div>
       <!-- end of add post container -->
