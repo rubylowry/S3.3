@@ -276,7 +276,7 @@ function loadPostsHomePage(){
       communityPosts = posts;
       for(var i = 0; i< posts.length; i++){
         renderCardHomePage(posts[i], 'communityPhotos');
-        renderCardHomePage(posts[i], 'communityPostsProfilePage');
+        renderCardHomePage(posts[i], 'communityPostsProfilePagePhotoContainer');
       }
     },
     error: function(){
@@ -581,6 +581,7 @@ $(document).ready(function(){
   $("#goToProfileBtn").click(function(){
     $("#homePage").hide();
     $("#profilePageContainer").show();
+    navigateProfilePage("myUploads");
   });
 
   $('#addPostContainer').hide();
