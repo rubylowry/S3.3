@@ -1,0 +1,30 @@
+@import 'theme';
+@import 'variables';
+@import 'base';
+@import 'media';
+@import 'mixins';
+@import 'animation';
+@import 'clippingMasks';
+@import 'forms';
+@import 'profilePage';
+
+
+//css resets
+// css elemtent resets
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+button{
+  background: none;
+  border: none;
+}
+
+a,a:hover, a:focus, a:active{
+  text-decoration: none;
+  color: inherit;
+}

@@ -1,0 +1,205 @@
+//Jacob
+// css elements for objects used in animations
+// example onclick hide and shadow ect..
+//For keyframe css
+
+//Navbar id/class elements for animations
+.leftCornerDivNav{
+  position: relative;
+  height:150px;
+  width: 200px;
+  z-index: 100;
+}
+
+#hidePlants{
+  top: 0;
+  left: 0;
+  position: absolute;
+  z-index: 3;
+}
+
+#hidePlants{
+  cursor: pointer;
+}
+
+#hideSeal{
+  display: none;
+}
+
+.hideAndSeekAnimals{
+  margin-top: 20px;
+  margin-left: 50px;
+  height: 100px;
+  z-index: 1;
+}
+
+.hideAndSeekAnimals:hover{
+  cursor: pointer;
+}
+
+.centerDivNav{
+  text-align: center;
+}
+
+.littleFoxNav{
+  margin-bottom: 20px;
+}
+
+.foxFaceNav{
+  margin: 0 10px;
+  float: left;
+  height: 80px;
+}
+
+.colourCircleNav{
+  margin: 0 10px;
+  margin-top: 40px;
+  float: left;
+  height: 20px;
+  width: 20px;
+  border-radius: 25px;
+  background-color: #333;
+}
+
+.colourCircleNav:hover{
+  cursor: pointer;
+}
+
+#orangeCircle{
+  background-color: #ff7B4a;
+}
+
+#purpleCircle{
+  background-color: #ff99fa;
+}
+
+#blueCircle{
+  background-color: #36ffff;
+}
+
+#yellowCircle{
+  background-color: #ffff39;
+}
+
+#purpleFox{
+  display: none;
+}
+
+#blueFox{
+  display: none;
+}
+
+#yellowFox{
+  display: none;
+}
+
+#hideAndSeekPopUp{
+  display: none;
+}
+
+
+
+// End of Navbar id/class elements for animations
+
+// start of landing homepage mission animations
+
+
+#missionTwoSound{
+  display: none;
+}
+
+#missionThreeSound{
+  display: none;
+}
+
+#clickHereImg{
+  height: 80px;
+  left: 13%;
+  position: absolute;
+}
+
+// keyframes animation for next mission fade in
+
+@keyframes fadeIn{
+  0%{
+    opacity: 0;
+  }
+  80%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+// end of keyframes animation for next mission fade in
+
+.missionOneText{
+  animation: fadeIn 25s ease;
+}
+
+.missionTwoText{
+    animation: fadeIn 25s ease;
+}
+
+.missionThreeText{
+    animation: fadeIn 25s ease;
+}
+
+.missionImages{
+  margin-top: 50px;
+}
+
+.missionOneImg{
+  height: 370px;
+}
+
+.missionTwoImg, .missionThreeImg{
+  display: none;
+  height: 370px;
+}
+
+// End of landing page animations
+
+
+
+
+// Start of form animations
+
+@keyframes shake{
+0%{
+  transform: translate(-50%,-50%) rotate(0deg);
+}
+25%{
+  transform: translate(-50%,-50%) rotate(3deg);
+}
+50%{
+  transform: translate(-50%,-50%) rotate(0deg);
+}
+75%{
+  transform: translate(-50%,-50%) rotate(3deg);
+}
+100%{
+  transform: translate(-50%,-50%) rotate(0deg);
+}
+}
+
+@keyframes shakeLogin{
+0%{
+  transform: translate(-50%,-50%) rotate(0deg);
+}
+25%{
+  transform: translate(-50%,-50%) rotate(3deg);
+}
+50%{
+  transform: translate(-50%,-50%) rotate(0deg);
+}
+75%{
+  transform: translate(-50%,-50%) rotate(3deg);
+}
+100%{
+  transform: translate(-50%,-50%) rotate(0deg);
+}
+}
+
+// End of form animations
