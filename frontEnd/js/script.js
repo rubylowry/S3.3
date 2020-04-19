@@ -17,7 +17,6 @@ $('#registerForm').submit(function(){
       email : email,
       password : password
       },
-
     success : function(user){
       console.log(user);
       if (!(user == 'username taken already. Please try another one')) {
@@ -30,15 +29,12 @@ $('#registerForm').submit(function(){
         $('#regUserName').val('');
         $('#regEmail').val('');
         $('#regPassword').val('');
-
       }
 
     },//success
     error:function(){
       console.log('error: cannot call api');
     }//error
-
-
   });//ajax
 
 }//else
@@ -106,7 +102,7 @@ $("#signUpAbout").click(function(){
 });
 
 $("#logInHomePage").click(function(){
-  $("#loginPage").attr('style',"display: block !important")
+  $("#loginPage").attr('style',"display: block !important");
   $("#signUpPage").attr('style',"display: none !important");
   $("#aboutPage").attr('style',"display: none !important");
   $("#homePage").hide();
@@ -134,14 +130,14 @@ $(".missionThreeSplashText").click(function(){
 });
 
 $("#signUpData").click(function(){
-  $("#loginPage").attr('style',"display: block !important")
+  $("#loginPage").attr('style',"display: block !important");
   $("#signUpPage").attr('style',"display: none !important");
 });
 
 //end of login /sign up navigation
 
 $("#signUpSubmitBtn").click(function(){
-    $("#loginPage").attr('style',"display: block !important")
+    $("#loginPage").attr('style',"display: block !important");
     $("#signUpPage").attr('style',"display: none !important");
     $("#aboutPage").attr('style',"display: none !important");
     $("#homePage").hide();
@@ -200,7 +196,7 @@ function validateEmail(email){
 		$('#signUpEmail').hide();
     $(".emailText").hide();
     $(".passwordText").show();
-		return true
+		return true;
 	} else {
 		error();
 		$('#errorMessage').show();
@@ -290,7 +286,7 @@ function renderCardHomePage(post, containerId){
     <div class="card cardSkin m-5">
       <img src="${post.imageUrl}" class="bd-placeholder-img card-img-top m-2"/>
       <div class="card-body">
-        <div><img class="avatarSkin d-inline" src="assets/avatar-natalia.jpg"><h2 class="d-inline ml-1">${post.username}</h2></div>
+        <div><img class="avatarSkin d-inline"><h2 class="d-inline ml-1">${post.username}</h2></div>
         <p class="card-text">${post.description}</p>
         <div class="text-right">
           <div>
@@ -401,7 +397,7 @@ let modalBody = `<div class="modal" id="myModal" tabindex="-1" role="dialog">
           <div class="card borderNone mb-4">
             <img src="${post.imageUrl}" class="bd-placeholder-img card-img-top m-2" />
             <div class="card-body">
-              <div><img class="avatarSkin d-inline" src="assets/avatar-natalia.jpg"><h2 class="d-inline ml-1">${post.username}</h2></div>
+              <div><img class="avatarSkin d-inline"><h2 class="d-inline ml-1">${post.username}</h2></div>
               <p class="card-text">${post.description}</p>
               <div class="text-right">
               </div>
@@ -463,7 +459,7 @@ let modalBody = `<div class="modal" id="myModal" tabindex="-1" role="dialog">
           <div class="card borderNone mb-4">
             <img src="${post.imageUrl}" class="bd-placeholder-img card-img-top m-2" />
             <div class="card-body">
-              <div><img class="avatarSkin d-inline" src="assets/avatar-natalia.jpg"><h2 class="d-inline ml-1">${post.username}</h2></div>
+              <div><img class="avatarSkin d-inline"><h2 class="d-inline ml-1">${post.username}</h2></div>
               <p class="card-text">${post.description}</p>
               <div class="text-right">
               </div>
@@ -496,7 +492,7 @@ function addComment(postId){
   let post = communityPosts.filter(p => p._id == postId)[0];
   let commentText = $("#addCommentArea").val();
   let userName = sessionStorage.userName;
-  let comment = {"text": commentText, "username": userName};
+  let comment = {"text": commentText, "userName": userName};
   post.comments.push(comment);
     $.ajax({
       url :`${url}/addComment`,
@@ -618,11 +614,11 @@ $(document).ready(function(){
       success : function(loginData){
         console.log(loginData);
         if (loginData === 'Please fill in all areas') {
-          alert('Please fill in all areas')
+          alert('Please fill in all areas');
         }else if (loginData === 'User not found. Please register') {
-          alert('Register please')
+          alert('Register please');
         } else if (loginData === 'Not Authorized') {
-          alert('Incorrect Password')
+          alert('Incorrect Password');
         } else {
           sessionStorage.setPost('userId',loginData['_id']);
           sessionStorage.setPost('userName',loginData['username']);
@@ -653,9 +649,9 @@ $(document).ready(function(){
       success : function(loginData){
         console.log(loginData);
         if (loginData === 'Please fill in all areas') {
-          alert('Please fill in all areas')
+          alert('Please fill in all areas');
         } else if (loginData === 'Username taken already. Please try another one') {
-          alert('Username taken already. Please try another one')
+          alert('Username taken already. Please try another one');
         } else {
           sessionStorage.setPost('userId',loginData['_id']);
           sessionStorage.setPost('userName',loginData['username']);
